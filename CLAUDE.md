@@ -55,7 +55,7 @@ content/    Inhalte: Sicherung der Datenbank als JSON (recipes/, plans/, setting
 ## Design
 
 - Farbpalette (12 Töne, hell → dunkel): `#FAF6F1 #EAE1D8 #DACCBF #C7B9AC` · `#BAA99A #A69482 #957A69 #79685A` · `#6B5747 #5A473A #47362E #2F2320`. Nur diese Töne verwenden
-- Seitenhintergrund `#DACCBF`, alle Kacheln einheitlich `#957A69` mit Schrift `#47362E`; Flächen `#FAF6F1`, Text `#2F2320`, Knöpfe `#5A473A`
+- Seitenhintergrund `#DACCBF`, alle Kacheln einheitlich `#A69482` mit Schrift `#47362E`; Flächen `#FAF6F1`, Text `#2F2320`, Knöpfe `#5A473A`
 - Kein Dunkelmodus: Die App zeigt immer die helle Palette, auch wenn das Handy im Dunkelmodus ist
 - Schriften: Young Serif (Überschriften), Figtree (Text und Bedienung)
 - Keine Bilder: Rezepte und Kapitel erscheinen als einfache Kacheln mit Titel, alle in derselben Farbe
