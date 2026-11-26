@@ -1,0 +1,44 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788384,
+  "ingredients": [
+    "800 g festkochende Kartoffeln",
+    "600 g Hähnchenbrustfilet",
+    "2 rote Paprika",
+    "1 Zucchini",
+    "2 EL Olivenöl",
+    "2 Knoblauchzehen",
+    "2 TL Paprikapulver",
+    "1 TL getrockneter Rosmarin",
+    "Salz, Pfeffer",
+    "200 g Naturjoghurt",
+    "Saft von ½ Zitrone"
+  ],
+  "notes": "Joghurt-Dip separat aufbewahren.",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 12,
+    "fiber": 6,
+    "kcal": 470,
+    "protein": 43
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C Umluft vorheizen. Kartoffeln in Spalten schneiden, mit 1 EL Öl, Salz und Rosmarin auf einem Blech verteilen und 15 Minuten backen.",
+    "Hähnchen in Stücke, Paprika und Zucchini in grobe Würfel schneiden. Mit restlichem Öl, Knoblauch, Paprika, Salz und Pfeffer mischen.",
+    "Zu den Kartoffeln geben und weitere 20 Minuten backen.",
+    "Joghurt mit Zitronensaft und Salz verrühren und dazu reichen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "45 Min.",
+  "title": "Hähnchen-Kartoffel-Blech mit Paprika und Zucchini",
+  "updatedAt": 1795673788384
+}

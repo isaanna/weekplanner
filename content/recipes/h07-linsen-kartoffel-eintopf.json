@@ -1,0 +1,47 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788390,
+  "ingredients": [
+    "300 g Tellerlinsen",
+    "600 g festkochende Kartoffeln",
+    "3 Möhren",
+    "200 g Knollensellerie",
+    "6 Putenwiener",
+    "2 Knoblauchzehen",
+    "1,5 l Gemüsebrühe",
+    "2 Lorbeerblätter",
+    "1 TL Majoran",
+    "2 EL Apfelessig",
+    "1 EL Rapsöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "Sehr gut zum Vorkochen, hält 5 Tage und lässt sich einfrieren.",
+  "nutrition": {
+    "carbs": 55,
+    "fat": 8,
+    "fiber": 13,
+    "kcal": 440,
+    "protein": 31
+  },
+  "servings": 6,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln, Möhren und Sellerie würfeln.",
+    "Gemüse und Knoblauch im Öl kurz anschwitzen, Linsen, Brühe, Lorbeer und Majoran zugeben.",
+    "40 Minuten köcheln lassen, bis Linsen und Kartoffeln weich sind.",
+    "Würstchen in Scheiben schneiden und 5 Minuten mitziehen lassen.",
+    "Mit Essig, Salz und Pfeffer abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "50 Min.",
+  "title": "Linsen-Kartoffel-Eintopf mit Putenwürstchen",
+  "updatedAt": 1795673788390
+}

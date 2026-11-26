@@ -1,0 +1,36 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524792,
+  "ingredients": [
+    "600 g Schweinefilet",
+    "8 Scheiben Frühstücksspeck",
+    "800 g festkochende Kartoffeln",
+    "500 g Möhren",
+    "1 EL Olivenöl",
+    "Thymian",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 40,
+    "fat": 18,
+    "fiber": 7,
+    "kcal": 500,
+    "protein": 42
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln und Möhren in Stücke schneiden, mit Öl, Thymian und Salz aufs Blech geben und 15 Minuten backen.",
+    "Filet pfeffern, mit Speck umwickeln und rundherum kurz anbraten.",
+    "Aufs Gemüse legen und 20–25 Minuten mitbacken. 5 Minuten ruhen lassen und aufschneiden."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich"
+  ],
+  "time": "45 Min.",
+  "title": "Schweinefilet im Speckmantel mit Ofenkartoffeln und Möhren",
+  "updatedAt": 1795674524792
+}

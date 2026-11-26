@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524787,
+  "ingredients": [
+    "800 g festkochende Kartoffeln",
+    "4 Hähnchenbrustfilets",
+    "400 g passierte Tomaten",
+    "125 g Mozzarella light",
+    "Basilikum",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 42,
+    "fat": 11,
+    "fiber": 5,
+    "kcal": 470,
+    "protein": 48
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln in Spalten schneiden, mit Öl und Salz 20 Minuten backen.",
+    "Hähnchen würzen und zwischen die Kartoffeln legen, Tomaten über das Hähnchen geben, mit Mozzarellascheiben belegen.",
+    "20 Minuten weiterbacken und mit Basilikum servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "45 Min.",
+  "title": "Hähnchen-Caprese-Blech mit Kartoffeln",
+  "updatedAt": 1795674524787
+}

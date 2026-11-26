@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524785,
+  "ingredients": [
+    "800 g mageres Rinderhack",
+    "2 Eier",
+    "3 EL Haferflocken",
+    "1 EL Senf",
+    "1 kg festkochende Kartoffeln",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer, Paprikapulver"
+  ],
+  "notes": "Kalt auch gut als Aufschnitt.",
+  "nutrition": {
+    "carbs": 36,
+    "fat": 20,
+    "fiber": 4,
+    "kcal": 480,
+    "protein": 36
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 190 °C vorheizen. Hack mit Eiern, Haferflocken, Senf, Salz, Pfeffer und Paprika verkneten und zu einem Laib formen.",
+    "Kartoffeln vierteln, mit Öl und Salz mischen und mit dem Braten aufs Blech legen.",
+    "60 Minuten backen. Braten 10 Minuten ruhen lassen und in Scheiben schneiden."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "70 Min.",
+  "title": "Hackbraten mit Ofenkartoffeln",
+  "updatedAt": 1795674524785
+}

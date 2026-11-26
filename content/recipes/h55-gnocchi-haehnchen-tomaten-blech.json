@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524797,
+  "ingredients": [
+    "800 g Kartoffelgnocchi (Kühlregal)",
+    "500 g Hähnchenbrust",
+    "400 g Kirschtomaten",
+    "125 g Mozzarella light",
+    "2 EL Olivenöl",
+    "Basilikum",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 68,
+    "fat": 13,
+    "fiber": 5,
+    "kcal": 560,
+    "protein": 42
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 210 °C vorheizen.",
+    "Gnocchi, Hähnchenwürfel und Tomaten mit Öl, Salz und Pfeffer auf einem Blech mischen.",
+    "20 Minuten backen, Mozzarella darüber zupfen und 5 Minuten weiterbacken. Mit Basilikum servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "30 Min.",
+  "title": "Gnocchi-Blech mit Hähnchen und Kirschtomaten",
+  "updatedAt": 1795674524797
+}

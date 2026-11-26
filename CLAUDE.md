@@ -16,7 +16,7 @@ Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten,
 
 ## Vorlieben
 
-- Viel Kartoffeln, mit Fleisch
+- Hauptsächlich Kartoffeln, mit Fleisch
 - Gesund oder proteinreich
 - Jedes Rezept ist entweder **herzhaft** oder **süß** (genau eins der beiden Tags)
 - Viel Gemüse, gesunde Kohlenhydrate (Kartoffeln, Vollkorn, Hülsenfrüchte)
@@ -35,12 +35,20 @@ Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten,
 
 - Vorgekochte Gerichte müssen bis zum letzten Esstag halten
 - Sonst einfrieren, getrennt lagern oder Mitte der Woche nachkochen
-- Nährwerte im Wochenplan müssen pro Person und Tag zum Profil passen (kcal ±10 %, Eiweiß ≥ 90 %)
+- Der Wochenplan enthält nur **Frühstück, Mittagessen und Abendessen**. Snacks werden nicht eingeplant und zählen nicht zur Woche
+- Nährwerte im Wochenplan müssen pro Person und Tag zum Profil passen (kcal ±10 %, Eiweiß ≥ 90 %), ausgeglichen nur über diese drei Mahlzeiten und Portionsgrößen
 
 ## Programm und Inhalt trennen
 
-- `kuechenbuch.html` enthält **keine Inhalte**: keine Rezepte, keine Profile, keine Regeln, keine Beispieltexte mit Rezeptdaten
+```
+app/        Code: kuechenbuch.html (die App, ohne Inhalte)
+content/    Inhalte: Sicherung der Datenbank als JSON (recipes/, plans/, settings/)
+```
+
+- `app/kuechenbuch.html` enthält **keine Inhalte**: keine Rezepte, keine Profile, keine Regeln, keine Beispieltexte mit Rezeptdaten
 - Alle Inhalte liegen in der Datenbank des Artifacts (`recipes`, `plans`, `profiles`, `tracking`, `settings/brain`)
+- Die Datenbank ist die Quelle. `content/` ist eine Sicherung: nach dem Eintragen oder Ändern von Rezepten, Plänen oder Regeln neu exportieren (ArtifactData `list` mit `out_dir: content`) und committen
+- `profiles` und `tracking` werden **nicht** exportiert (persönliche Daten wie Gewicht, Alter, Essprotokoll)
 - Die Regeln oben sind in `settings/brain` gespeichert und dort die Quelle für die App. Bei Änderungen **beides** aktualisieren: diese Datei und `settings/brain`
 
 ## Design
@@ -51,6 +59,6 @@ Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten,
 ## Arbeitsweise
 
 - App-URL: https://claude.ai/artifact/NEMo2yd7AXeyKKwiYcJ9Hb
-- Nach Änderungen an `kuechenbuch.html`: auf dieselbe URL publizieren, committen und selbstständig pushen
+- Nach Änderungen an `app/kuechenbuch.html`: auf dieselbe URL publizieren, committen und selbstständig pushen
 - Commits ohne Co-Author- oder Session-Zeilen, kein Hinweis auf Claude als Mitautor
 - Commit-Nachrichten auf Deutsch

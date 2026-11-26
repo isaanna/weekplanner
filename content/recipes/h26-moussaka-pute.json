@@ -1,0 +1,47 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788409,
+  "ingredients": [
+    "800 g festkochende Kartoffeln",
+    "2 Auberginen",
+    "600 g Putenhack",
+    "800 g stückige Tomaten",
+    "2 Knoblauchzehen",
+    "1 TL Zimt",
+    "1 TL Oregano",
+    "400 ml Milch (1,5 %)",
+    "2 EL Speisestärke",
+    "1 Ei",
+    "60 g geriebener Parmesan",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 38,
+    "fat": 14,
+    "fiber": 8,
+    "kcal": 430,
+    "protein": 35
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in Scheiben schneiden und 8 Minuten vorkochen. Auberginen in Scheiben schneiden, salzen und im Ofen bei 220 °C 15 Minuten backen.",
+    "Hack im Öl anbraten, Knoblauch, Tomaten, Zimt und Oregano zugeben, 15 Minuten köcheln.",
+    "Milch mit Stärke aufkochen, vom Herd nehmen, Ei und die Hälfte des Parmesans einrühren, mit Muskat würzen.",
+    "Kartoffeln, Auberginen und Hacksoße schichten, Béchamel darüber, mit Parmesan bestreuen.",
+    "Bei 180 °C 35 Minuten backen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "75 Min.",
+  "title": "Kartoffel-Moussaka mit Putenhack",
+  "updatedAt": 1795673788409
+}

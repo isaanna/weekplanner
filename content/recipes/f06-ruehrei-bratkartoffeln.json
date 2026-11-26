@@ -1,0 +1,37 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788369,
+  "ingredients": [
+    "300 g gekochte Pellkartoffeln (vom Vortag)",
+    "4 Eier",
+    "2 EL Milch",
+    "150 g Kirschtomaten",
+    "1 EL Rapsöl",
+    "Schnittlauch",
+    "Salz, Pfeffer, Paprikapulver"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 31,
+    "fat": 21,
+    "fiber": 4,
+    "kcal": 390,
+    "protein": 17
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in Scheiben schneiden und im Öl 8–10 Minuten knusprig braten, mit Salz und Paprika würzen.",
+    "Eier mit Milch, Salz und Pfeffer verquirlen und in einer zweiten Pfanne bei mittlerer Hitze cremig stocken lassen.",
+    "Tomaten halbieren, alles mit Schnittlauch anrichten."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "20 Min.",
+  "title": "Rührei mit Bratkartoffeln und Kirschtomaten",
+  "updatedAt": 1795673788369
+}

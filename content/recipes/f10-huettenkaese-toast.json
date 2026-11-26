@@ -1,0 +1,40 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788373,
+  "ingredients": [
+    "4 Scheiben Vollkornbrot",
+    "200 g Hüttenkäse",
+    "2 Eier",
+    "½ Avocado",
+    "Kresse",
+    "Chiliflocken",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 36,
+    "fat": 16,
+    "fiber": 9,
+    "kcal": 410,
+    "protein": 27
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Eier 7 Minuten kochen, abschrecken und pellen.",
+    "Brot toasten, mit Hüttenkäse bestreichen.",
+    "Avocado und Eier in Scheiben darauf legen, mit Salz, Pfeffer, Chili und Kresse würzen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "Vollkorn",
+    "schnell",
+    "vegetarisch"
+  ],
+  "time": "10 Min.",
+  "title": "Vollkorntoast mit Hüttenkäse, Ei und Avocado",
+  "updatedAt": 1795673788373
+}

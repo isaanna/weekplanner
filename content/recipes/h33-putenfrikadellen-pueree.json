@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524775,
+  "ingredients": [
+    "500 g Putenhack",
+    "1 Ei",
+    "1 TL Senf",
+    "1 kg mehligkochende Kartoffeln",
+    "200 ml Milch",
+    "1 EL Rapsöl",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 47,
+    "fat": 14,
+    "fiber": 4,
+    "kcal": 470,
+    "protein": 37
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hack mit Ei, Senf, Salz und Pfeffer verkneten und 8 Frikadellen formen.",
+    "Im Öl pro Seite 5 Minuten braten.",
+    "Kartoffeln schälen, 20 Minuten kochen und mit warmer Milch, Salz und Muskat stampfen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "35 Min.",
+  "title": "Putenfrikadellen mit Kartoffelpüree",
+  "updatedAt": 1795674524775
+}

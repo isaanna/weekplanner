@@ -1,0 +1,44 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788404,
+  "ingredients": [
+    "700 g Hähnchenbrust",
+    "800 g festkochende Kartoffeln",
+    "500 g grüne Bohnen",
+    "2 Möhren",
+    "1,5 l Hühnerbrühe",
+    "2 Zweige Bohnenkraut oder 1 TL getrocknet",
+    "1 Knoblauchzehe",
+    "1 EL Rapsöl",
+    "Petersilie",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 30,
+    "fat": 5,
+    "fiber": 6,
+    "kcal": 320,
+    "protein": 35
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln und Möhren würfeln, Bohnen in Stücke brechen.",
+    "Hähnchen würfeln und im Öl kurz anbraten.",
+    "Gemüse, Knoblauch, Brühe und Bohnenkraut zugeben und 25 Minuten köcheln.",
+    "Mit Salz, Pfeffer und Petersilie abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "45 Min.",
+  "title": "Hähnchen-Kartoffel-Eintopf mit grünen Bohnen",
+  "updatedAt": 1795673788404
+}

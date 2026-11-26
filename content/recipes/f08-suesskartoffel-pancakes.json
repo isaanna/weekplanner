@@ -1,0 +1,42 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788371,
+  "ingredients": [
+    "200 g gekochte Süßkartoffel (püriert)",
+    "2 Eier",
+    "50 g Dinkel-Vollkornmehl",
+    "1 TL Backpulver",
+    "½ TL Zimt",
+    "1 TL Rapsöl",
+    "250 g Magerquark",
+    "½ TL Vanilleextrakt",
+    "1 TL Honig",
+    "100 g Heidelbeeren"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 52,
+    "fat": 9,
+    "fiber": 6,
+    "kcal": 410,
+    "protein": 28
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Süßkartoffelpüree, Eier, Mehl, Backpulver und Zimt zu einem dicken Teig verrühren.",
+    "In einer beschichteten Pfanne mit wenig Öl kleine Pancakes von jeder Seite 2–3 Minuten backen.",
+    "Quark mit Vanille und Honig glatt rühren.",
+    "Pancakes mit Vanillequark und Heidelbeeren servieren."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "vegetarisch"
+  ],
+  "time": "25 Min.",
+  "title": "Süßkartoffel-Pancakes mit Vanillequark",
+  "updatedAt": 1795673788371
+}

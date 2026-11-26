@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524794,
+  "ingredients": [
+    "600 g mageres Rinderhack",
+    "2 Knoblauchzehen",
+    "1 TL Paprikapulver",
+    "800 g festkochende Kartoffeln",
+    "150 g Ajvar",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 42,
+    "fat": 20,
+    "fiber": 5,
+    "kcal": 500,
+    "protein": 35
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln in Spalten schneiden, mit Öl und Salz 30 Minuten backen.",
+    "Hack mit Knoblauch, Paprika, Salz und Pfeffer verkneten und 16 fingerlange Röllchen formen.",
+    "In einer Pfanne rundherum 8 Minuten braten. Mit Ajvar servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "einfrierbar"
+  ],
+  "time": "40 Min.",
+  "title": "Cevapcici mit Ofenkartoffeln und Ajvar",
+  "updatedAt": 1795674524794
+}

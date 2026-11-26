@@ -1,0 +1,40 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788382,
+  "ingredients": [
+    "500 g Magerquark",
+    "3 Eier",
+    "40 g Weichweizengrieß",
+    "2 EL Zucker oder Erythrit",
+    "1 TL Vanilleextrakt",
+    "abgeriebene Schale von 1 Bio-Zitrone",
+    "250 g Beeren (TK)"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 24,
+    "fat": 4,
+    "fiber": 2,
+    "kcal": 240,
+    "protein": 24
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 180 °C vorheizen, eine kleine Auflaufform fetten.",
+    "Quark, Eier, Grieß, Zucker, Vanille und Zitronenschale glatt rühren.",
+    "Die Hälfte der Beeren unterheben, in die Form geben, Rest darauf verteilen.",
+    "35 Minuten backen, bis die Oberfläche goldgelb ist. Warm oder kalt essen."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "vegetarisch"
+  ],
+  "time": "45 Min.",
+  "title": "Quarkauflauf mit Beeren",
+  "updatedAt": 1795673788382
+}

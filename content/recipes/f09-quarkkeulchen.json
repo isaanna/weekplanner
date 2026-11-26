@@ -1,0 +1,41 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788372,
+  "ingredients": [
+    "400 g mehligkochende Kartoffeln (gekocht, kalt)",
+    "250 g Magerquark",
+    "1 Ei",
+    "60 g Dinkelmehl",
+    "1 EL Zucker",
+    "1 Prise Salz",
+    "abgeriebene Schale von ½ Bio-Zitrone",
+    "1 EL Rapsöl",
+    "300 g ungesüßtes Apfelmus",
+    "Zimt"
+  ],
+  "notes": "Sächsischer Klassiker. Lassen sich gut einfrieren und im Toaster aufbacken.",
+  "nutrition": {
+    "carbs": 47,
+    "fat": 5,
+    "fiber": 4,
+    "kcal": 300,
+    "protein": 14
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln fein reiben oder durch die Presse drücken.",
+    "Mit Quark, Ei, Mehl, Zucker, Salz und Zitronenschale zu einem formbaren Teig verkneten.",
+    "12 flache Taler formen und in einer beschichteten Pfanne mit wenig Öl je Seite 3–4 Minuten goldbraun braten.",
+    "Mit Apfelmus und Zimt servieren."
+  ],
+  "tags": [
+    "süß",
+    "vegetarisch",
+    "einfrierbar"
+  ],
+  "time": "40 Min.",
+  "title": "Quarkkeulchen mit Apfelmus",
+  "updatedAt": 1795673788372
+}

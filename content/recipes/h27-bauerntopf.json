@@ -1,0 +1,45 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788410,
+  "ingredients": [
+    "600 g mageres Rinderhack",
+    "1 kg festkochende Kartoffeln",
+    "3 Paprika",
+    "2 Möhren",
+    "2 Knoblauchzehen",
+    "2 EL Tomatenmark",
+    "1 l Rinderbrühe",
+    "1 TL Paprikapulver edelsüß",
+    "1 TL Majoran",
+    "1 EL Rapsöl",
+    "Petersilie",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 40,
+    "fat": 13,
+    "fiber": 6,
+    "kcal": 400,
+    "protein": 30
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hack im Öl krümelig braten, Knoblauch und Tomatenmark mitrösten.",
+    "Kartoffeln, Paprika und Möhren würfeln und zugeben.",
+    "Mit Brühe auffüllen, Gewürze zugeben und 25 Minuten köcheln.",
+    "Abschmecken und mit Petersilie bestreuen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "45 Min.",
+  "title": "Bauerntopf mit Hackfleisch, Kartoffeln und Paprika",
+  "updatedAt": 1795673788410
+}

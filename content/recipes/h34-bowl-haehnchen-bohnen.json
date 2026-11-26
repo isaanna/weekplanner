@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524776,
+  "ingredients": [
+    "800 g Drillinge",
+    "500 g Hähnchenbrust",
+    "400 g grüne Bohnen",
+    "250 g griechischer Joghurt (2 %)",
+    "1 Knoblauchzehe",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "Joghurt separat aufbewahren.",
+  "nutrition": {
+    "carbs": 44,
+    "fat": 9,
+    "fiber": 7,
+    "kcal": 450,
+    "protein": 46
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 210 °C vorheizen. Drillinge halbieren, mit Öl und Salz 25 Minuten rösten.",
+    "Bohnen 7 Minuten in Salzwasser garen.",
+    "Hähnchen in Streifen braten, salzen und pfeffern.",
+    "Joghurt mit geriebenem Knoblauch und Salz verrühren. Alles in Bowls oder Dosen verteilen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "35 Min.",
+  "title": "Kartoffel-Bowl mit Hähnchen, grünen Bohnen und Joghurt",
+  "updatedAt": 1795674524776
+}

@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788367,
+  "ingredients": [
+    "400 g Skyr natur",
+    "1 großer Apfel",
+    "20 g Walnüsse",
+    "2 EL kernige Haferflocken",
+    "1 TL Ahornsirup",
+    "1 TL Zimt"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 30,
+    "fat": 7,
+    "fiber": 4,
+    "kcal": 290,
+    "protein": 25
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Apfel würfeln, Walnüsse grob hacken.",
+    "Haferflocken und Walnüsse in einer Pfanne ohne Fett kurz rösten.",
+    "Skyr auf 2 Schalen verteilen, Apfel, Nuss-Hafer-Mischung, Zimt und Ahornsirup darübergeben."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "schnell",
+    "vegetarisch"
+  ],
+  "time": "5 Min.",
+  "title": "Skyr-Bowl mit Apfel, Zimt und Walnüssen",
+  "updatedAt": 1795673788367
+}

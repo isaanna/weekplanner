@@ -1,0 +1,41 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788402,
+  "ingredients": [
+    "4 große mehligkochende Kartoffeln (à 250 g)",
+    "400 g mageres Rinderhack",
+    "1 rote Paprika",
+    "200 g passierte Tomaten",
+    "1 Knoblauchzehe",
+    "200 g Hüttenkäse",
+    "40 g geriebener Gouda",
+    "1 TL Paprikapulver",
+    "Schnittlauch",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 52,
+    "fat": 16,
+    "fiber": 6,
+    "kcal": 510,
+    "protein": 38
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln waschen, mehrmals einstechen und bei 200 °C 50–60 Minuten backen.",
+    "Hack mit Knoblauch und Paprikawürfeln anbraten, Tomaten zugeben und würzen, 10 Minuten köcheln.",
+    "Kartoffeln längs aufschneiden, etwas Kartoffelinneres herausdrücken und mit Hüttenkäse vermischen.",
+    "Mischung und Hack in die Kartoffeln füllen, mit Käse bestreuen, 10 Minuten überbacken. Mit Schnittlauch servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "70 Min.",
+  "title": "Gefüllte Ofenkartoffeln mit Hackfleisch und Hüttenkäse",
+  "updatedAt": 1795673788402
+}

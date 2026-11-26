@@ -276,6 +276,7 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
   const TAGS = ["herzhaft", "süß", "gesund", "leicht", "viel Gemüse", "proteinreich", "Vollkorn", "low carb", "vegetarisch", "vegan", "schnell", "meal-prep-tauglich", "einfrierbar"];
   const NUT = [["kcal", "Kalorien", "kcal"], ["protein", "Eiweiß", "g"], ["carbs", "Kohlenhydrate", "g"], ["fat", "Fett", "g"], ["fiber", "Ballaststoffe", "g"]];
   const SLOTS = ["Frühstück", "Mittagessen", "Abendessen", "Snack"];
+  const PLAN_SLOTS = ["Frühstück", "Mittagessen", "Abendessen"];
   const SLOT_CAT = { "Frühstück": ["Frühstück"], "Mittagessen": ["Hauptgerichte", "Suppen", "Vorspeisen & Salate"], "Abendessen": ["Hauptgerichte", "Suppen", "Vorspeisen & Salate"], "Snack": ["Snacks", "Desserts", "Backen"] };
   const DAYS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
   const ACT = [["1.2", "kaum Bewegung (Büro)"], ["1.375", "leicht aktiv (1–2× Sport/Woche)"], ["1.55", "mäßig aktiv (3–4×)"], ["1.725", "sehr aktiv (5–6×)"], ["1.9", "extrem aktiv (körperliche Arbeit + Sport)"]];
@@ -287,7 +288,7 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
     sel: null, mode: "read", q: "", tag: null, scale: null, draft: null, confirmDel: false,
     busy: false, status: "", statusErr: false, trackMsg: "",
     planSel: null, planMode: "read", brief: "", feedback: "", planBusy: false, planStatus: "", planErr: false, confirmPlanDel: false, adoptMsg: "",
-    weekStart: null, pick: null, pickQ: "", person: "all",
+    weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
     editProfile: null, settingsMsg: "",
   };
   let db = null, col = null, plansCol = null, profCol = null, trackCol = null, sample = null, imagesOk = false, unsubTrack = null;
@@ -786,7 +787,7 @@ ${d.raw || "(kein Text – siehe Bilder)"}`;
     const info = h("div", { class: "panel", style: "margin-top:16px" }, h("h3", { class: "sec", style: "margin:0" }, "Das bekommt Claude automatisch mit"));
     info.append(h("p", { class: "hint" }, `Dein Kochbuch: ${n} ${n === 1 ? "Rezept" : "Rezepte"}. Fehlt etwas Passendes, schlägt Claude neue Rezepte vor.`));
     info.append(h("p", { class: "hint" }, S.profiles.length
-      ? "Profile: " + S.profiles.map(p => { const t = targets(p); return `${p.name}${t ? ` (${de(t.kcal)} kcal, ${t.protein} g Eiweiß)` : " (ohne Zielwerte)"}`; }).join(" · ") + ". Portionen werden so verteilt, dass jeder Tag pro Person passt."
+      ? "Profile: " + S.profiles.map(p => { const t = targets(p); return `${p.name}${t ? ` (${de(t.kcal)} kcal, ${t.protein} g Eiweiß)` : " (ohne Zielwerte)"}`; }).join(" · ") + ". Portionen werden so verteilt, dass jeder Tag pro Person passt. Geplant werden nur Frühstück, Mittag- und Abendessen, Snacks zählen nicht dazu."
       : "Noch keine Profile. Lege unter „Profil & Regeln“ Profile an, damit die Nährwerte pro Person stimmen."));
     info.append(h("p", { class: "hint" }, brain ? "Deine Regeln und verbotenen Lebensmittel werden beachtet." : "Noch keine Regeln hinterlegt (verbotene Lebensmittel, Vorlieben)."));
     sh.append(info);
@@ -827,15 +828,15 @@ Antworte ausschließlich mit JSON in dieser Form:
  "newRecipes": [ {"key": "n1", ...Rezept} ],
  "cook": [ {"ref": "Rezept-id oder key", "portions": Zahl, "when": "Sonntag", "storage": "wie aufbewahren und wie lange haltbar"} ],
  "prep": [ {"when": "Sonntag", "time": "z. B. 0:00–0:20", "step": "konkreter Arbeitsschritt"} ],
- "days": [ {"day": "Montag", "meals": [ {"slot": "Frühstück" | "Mittagessen" | "Abendessen" | "Snack", "ref": "id oder key", "portionsByPerson": {"<Profil-id>": Zahl}, "portions": Zahl (Summe), "note": "z. B. kalt essen, aufwärmen, frisch kochen"} ]} ],
+ "days": [ {"day": "Montag", "meals": [ {"slot": "Frühstück" | "Mittagessen" | "Abendessen", "ref": "id oder key", "portionsByPerson": {"<Profil-id>": Zahl}, "portions": Zahl (Summe), "note": "z. B. kalt essen, aufwärmen, frisch kochen"} ]} ],
  "shopping": [ {"section": "Gemüse & Obst" | "Kühlregal" | "Fleisch & Fisch" | "Brot & Getreide" | "Konserven & Hülsenfrüchte" | "Gewürze & Öle" | "Sonstiges", "items": [ {"name": string, "amount": string} ]} ],
  "pantry": [ {"name": string, "amount": string} ],
  "tips": [ string ]
 }
 Jedes Rezept in newRecipes hat die Form ${RECIPE_SHAPE} plus "key". Zutatenmengen in newRecipes gelten für "servings".
 Regeln:
-- Nimm nur die Tage und Mahlzeiten auf, die in den Vorgaben vorkommen. Fehlt eine Angabe, plane Montag bis Freitag.
-- NÄHRWERTE PRO PERSON: Wähle Gerichte und "portionsByPerson" (auch Bruchteile wie 0.75, 1.25) so, dass jede Person an jedem geplanten Tag ihr kcal-Ziel um höchstens ±10 % verfehlt und das Eiweißziel mindestens zu 90 % erreicht. Wenn die Hauptmahlzeiten nicht reichen, füge einen Snack aus dem Kochbuch hinzu. Sind Mahlzeiten vorgegeben, die nicht im Plan stehen (z. B. auswärts), erwähne das in summary.
+- Nur die Mahlzeiten Frühstück, Mittagessen und Abendessen. Nimm nur die Tage und Mahlzeiten auf, die in den Vorgaben vorkommen. Fehlt eine Angabe, plane Montag bis Freitag.
+- NÄHRWERTE PRO PERSON: Wähle Gerichte und "portionsByPerson" (auch Bruchteile wie 0.75, 1.25) so, dass jede Person an jedem geplanten Tag ihr kcal-Ziel um höchstens ±10 % verfehlt und das Eiweißziel mindestens zu 90 % erreicht. Plane KEINE Snacks und nimm keine Snack-Rezepte in den Plan: Snacks zählen nicht zur Woche. Gleiche die Zielwerte nur über Frühstück, Mittag- und Abendessen und deren Portionsgrößen aus. Sind Mahlzeiten vorgegeben, die nicht im Plan stehen (z. B. auswärts), erwähne das in summary.
 - "cook" listet jedes Gericht genau einmal mit der Gesamtzahl der Portionen (Summe über alle Personen und Tage). Frisch gekochte Gerichte stehen mit "when" = Wochentag in cook.
 - Haltbarkeit ernst nehmen: Ein vorgekochtes Gericht muss bis zum letzten Esstag halten (shelfLifeDays). Sonst einfrieren, getrennt lagern oder Mitte der Woche nachkochen und das in storage oder tips erklären.
 - "prep" ist ein sinnvoller, paralleler Ablauf mit Zeitangaben, inklusive Abfüllen.
@@ -855,7 +856,7 @@ Regeln:
       newRecipes: arr(out.newRecipes).filter(n => n && n.key).map(n => ({ key: str(n.key), ...recordFrom(n) })),
       cook: arr(out.cook).map(c => ({ ref: ref(c.ref), label: ref(c.ref) ? "" : str(c.ref), portions: num(c.portions), when: str(c.when), storage: str(c.storage) })),
       prep: arr(out.prep).map(p => ({ when: str(p.when), time: str(p.time), step: str(p.step) })).filter(p => p.step),
-      days: arr(out.days).map(d => ({ day: str(d.day), meals: arr(d.meals).map(m => ({ slot: SLOTS.includes(str(m.slot)) ? str(m.slot) : "Snack", ref: ref(m.ref), label: ref(m.ref) ? "" : str(m.ref), portions: num(m.portions), portionsByPerson: pbp(m.portionsByPerson), note: str(m.note) })) })),
+      days: arr(out.days).map(d => ({ day: str(d.day), meals: arr(d.meals).filter(m => PLAN_SLOTS.includes(str(m.slot))).map(m => ({ slot: str(m.slot), ref: ref(m.ref), label: ref(m.ref) ? "" : str(m.ref), portions: num(m.portions), portionsByPerson: pbp(m.portionsByPerson), note: str(m.note) })) })),
       shopping: arr(out.shopping).map(s => ({ section: str(s.section) || "Sonstiges", items: arr(s.items).map(i => ({ name: str(i.name), amount: str(i.amount) })).filter(i => i.name) })).filter(s => s.items.length),
       pantry: arr(out.pantry).map(i => ({ name: str(i.name), amount: str(i.amount) })).filter(i => i.name),
       tips: arr(out.tips).map(str).filter(Boolean),
@@ -1207,8 +1208,21 @@ Regeln:
         `Durchschnitt an ${n} ${n === 1 ? "Tag" : "Tagen"} mit Einträgen: ${de(sum.kcal / n)} kcal · ${de(sum.protein / n)} g Eiweiß · ${de(sum.carbs / n)} g KH · ${de(sum.fat / n)} g Fett · ${de(sum.fiber / n)} g Ballaststoffe${t ? ` (Ziel ${de(t.kcal)} kcal, ${t.protein} g Eiweiß)` : ""}.`));
     }
     box.append(h("p", { class: "hint", style: "margin-top:6px" }, "Einen ganzen Wochenplan übernimmst du im Reiter „Wochenplan“ mit „Ganzen Plan eintragen“."));
+    const weekEntries = S.entries.filter(e => e.date >= ymd(mon) && e.date <= ymd(days[6]));
+    const act = h("div", { class: "actions" });
+    if (S.confirmWeekDel) act.append(h("span", { class: "confirm" }, `Alle ${weekEntries.length} Einträge dieser Woche löschen${S.profiles.length > 1 ? " (für alle Personen)" : ""}?`,
+      h("button", { class: "btn danger", type: "button", onclick: (e) => clearWeek(weekEntries, e.currentTarget) }, "Ja, Woche leeren"),
+      h("button", { class: "btn", type: "button", onclick: () => { S.confirmWeekDel = false; renderMain(); } }, "Behalten")));
+    else act.append(h("button", { class: "btn ghost danger", type: "button", disabled: !weekEntries.length, onclick: () => { S.confirmWeekDel = true; renderMain(); } }, "Ganze Woche löschen"));
+    box.append(act);
   }
-  function shiftWeek(n) { S.weekStart = ymd(addDays(parseYmd(S.weekStart), n)); S.pick = null; subscribeWeek(); renderMain(); }
+  async function clearWeek(list, btn) {
+    btn.disabled = true; btn.textContent = "Wird gelöscht …";
+    for (const e of list) { try { await trackCol.doc(e.id).delete(); } catch {} }
+    const ids = new Set(list.map(e => e.id));
+    S.entries = S.entries.filter(e => !ids.has(e.id)); S.confirmWeekDel = false; renderMain();
+  }
+  function shiftWeek(n) { S.confirmWeekDel = false; S.weekStart = ymd(addDays(parseYmd(S.weekStart), n)); S.pick = null; subscribeWeek(); renderMain(); }
 
   function renderPicker(pid) {
     const { date, slot } = S.pick;

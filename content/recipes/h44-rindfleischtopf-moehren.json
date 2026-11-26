@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524786,
+  "ingredients": [
+    "900 g Rindergulasch",
+    "1 kg festkochende Kartoffeln",
+    "600 g Möhren",
+    "1,2 l Rinderbrühe",
+    "2 Lorbeerblätter",
+    "Petersilie",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 38,
+    "fat": 9,
+    "fiber": 6,
+    "kcal": 390,
+    "protein": 38
+  },
+  "servings": 6,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Fleisch in der Brühe mit Lorbeer aufkochen und zugedeckt 75 Minuten leise köcheln.",
+    "Kartoffeln und Möhren würfeln, dazugeben und 25 Minuten weitergaren.",
+    "Mit Salz, Pfeffer und Petersilie abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "1 Std. 45 Min.",
+  "title": "Rindfleischtopf mit Möhren und Kartoffeln",
+  "updatedAt": 1795674524786
+}

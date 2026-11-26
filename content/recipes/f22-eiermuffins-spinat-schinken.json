@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795674524772,
+  "ingredients": [
+    "10 Eier",
+    "150 g Blattspinat",
+    "100 g Kochschinken",
+    "50 g geriebener Gouda",
+    "Salz, Pfeffer"
+  ],
+  "notes": "1 Portion = 2 Muffins. Kalt oder kurz aufgewärmt.",
+  "nutrition": {
+    "carbs": 2,
+    "fat": 15,
+    "fiber": 1,
+    "kcal": 210,
+    "protein": 17
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 180 °C vorheizen, 12 Muffinmulden einfetten.",
+    "Spinat grob hacken, Schinken würfeln und auf die Mulden verteilen.",
+    "Eier mit Salz und Pfeffer verquirlen, einfüllen und mit Käse bestreuen.",
+    "20 Minuten backen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "leicht"
+  ],
+  "time": "25 Min.",
+  "title": "Eiermuffins mit Spinat und Schinken",
+  "updatedAt": 1795674524772
+}

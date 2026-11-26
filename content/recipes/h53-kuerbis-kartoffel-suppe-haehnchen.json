@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524795,
+  "ingredients": [
+    "800 g Hokkaido-Kürbis",
+    "400 g mehligkochende Kartoffeln",
+    "1 l Gemüsebrühe",
+    "1 Stück Ingwer (2 cm)",
+    "400 g Hähnchenbrust",
+    "1 TL Rapsöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 30,
+    "fat": 5,
+    "fiber": 6,
+    "kcal": 290,
+    "protein": 29
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kürbis (mit Schale) und Kartoffeln würfeln und mit Ingwer in der Brühe 20 Minuten weich kochen.",
+    "Fein pürieren und abschmecken.",
+    "Hähnchen in Streifen braten und auf die Suppe geben."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "leicht"
+  ],
+  "time": "35 Min.",
+  "title": "Kürbis-Kartoffel-Suppe mit Hähnchenstreifen",
+  "updatedAt": 1795674524795
+}

@@ -1,0 +1,43 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788392,
+  "ingredients": [
+    "1 kg mehligkochende Kartoffeln",
+    "3 Möhren",
+    "200 g Knollensellerie",
+    "4 Putenwiener",
+    "1,2 l Gemüsebrühe",
+    "100 ml Milch",
+    "1 TL Majoran",
+    "Muskat",
+    "1 Bund Petersilie",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 52,
+    "fat": 11,
+    "fiber": 8,
+    "kcal": 380,
+    "protein": 17
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln, Möhren und Sellerie schälen und würfeln.",
+    "In der Brühe mit Majoran 20 Minuten weich kochen.",
+    "Etwa die Hälfte pürieren, Milch einrühren, mit Salz, Pfeffer und Muskat abschmecken.",
+    "Würstchen in Scheiben schneiden und in der Suppe erwärmen. Mit Petersilie servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "40 Min.",
+  "title": "Kartoffelsuppe mit Möhren und Putenwürstchen",
+  "updatedAt": 1795673788392
+}

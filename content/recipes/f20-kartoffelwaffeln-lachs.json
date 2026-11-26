@@ -1,0 +1,37 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788383,
+  "ingredients": [
+    "300 g mehligkochende Kartoffeln",
+    "1 Ei",
+    "2 EL Dinkelmehl",
+    "100 g Räucherlachs",
+    "60 g körniger Frischkäse",
+    "Dill",
+    "Zitronensaft",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 35,
+    "fat": 13,
+    "fiber": 4,
+    "kcal": 360,
+    "protein": 24
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln fein reiben und gut ausdrücken, mit Ei, Mehl, Salz und Pfeffer mischen.",
+    "Im gefetteten Waffeleisen 4 Waffeln knusprig backen (je ca. 5 Minuten).",
+    "Mit Frischkäse, Räucherlachs, Dill und etwas Zitronensaft belegen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich"
+  ],
+  "time": "25 Min.",
+  "title": "Kartoffelwaffeln mit Räucherlachs und Frischkäse",
+  "updatedAt": 1795673788383
+}

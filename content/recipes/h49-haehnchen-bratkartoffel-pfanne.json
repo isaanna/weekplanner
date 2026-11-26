@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524791,
+  "ingredients": [
+    "800 g gekochte Kartoffeln (vom Vortag)",
+    "500 g Hähnchenbrust",
+    "2 Paprika",
+    "1 EL Rapsöl",
+    "1 TL Paprikapulver",
+    "Schnittlauch",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 40,
+    "fat": 10,
+    "fiber": 5,
+    "kcal": 420,
+    "protein": 38
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in Scheiben schneiden und im Öl 10 Minuten knusprig braten.",
+    "Hähnchen und Paprika in Streifen schneiden, dazugeben und 8 Minuten mitbraten.",
+    "Würzen und mit Schnittlauch bestreuen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "30 Min.",
+  "title": "Hähnchen-Bratkartoffel-Pfanne mit Paprika",
+  "updatedAt": 1795674524791
+}

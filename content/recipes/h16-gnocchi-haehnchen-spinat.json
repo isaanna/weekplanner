@@ -1,0 +1,42 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788399,
+  "ingredients": [
+    "800 g Kartoffelgnocchi (Kühlregal)",
+    "500 g Hähnchenbrust",
+    "250 g Kirschtomaten",
+    "200 g Babyspinat",
+    "2 Knoblauchzehen",
+    "100 g Frischkäse light",
+    "100 ml Gemüsebrühe",
+    "1 EL Olivenöl",
+    "30 g Parmesan",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 68,
+    "fat": 12,
+    "fiber": 5,
+    "kcal": 560,
+    "protein": 42
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hähnchen würfeln und im Öl goldbraun braten, herausnehmen.",
+    "Gnocchi in derselben Pfanne 5 Minuten knusprig braten.",
+    "Knoblauch und Tomaten zugeben, mit Brühe ablöschen, Frischkäse einrühren.",
+    "Spinat und Hähnchen unterheben, mit Parmesan bestreuen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell",
+    "viel Gemüse"
+  ],
+  "time": "25 Min.",
+  "title": "Kartoffelgnocchi-Pfanne mit Hähnchen, Spinat und Tomaten",
+  "updatedAt": 1795673788399
+}

@@ -1,0 +1,40 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788368,
+  "ingredients": [
+    "500 g mehligkochende Kartoffeln",
+    "1 Ei",
+    "2 EL Vollkorn-Haferflocken",
+    "1 EL Rapsöl",
+    "250 g Magerquark",
+    "2 EL Milch",
+    "½ Bund Schnittlauch",
+    "½ Bund Petersilie",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 48,
+    "fat": 9,
+    "fiber": 5,
+    "kcal": 380,
+    "protein": 24
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 220 °C (Umluft 200 °C) vorheizen, Blech mit Backpapier auslegen und mit Öl bepinseln.",
+    "Kartoffeln reiben, gut ausdrücken, mit Ei, Haferflocken, Salz und Pfeffer mischen.",
+    "8 flache Taler aufs Blech setzen, 15 Minuten backen, wenden, weitere 10 Minuten backen.",
+    "Quark mit Milch, gehackten Kräutern, Salz und Pfeffer verrühren und dazu servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "vegetarisch"
+  ],
+  "time": "35 Min.",
+  "title": "Ofen-Reibekuchen mit Kräuterquark",
+  "updatedAt": 1795673788368
+}

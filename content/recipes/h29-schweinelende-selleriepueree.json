@@ -1,0 +1,40 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788412,
+  "ingredients": [
+    "600 g Schweinelende",
+    "700 g mehligkochende Kartoffeln",
+    "300 g Knollensellerie",
+    "500 g Möhren",
+    "150 ml Milch",
+    "1 TL Senf",
+    "1 EL Rapsöl",
+    "1 TL Honig",
+    "Thymian",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 42,
+    "fat": 11,
+    "fiber": 8,
+    "kcal": 440,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln und Sellerie würfeln, zusammen 20 Minuten kochen und mit warmer Milch, Salz und Muskat stampfen.",
+    "Möhren in Stifte schneiden, in wenig Wasser mit Honig 8 Minuten dünsten.",
+    "Lende in Medaillons schneiden, mit Senf einreiben und pro Seite 3–4 Minuten braten. Mit Thymian, Salz und Pfeffer würzen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich"
+  ],
+  "time": "45 Min.",
+  "title": "Schweinelende mit Kartoffel-Sellerie-Püree und Möhren",
+  "updatedAt": 1795673788412
+}

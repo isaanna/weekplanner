@@ -11,8 +11,8 @@ Die App ist eine einzelne HTML-Seite, die als Artifact auf claude.ai läuft:
 | --- | --- |
 | **Start** | Zwei Wege: *Rezepte* oder *Wochenplan*. Darunter, was heute pro Person schon gegessen wurde, verglichen mit dem Tagesbedarf. |
 | **Rezepte** | Kochbuch mit Inhaltsverzeichnis, Seitenzahlen, Suche und Filter nach Eigenschaften (herzhaft, süß, gesund, proteinreich …). Pro Rezept: Portionsrechner, Nährwerttabelle, Haltbarkeit, Knopf zum Tracken. |
-| **Wochenplan** | Vorgaben in eigenen Worten eingeben (wann vorkochen, welche Mahlzeiten, für wen). Claude erstellt Vorkoch-Ablauf, Tagesplan mit Nährwerten pro Person, Einkaufsliste und schlägt bei Bedarf neue Rezepte vor. Der ganze Plan lässt sich ins Tracking übernehmen. |
-| **Tracking** | Wochenraster Montag–Sonntag × Frühstück/Mittagessen/Abendessen/Snack. Per Klick Rezept oder freien Eintrag hinzufügen, Tagessumme gegen Profilziel. |
+| **Wochenplan** | Vorgaben in eigenen Worten eingeben (wann vorkochen, für wen). Claude plant Frühstück, Mittag- und Abendessen (keine Snacks) mit Vorkoch-Ablauf, Nährwerten pro Person, Einkaufsliste und schlägt bei Bedarf neue Rezepte vor. Der ganze Plan lässt sich ins Tracking übernehmen. |
+| **Tracking** | Wochenraster Montag–Sonntag × Frühstück/Mittagessen/Abendessen/Snack. Per Klick Rezept oder freien Eintrag hinzufügen, Tagessumme gegen Profilziel. „Ganze Woche löschen“ leert die angezeigte Woche. |
 | **Profil & Regeln** | Profile pro Person (Alter, Größe, Gewicht, Aktivität, Ziel, optional kcal-Maximum) mit berechnetem Tagesbedarf. Regeln für Claude: verbotene Lebensmittel, Vorlieben, weitere Regeln. |
 
 ## Rezepte hinzufügen
@@ -25,6 +25,7 @@ Die App ist eine einzelne HTML-Seite, die als Artifact auf claude.ai läuft:
 ## Einkaufsliste in Bring!
 
 Im Wochenplan „Für Bring! kopieren“ wählen. Kopiert wird jeder noch nicht abgehakte Artikel in einer eigenen Zeile (`Artikel, Menge`). In Bring! ins Eingabefeld einfügen.
+Ein „Teilen“-Knopf mit Auswahl der Bring!-App ist in claude.ai nicht möglich: Die App läuft in einem geschützten Rahmen, der das Teilen-Menü des Handys sperrt.
 *Noch zu prüfen:* ob Bring! mehrere Zeilen beim Einfügen in einzelne Artikel aufteilt.
 
 ## Tagesbedarf
@@ -35,9 +36,21 @@ Im Wochenplan „Für Bring! kopieren“ wählen. Kopiert wird jeder noch nicht 
 - Ein eingetragenes **kcal-Maximum** ersetzt den berechneten Wert
 - Eiweiß 1,6 g/kg (halten) bzw. 2,0 g/kg, Fett 30 % der kcal, Ballaststoffe mind. 30 g, Rest Kohlenhydrate
 
+## Ordner
+
+```
+app/        Code – kuechenbuch.html, enthält keine Inhalte
+content/    Inhalte – Sicherung der Datenbank als JSON
+            recipes/   ein Rezept pro Datei
+            plans/     gespeicherte Wochenpläne
+            settings/  Regeln (verbotene Lebensmittel, Vorlieben)
+```
+
+Profile und Tracking werden nicht in `content/` gesichert, weil sie persönliche Daten enthalten.
+
 ## Daten
 
-Die Seite enthält keine Inhalte. Alles liegt in der Datenbank des Artifacts:
+Die App selbst enthält keine Inhalte. Alles liegt in der Datenbank des Artifacts; `content/` ist eine Sicherung davon:
 
 | Sammlung | Inhalt |
 | --- | --- |
@@ -49,6 +62,6 @@ Die Seite enthält keine Inhalte. Alles liegt in der Datenbank des Artifacts:
 
 ## Entwicklung
 
-- Quellcode: `kuechenbuch.html` (eine Datei, kein Build-Schritt)
+- Quellcode: `app/kuechenbuch.html` (eine Datei, kein Build-Schritt)
 - Veröffentlichen: Datei als Artifact auf dieselbe URL publizieren (Capabilities `db` und `sample` bleiben bestehen)
 - Ausbauplan: [`plan.md`](plan.md)

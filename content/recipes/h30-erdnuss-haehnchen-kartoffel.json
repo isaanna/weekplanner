@@ -1,0 +1,46 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788413,
+  "ingredients": [
+    "700 g festkochende Kartoffeln",
+    "600 g Hähnchenbrust",
+    "1 rote Paprika",
+    "200 g Zuckerschoten",
+    "1 Möhre",
+    "2 EL Erdnussmus",
+    "3 EL Sojasauce",
+    "1 EL Limettensaft",
+    "1 TL Honig",
+    "1 Stück Ingwer (2 cm)",
+    "1 Knoblauchzehe",
+    "100 ml Wasser",
+    "1 EL Rapsöl",
+    "Koriander"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 42,
+    "fat": 14,
+    "fiber": 6,
+    "kcal": 480,
+    "protein": 44
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in 1,5 cm Würfel schneiden und 8 Minuten vorkochen.",
+    "Hähnchen in Streifen im Öl scharf anbraten, herausnehmen.",
+    "Kartoffeln in der Pfanne 5 Minuten anbräunen, Gemüse dazugeben und 4 Minuten braten.",
+    "Erdnussmus, Sojasauce, Limette, Honig, Ingwer, Knoblauch und Wasser verrühren, mit dem Hähnchen zugeben und kurz einköcheln. Mit Koriander servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "35 Min.",
+  "title": "Asiatische Kartoffel-Hähnchen-Pfanne mit Erdnusssoße",
+  "updatedAt": 1795673788413
+}

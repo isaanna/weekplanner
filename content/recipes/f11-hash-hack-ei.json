@@ -1,0 +1,40 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788374,
+  "ingredients": [
+    "350 g festkochende Kartoffeln",
+    "150 g mageres Rinderhack",
+    "1 rote Paprika",
+    "2 Eier",
+    "1 TL Olivenöl",
+    "1 TL geräuchertes Paprikapulver",
+    "½ TL Kreuzkümmel",
+    "Petersilie",
+    "Salz, Pfeffer"
+  ],
+  "notes": "Zum Vorkochen den Hash ohne Ei portionieren und morgens ein Ei dazu braten.",
+  "nutrition": {
+    "carbs": 33,
+    "fat": 19,
+    "fiber": 5,
+    "kcal": 430,
+    "protein": 30
+  },
+  "servings": 2,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in 1 cm Würfel schneiden, 5 Minuten in Salzwasser vorkochen und abtropfen lassen.",
+    "Hack im Öl krümelig braten, Kartoffeln und Paprikawürfel dazugeben und 8–10 Minuten braten, würzen.",
+    "Zwei Mulden formen, Eier hineingeben und mit Deckel 4–5 Minuten stocken lassen.",
+    "Mit Petersilie bestreuen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "viel Gemüse"
+  ],
+  "time": "25 Min.",
+  "title": "Kartoffel-Hash mit Rinderhack, Paprika und Ei",
+  "updatedAt": 1795673788374
+}

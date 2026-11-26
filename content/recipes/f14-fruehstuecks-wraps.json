@@ -1,0 +1,41 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788377,
+  "ingredients": [
+    "4 Vollkorn-Tortillas",
+    "300 g festkochende Kartoffeln",
+    "6 Eier",
+    "150 g Putenbrustaufschnitt",
+    "1 grüne Paprika",
+    "50 g geriebener Cheddar",
+    "1 TL Rapsöl",
+    "Salz, Pfeffer, Paprikapulver"
+  ],
+  "notes": "Lassen sich einzeln einfrieren.",
+  "nutrition": {
+    "carbs": 38,
+    "fat": 17,
+    "fiber": 5,
+    "kcal": 420,
+    "protein": 28
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln klein würfeln und im Öl 10–12 Minuten knusprig braten, würzen.",
+    "Paprika würfeln und kurz mitbraten.",
+    "Eier verquirlen, dazugeben und zu Rührei stocken lassen.",
+    "Tortillas mit Pute belegen, Füllung und Käse darauf verteilen, fest einrollen.",
+    "Einzeln in Backpapier wickeln. Zum Essen 1 Minute in der Mikrowelle oder 3 Minuten in der Pfanne erwärmen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "30 Min.",
+  "title": "Frühstücks-Wraps mit Kartoffel, Ei und Pute",
+  "updatedAt": 1795673788377
+}

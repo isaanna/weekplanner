@@ -1,0 +1,46 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788388,
+  "ingredients": [
+    "500 g mageres Rinderhack",
+    "1 kg mehligkochende Kartoffeln",
+    "2 Möhren",
+    "1 Stange Staudensellerie",
+    "150 g Erbsen (TK)",
+    "2 EL Tomatenmark",
+    "300 ml Rinderbrühe",
+    "1 EL Worcestersauce",
+    "1 TL Thymian",
+    "150 ml Milch",
+    "40 g geriebener Cheddar",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 52,
+    "fat": 19,
+    "fiber": 8,
+    "kcal": 540,
+    "protein": 37
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln kochen und mit Milch zu Püree stampfen, salzen.",
+    "Hack anbraten, Möhren und Sellerie fein würfeln und mitbraten.",
+    "Tomatenmark kurz anrösten, mit Brühe und Worcestersauce ablöschen, Thymian zugeben und 15 Minuten einköcheln. Erbsen unterheben.",
+    "Hackmasse in eine Auflaufform geben, Püree darauf verstreichen, mit Käse bestreuen.",
+    "Bei 200 °C 25 Minuten goldbraun backen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "60 Min.",
+  "title": "Shepherd's Pie mit Rinderhack und Gemüse",
+  "updatedAt": 1795673788388
+}

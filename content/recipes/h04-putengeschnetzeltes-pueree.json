@@ -1,0 +1,44 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788387,
+  "ingredients": [
+    "600 g Putenbrust",
+    "400 g Champignons",
+    "1 kg mehligkochende Kartoffeln",
+    "200 ml Milch (1,5 %)",
+    "250 ml Geflügelbrühe",
+    "150 g Kochcreme 7 % oder Joghurt 3,5 %",
+    "1 TL Senf",
+    "1 TL Speisestärke",
+    "1 EL Rapsöl",
+    "Petersilie",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 47,
+    "fat": 10,
+    "fiber": 5,
+    "kcal": 480,
+    "protein": 46
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln schälen, in Salzwasser 20 Minuten kochen, abgießen, mit warmer Milch und Muskat zu Püree stampfen.",
+    "Pute in Streifen schneiden und im Öl portionsweise scharf anbraten, herausnehmen.",
+    "Champignons in Scheiben braten, mit Brühe ablöschen.",
+    "Kochcreme, Senf und angerührte Stärke einrühren, kurz aufkochen, Fleisch zurückgeben und abschmecken.",
+    "Mit Petersilie und Püree servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "35 Min.",
+  "title": "Putengeschnetzeltes mit Champignons und Kartoffelpüree",
+  "updatedAt": 1795673788387
+}

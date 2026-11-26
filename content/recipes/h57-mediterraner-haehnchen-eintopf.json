@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524799,
+  "ingredients": [
+    "600 g Hähnchenbrust",
+    "700 g festkochende Kartoffeln",
+    "800 g stückige Tomaten",
+    "1 Zucchini",
+    "50 g schwarze Oliven",
+    "2 Knoblauchzehen",
+    "Salz, Pfeffer, Oregano"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 36,
+    "fat": 7,
+    "fiber": 7,
+    "kcal": 380,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln und Zucchini würfeln.",
+    "Mit Tomaten, Knoblauch, Oregano und 200 ml Wasser 15 Minuten köcheln.",
+    "Hähnchen würfeln und mit den Oliven zugeben, 10 Minuten garen und abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "40 Min.",
+  "title": "Mediterraner Kartoffel-Hähnchen-Eintopf mit Oliven",
+  "updatedAt": 1795674524799
+}

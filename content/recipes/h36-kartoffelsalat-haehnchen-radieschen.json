@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524778,
+  "ingredients": [
+    "1 kg festkochende Kartoffeln",
+    "500 g Hähnchenbrust",
+    "1 Bund Radieschen",
+    "250 g Naturjoghurt",
+    "1 EL Senf",
+    "Schnittlauch",
+    "Salz, Pfeffer"
+  ],
+  "notes": "Kalt essen, ideal für unterwegs.",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 6,
+    "fiber": 5,
+    "kcal": 410,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln kochen, pellen und in Scheiben schneiden.",
+    "Hähnchen braten, abkühlen lassen und in Streifen schneiden. Radieschen in Scheiben schneiden.",
+    "Joghurt mit Senf, Salz und Pfeffer verrühren und alles mit Schnittlauch vermischen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "leicht"
+  ],
+  "time": "35 Min.",
+  "title": "Kartoffelsalat mit Hähnchen und Radieschen",
+  "updatedAt": 1795674524778
+}

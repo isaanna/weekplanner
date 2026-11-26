@@ -1,0 +1,44 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788386,
+  "ingredients": [
+    "800 g festkochende Kartoffeln",
+    "400 g mageres Rinderhack",
+    "300 g Blattspinat (TK)",
+    "400 g passierte Tomaten",
+    "2 Knoblauchzehen",
+    "250 ml Milch (1,5 %)",
+    "2 Eier",
+    "80 g geriebener Mozzarella",
+    "1 TL Oregano",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 20,
+    "fiber": 7,
+    "kcal": 520,
+    "protein": 38
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln schälen, in dünne Scheiben schneiden und 5 Minuten vorkochen. Ofen auf 190 °C vorheizen.",
+    "Hack krümelig anbraten, Knoblauch und Tomaten zugeben, mit Oregano, Salz und Pfeffer 10 Minuten köcheln.",
+    "Spinat auftauen, ausdrücken und würzen.",
+    "Kartoffeln, Hacksoße und Spinat in eine Form schichten.",
+    "Milch mit Eiern, Salz und Muskat verquirlen, darüber gießen, Käse aufstreuen und 35 Minuten backen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "60 Min.",
+  "title": "Kartoffel-Hack-Auflauf mit Spinat",
+  "updatedAt": 1795673788386
+}

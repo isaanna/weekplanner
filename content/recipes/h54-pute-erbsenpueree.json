@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524796,
+  "ingredients": [
+    "600 g Putenbrust",
+    "800 g mehligkochende Kartoffeln",
+    "300 g Erbsen (TK)",
+    "150 ml Milch",
+    "1 EL Rapsöl",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 6,
+    "fiber": 9,
+    "kcal": 430,
+    "protein": 47
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln schälen und 20 Minuten kochen, Erbsen für die letzten 4 Minuten dazugeben.",
+    "Abgießen und mit warmer Milch grob stampfen, würzen.",
+    "Putenbrust in Scheiben schneiden und im Öl pro Seite 3 Minuten braten."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "30 Min.",
+  "title": "Putenbrust mit Kartoffel-Erbsen-Püree",
+  "updatedAt": 1795674524796
+}

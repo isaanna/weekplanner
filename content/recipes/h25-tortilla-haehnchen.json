@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788408,
+  "ingredients": [
+    "700 g festkochende Kartoffeln",
+    "300 g Hähnchenbrust",
+    "1 rote Paprika",
+    "8 Eier",
+    "2 EL Olivenöl",
+    "1 TL geräuchertes Paprikapulver",
+    "Salz, Pfeffer",
+    "Grüner Salat als Beilage"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 36,
+    "fat": 18,
+    "fiber": 4,
+    "kcal": 450,
+    "protein": 35
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in dünne Scheiben schneiden und in 1 EL Öl bei mittlerer Hitze 15 Minuten weich braten.",
+    "Hähnchen und Paprika klein würfeln, separat anbraten und untermischen.",
+    "Eier mit Gewürzen verquirlen, über die Kartoffeln gießen und bei kleiner Hitze mit Deckel 10 Minuten stocken lassen.",
+    "Mithilfe eines Tellers wenden und weitere 5 Minuten braten. In Stücke schneiden."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "40 Min.",
+  "title": "Kartoffel-Tortilla mit Hähnchen und Paprika",
+  "updatedAt": 1795673788408
+}

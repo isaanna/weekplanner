@@ -1,0 +1,37 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795673788414,
+  "ingredients": [
+    "100 g zarte Haferflocken",
+    "80 g Erdnussmus",
+    "60 g Vanille-Proteinpulver",
+    "2 EL Honig",
+    "3 EL Milch",
+    "30 g Zartbitter-Schokotropfen"
+  ],
+  "notes": "1 Portion = 2 Bällchen.",
+  "nutrition": {
+    "carbs": 15,
+    "fat": 6,
+    "fiber": 2,
+    "kcal": 150,
+    "protein": 8
+  },
+  "servings": 10,
+  "shelfLifeDays": 10,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Alle Zutaten zu einer formbaren Masse verkneten, bei Bedarf noch etwas Milch zugeben.",
+    "20 Bällchen formen und 30 Minuten kühlen.",
+    "In einer Dose im Kühlschrank aufbewahren."
+  ],
+  "tags": [
+    "süß",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "vegetarisch"
+  ],
+  "time": "15 Min.",
+  "title": "Erdnuss-Protein-Bällchen",
+  "updatedAt": 1795673788414
+}

@@ -1,0 +1,35 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795674524800,
+  "ingredients": [
+    "150 g Putenbrustaufschnitt",
+    "80 g Frischkäse light",
+    "1 rote Paprika",
+    "Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 5,
+    "fat": 4,
+    "fiber": 1,
+    "kcal": 140,
+    "protein": 21
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Paprika in feine Streifen schneiden.",
+    "Putenscheiben mit Frischkäse bestreichen und pfeffern.",
+    "Paprikastreifen darauf legen und einrollen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "leicht",
+    "schnell"
+  ],
+  "time": "5 Min.",
+  "title": "Putenröllchen mit Frischkäse und Paprika",
+  "updatedAt": 1795674524800
+}

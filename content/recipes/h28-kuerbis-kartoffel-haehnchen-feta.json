@@ -1,0 +1,41 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788411,
+  "ingredients": [
+    "600 g festkochende Kartoffeln",
+    "600 g Hokkaido-Kürbis",
+    "500 g Hähnchenbrust",
+    "200 g Feta light",
+    "2 EL Olivenöl",
+    "1 TL Rosmarin",
+    "1 TL Paprikapulver",
+    "1 Handvoll Kürbiskerne",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 42,
+    "fat": 15,
+    "fiber": 7,
+    "kcal": 490,
+    "protein": 45
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln und Kürbis (mit Schale) würfeln, mit 1 EL Öl, Rosmarin und Salz mischen und 20 Minuten backen.",
+    "Hähnchen würfeln, mit restlichem Öl und Paprika mischen, auf das Blech geben und 15 Minuten mitbacken.",
+    "Feta zerbröseln, mit Kürbiskernen darüber streuen und 5 Minuten weiterbacken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "45 Min.",
+  "title": "Ofengemüse mit Kürbis, Kartoffeln, Hähnchen und Feta",
+  "updatedAt": 1795673788411
+}

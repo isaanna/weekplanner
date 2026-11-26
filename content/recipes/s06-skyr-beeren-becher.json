@@ -1,0 +1,36 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795673788419,
+  "ingredients": [
+    "300 g Skyr natur",
+    "150 g Himbeeren",
+    "30 g Granola ohne Zuckerzusatz",
+    "1 TL Honig"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 24,
+    "fat": 3,
+    "fiber": 4,
+    "kcal": 200,
+    "protein": 18
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Himbeeren mit einer Gabel leicht zerdrücken und mit Honig mischen.",
+    "Abwechselnd mit Skyr in 2 Gläser schichten.",
+    "Granola erst kurz vor dem Essen darüber streuen."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "schnell",
+    "vegetarisch"
+  ],
+  "time": "5 Min.",
+  "title": "Skyr-Beeren-Becher mit Granola",
+  "updatedAt": 1795673788419
+}

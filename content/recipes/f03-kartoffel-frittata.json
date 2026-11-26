@@ -1,0 +1,42 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788366,
+  "ingredients": [
+    "300 g gekochte Pellkartoffeln",
+    "8 Eier",
+    "100 g Putenschinken",
+    "150 g Babyspinat",
+    "100 g Kirschtomaten",
+    "50 g geriebener Bergkäse",
+    "1 TL Olivenöl",
+    "Salz, Pfeffer, Paprikapulver"
+  ],
+  "notes": "Kalt oder kurz aufgewärmt essen. Ideal zum Vorkochen am Sonntag.",
+  "nutrition": {
+    "carbs": 15,
+    "fat": 16,
+    "fiber": 3,
+    "kcal": 310,
+    "protein": 25
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 180 °C vorheizen. Kartoffeln in Scheiben schneiden, Schinken würfeln, Tomaten halbieren.",
+    "Kartoffeln in einer ofenfesten Pfanne im Öl 5 Minuten anbraten, Spinat zufallen lassen.",
+    "Eier mit Salz, Pfeffer und Paprika verquirlen, mit Schinken über das Gemüse gießen.",
+    "Tomaten und Käse darauf verteilen, 2 Minuten stocken lassen, dann 15–18 Minuten im Ofen backen.",
+    "In 4 Stücke schneiden und abkühlen lassen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "35 Min.",
+  "title": "Kartoffel-Frittata mit Spinat und Putenschinken",
+  "updatedAt": 1795673788366
+}

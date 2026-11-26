@@ -1,0 +1,40 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788365,
+  "ingredients": [
+    "80 g zarte Haferflocken",
+    "250 g Skyr natur",
+    "150 ml Milch (1,5 %)",
+    "1 EL Chiasamen",
+    "1 TL Honig",
+    "150 g Beeren (TK oder frisch)",
+    "½ TL Zimt"
+  ],
+  "notes": "Hält im Glas 4 Tage. Beeren erst am Vortag dazugeben, wenn du frische nimmst.",
+  "nutrition": {
+    "carbs": 44,
+    "fat": 6,
+    "fiber": 7,
+    "kcal": 330,
+    "protein": 23
+  },
+  "servings": 2,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Haferflocken, Skyr, Milch, Chiasamen, Honig und Zimt verrühren.",
+    "In 2 Gläser füllen und Beeren darauf geben.",
+    "Abgedeckt über Nacht in den Kühlschrank stellen."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "Vollkorn",
+    "meal-prep-tauglich",
+    "vegetarisch"
+  ],
+  "time": "5 Min. + über Nacht",
+  "title": "Protein-Overnight-Oats mit Beeren",
+  "updatedAt": 1795673788365
+}

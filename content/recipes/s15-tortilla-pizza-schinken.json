@@ -1,0 +1,35 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795674524804,
+  "ingredients": [
+    "2 Vollkorn-Tortillas",
+    "4 EL passierte Tomaten",
+    "80 g Kochschinken",
+    "60 g geriebener Mozzarella",
+    "Oregano"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 26,
+    "fat": 11,
+    "fiber": 4,
+    "kcal": 290,
+    "protein": 21
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 220 °C vorheizen (oder Pfanne mit Deckel).",
+    "Tortillas mit Tomaten bestreichen, mit Schinken und Käse belegen und mit Oregano bestreuen.",
+    "6–8 Minuten backen, bis der Käse schmilzt. In Stücke schneiden."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "12 Min.",
+  "title": "Tortilla-Pizza mit Schinken",
+  "updatedAt": 1795674524804
+}

@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524773,
+  "ingredients": [
+    "4 Hähnchenbrustfilets (à 150 g)",
+    "800 g Süßkartoffeln",
+    "1 EL Olivenöl",
+    "1 TL Paprikapulver",
+    "300 g Kräuterquark (Magerstufe)",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 48,
+    "fat": 7,
+    "fiber": 7,
+    "kcal": 460,
+    "protein": 49
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Süßkartoffeln in Spalten schneiden, mit Öl, Paprika und Salz mischen und 25 Minuten backen.",
+    "Hähnchen würzen und pro Seite 5–6 Minuten braten.",
+    "Mit Kräuterquark servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "35 Min.",
+  "title": "Hähnchen mit Süßkartoffel-Spalten und Kräuterquark",
+  "updatedAt": 1795674524773
+}

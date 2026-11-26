@@ -1,0 +1,36 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524780,
+  "ingredients": [
+    "600 g Kasslerlachs",
+    "500 g Sauerkraut",
+    "1 kg mehligkochende Kartoffeln",
+    "200 ml Milch",
+    "1 Lorbeerblatt",
+    "Salz, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 14,
+    "fiber": 7,
+    "kcal": 480,
+    "protein": 38
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Sauerkraut mit Lorbeer und 100 ml Wasser in einen Topf geben, Kassler darauf legen und zugedeckt 25 Minuten garen.",
+    "Kartoffeln kochen und mit warmer Milch, Salz und Muskat stampfen.",
+    "Kassler in Scheiben schneiden und mit Kraut und Püree servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "35 Min.",
+  "title": "Kassler mit Sauerkraut und Kartoffelpüree",
+  "updatedAt": 1795674524780
+}

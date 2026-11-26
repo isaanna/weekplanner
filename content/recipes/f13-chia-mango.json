@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788376,
+  "ingredients": [
+    "60 g Chiasamen",
+    "300 ml Milch (1,5 %)",
+    "400 g Skyr natur",
+    "1 EL Honig",
+    "1 reife Mango",
+    "2 EL Kokosraspeln"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 27,
+    "fat": 9,
+    "fiber": 7,
+    "kcal": 260,
+    "protein": 17
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Chiasamen mit Milch, Skyr und Honig verrühren, 10 Minuten quellen lassen und nochmals umrühren.",
+    "In 4 Gläser füllen und mindestens 3 Stunden kühlen.",
+    "Mango würfeln und mit Kokosraspeln darauf geben."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "vegetarisch"
+  ],
+  "time": "10 Min. + 3 Std.",
+  "title": "Chia-Skyr-Pudding mit Mango",
+  "updatedAt": 1795673788376
+}

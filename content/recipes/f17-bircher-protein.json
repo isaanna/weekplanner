@@ -1,0 +1,42 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788380,
+  "ingredients": [
+    "150 g Haferflocken",
+    "300 ml Milch (1,5 %)",
+    "250 g Magerquark",
+    "150 g Naturjoghurt",
+    "2 Äpfel",
+    "2 EL gehackte Haselnüsse",
+    "1 EL Honig",
+    "Saft von ½ Zitrone"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 43,
+    "fat": 8,
+    "fiber": 5,
+    "kcal": 320,
+    "protein": 19
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Haferflocken mit Milch über Nacht einweichen.",
+    "Äpfel grob reiben und sofort mit Zitronensaft mischen.",
+    "Quark, Joghurt, Äpfel und Honig unter die Haferflocken rühren.",
+    "In 4 Dosen füllen und mit Haselnüssen bestreuen."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "Vollkorn",
+    "meal-prep-tauglich",
+    "vegetarisch"
+  ],
+  "time": "10 Min. + über Nacht",
+  "title": "Bircher-Müsli mit Proteinquark",
+  "updatedAt": 1795673788380
+}

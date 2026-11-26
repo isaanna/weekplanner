@@ -1,0 +1,40 @@
+{
+  "category": "Desserts",
+  "createdAt": 1795671760477,
+  "ingredients": [
+    "5 dl trüber Süssmost (ohne Kohlensäure)",
+    "35–40 g Maisstärke (Maizena)",
+    "20–30 g Zucker (je nach Süssmost)",
+    "1 TL Vanillezucker oder Vanillepaste",
+    "1 dl pflanzlicher Schlagrahm (z. B. Hafer- oder Soja-Schlagcreme), geschlagen",
+    "Optional zum Garnieren: feine Apfelwürfel oder Zimt"
+  ],
+  "notes": "Die Frischhaltefolie direkt auf der Oberfläche verhindert Hautbildung. Die Zuckermenge richtet sich danach, wie süss der Süssmost ist. Das Rezept ist durch den pflanzlichen Schlagrahm vegan.",
+  "nutrition": {
+    "carbs": 32,
+    "fat": 6,
+    "fiber": 0,
+    "kcal": 190,
+    "protein": 1
+  },
+  "raw": "Zutaten (für ca. 4 Portionen)\n•\t5 dl trüber Süssmost (ohne Kohlensäure)\n•\t35–40 g Maisstärke (Maizena)\n•\t20–30 g Zucker (je nach Süssmost)\n•\t1 TL Vanillezucker oder Vanillepaste\n•\t1 dl pflanzlicher Schlagrahm (z. B. Hafer- oder Soja-Schlagcreme), geschlagen\n•\tOptional zum Garnieren: feine Apfelwürfel oder Zimt\nZubereitung\n1.\tAnrühren: Etwas Süssmost abnehmen und mit Maisstärke, Zucker und Vanille glattrühren.\n1.\tAufkochen: Den restlichen Süssmost erhitzen, die angerührte Stärke einrühren und unter Rühren kurz aufkochen lassen, bis die Masse eindickt.\n1.\tAbkühlen: Die Crème in eine Schüssel füllen, Frischhaltefolie direkt auf die Oberfläche legen (verhindert Hautbildung) und vollständig auskühlen lassen.\n1.\tUnterheben: Den geschlagenen pflanzlichen Rahm vorsichtig unter die kalte Crème heben.\n1.\tKühlen & Servieren: Mindestens 1–2 Stunden kalt stellen, in Gläser füllen und nach Wunsch garnieren.\n",
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "",
+  "steps": [
+    "Etwas Süssmost abnehmen und mit Maisstärke, Zucker und Vanille glattrühren.",
+    "Den restlichen Süssmost erhitzen, die angerührte Stärke einrühren und unter Rühren kurz aufkochen lassen, bis die Masse eindickt.",
+    "Die Crème in eine Schüssel füllen, Frischhaltefolie direkt auf die Oberfläche legen und vollständig auskühlen lassen.",
+    "Den geschlagenen pflanzlichen Rahm vorsichtig unter die kalte Crème heben.",
+    "Mindestens 1–2 Stunden kalt stellen, in Gläser füllen und nach Wunsch garnieren."
+  ],
+  "tags": [
+    "süß",
+    "vegan",
+    "vegetarisch",
+    "schnell"
+  ],
+  "time": "",
+  "title": "Süssmost-Crème",
+  "updatedAt": 1795673435022
+}

@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788391,
+  "ingredients": [
+    "600 g Schweinefilet",
+    "800 g kleine Drillinge",
+    "500 g grüne Bohnen",
+    "2 EL Olivenöl",
+    "2 Zweige Rosmarin",
+    "2 Knoblauchzehen",
+    "1 TL Senf",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 38,
+    "fat": 11,
+    "fiber": 7,
+    "kcal": 430,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln halbieren, mit 1 EL Öl, Rosmarin, Knoblauch und Salz 30 Minuten rösten.",
+    "Filet salzen, pfeffern, mit Senf einreiben und rundherum 4 Minuten anbraten. Für die letzten 12–15 Minuten zu den Kartoffeln in den Ofen legen.",
+    "Bohnen 6–8 Minuten in Salzwasser garen.",
+    "Filet 5 Minuten ruhen lassen und in Scheiben schneiden."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich"
+  ],
+  "time": "40 Min.",
+  "title": "Schweinefilet mit Rosmarinkartoffeln und grünen Bohnen",
+  "updatedAt": 1795673788391
+}

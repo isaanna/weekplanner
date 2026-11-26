@@ -1,0 +1,33 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795674524805,
+  "ingredients": [
+    "80 g Putensalami in dünnen Scheiben",
+    "100 g körniger Frischkäse",
+    "1 TL Paprikapulver"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 2,
+    "fat": 11,
+    "fiber": 0,
+    "kcal": 180,
+    "protein": 18
+  },
+  "servings": 2,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Salamischeiben auf einem Teller mit Küchenpapier in der Mikrowelle 1–2 Minuten bei voller Leistung knusprig garen.",
+    "Kurz abkühlen lassen, dann werden sie fest.",
+    "Frischkäse mit Paprika verrühren und dazu reichen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "5 Min.",
+  "title": "Putensalami-Chips mit Frischkäse-Dip",
+  "updatedAt": 1795674524805
+}

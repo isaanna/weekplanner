@@ -1,0 +1,46 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788400,
+  "ingredients": [
+    "800 g Rindfleisch aus der Schulter",
+    "800 g festkochende Kartoffeln",
+    "2 Möhren",
+    "400 ml Kokosmilch (light)",
+    "300 ml Rinderbrühe",
+    "2 EL rote Currypaste",
+    "3 Knoblauchzehen",
+    "1 Stück Ingwer (3 cm)",
+    "1 Zimtstange",
+    "1 EL Erdnussmus",
+    "1 EL Fischsauce oder Sojasauce",
+    "1 EL Rapsöl",
+    "Koriander oder Thai-Basilikum"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 32,
+    "fat": 21,
+    "fiber": 5,
+    "kcal": 470,
+    "protein": 37
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Fleisch würfeln und im Öl portionsweise anbraten.",
+    "Currypaste, Knoblauch und Ingwer kurz anrösten, mit Kokosmilch und Brühe ablöschen.",
+    "Zimtstange zugeben und zugedeckt 60 Minuten schmoren.",
+    "Kartoffeln und Möhren würfeln, dazugeben und 30 Minuten weitergaren.",
+    "Erdnussmus und Fischsauce einrühren, mit Kräutern servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "1 Std. 45 Min.",
+  "title": "Rindfleisch-Kartoffel-Curry",
+  "updatedAt": 1795673788400
+}

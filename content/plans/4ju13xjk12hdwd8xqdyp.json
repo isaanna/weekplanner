@@ -1,0 +1,964 @@
+{
+  "brief": "Frühstück: Zwei Rezepte, eins süss und eins salzig, für die ganze vorbereitbar, 10 Portionen (für jeden eine Portion pro Tag\n\nMittagessen: Meal-Prep am Sonntag, zwei verschiedene Menu's, abwechselbar pro Tag, mit Kohlenhydrate, auch Reis oder Nudeln in Ordnung, gesund und proteinreich. Insgesamt 10 Portionen. Gerne mit genug Gemüse.\n\nAbendessen: Jeden Abend was anderes, 2 Portionen pro kochen, abwechslungsreich, wenig Kohlenhydrate.",
+  "checked": {},
+  "cook": [
+    {
+      "label": "",
+      "portions": 6,
+      "ref": "f07-ei-kartoffel-muffins",
+      "storage": "12 Muffins (1 Portion = 2 Muffins). Im Kühlschrank 4 Tage haltbar. Die 4 Muffins für Freitag am Sonntag einfrieren und Donnerstagabend im Kühlschrank auftauen.",
+      "when": "Sonntag"
+    },
+    {
+      "label": "",
+      "portions": 4,
+      "ref": "f19-quarkauflauf-beeren",
+      "storage": "In 4 Stücke teilen, luftdicht gekühlt lagern, 4 Tage haltbar (gegessen am Dienstag und Donnerstag).",
+      "when": "Sonntag"
+    },
+    {
+      "label": "",
+      "portions": 6,
+      "ref": "h44-rindfleischtopf-moehren",
+      "storage": "In 6 Dosen abfüllen, gekühlt 5 Tage haltbar (bis Freitag). Wer sichergehen will, friert die 2 Freitagsdosen ein und taut sie am Donnerstagabend im Kühlschrank auf.",
+      "when": "Sonntag"
+    },
+    {
+      "label": "",
+      "portions": 4,
+      "ref": "h01-haehnchen-kartoffel-blech",
+      "storage": "In 4 Dosen abfüllen, den Joghurt-Dip separat in kleinen Döschen. Gekühlt 4 Tage haltbar (Dienstag und Donnerstag).",
+      "when": "Sonntag"
+    },
+    {
+      "label": "",
+      "portions": 2,
+      "ref": "n1",
+      "storage": "Frisch essen.",
+      "when": "Montag"
+    },
+    {
+      "label": "",
+      "portions": 2,
+      "ref": "n2",
+      "storage": "Frisch essen.",
+      "when": "Dienstag"
+    },
+    {
+      "label": "",
+      "portions": 2,
+      "ref": "n3",
+      "storage": "Frisch essen.",
+      "when": "Mittwoch"
+    },
+    {
+      "label": "",
+      "portions": 2,
+      "ref": "n4",
+      "storage": "Frisch essen.",
+      "when": "Donnerstag"
+    },
+    {
+      "label": "",
+      "portions": 2,
+      "ref": "n5",
+      "storage": "Frisch essen.",
+      "when": "Freitag"
+    },
+    {
+      "label": "",
+      "portions": 8.5,
+      "ref": "s12-schoko-skyr",
+      "storage": "Frisch anrühren, Reste bis zu 2 Tage gekühlt haltbar.",
+      "when": "Montag, Mittwoch, Freitag – jeweils frisch (5 Min.)"
+    },
+    {
+      "label": "",
+      "portions": 6,
+      "ref": "s17-thunfischcreme-cracker",
+      "storage": "Frisch anrühren, Creme bis zu 2 Tage gekühlt haltbar.",
+      "when": "Montag und Donnerstag – jeweils frisch (5 Min.)"
+    },
+    {
+      "label": "",
+      "portions": 5,
+      "ref": "s11-putenroellchen-paprika",
+      "storage": "Frisch rollen, bis zu 2 Tage gekühlt haltbar.",
+      "when": "Dienstag und Mittwoch – jeweils frisch (10 Min.)"
+    },
+    {
+      "label": "",
+      "portions": 6,
+      "ref": "s06-skyr-beeren-becher",
+      "storage": "Frisch schichten und das Granola erst kurz vor dem Essen darüberstreuen.",
+      "when": "Dienstag und Donnerstag – jeweils frisch (5 Min.)"
+    },
+    {
+      "label": "",
+      "portions": 4.5,
+      "ref": "s15-tortilla-pizza-schinken",
+      "storage": "Frisch backen und sofort essen.",
+      "when": "Mittwoch und Freitag – jeweils frisch (10–12 Min.)"
+    },
+    {
+      "label": "",
+      "portions": 3,
+      "ref": "s13-quarkdip-gemuesesticks",
+      "storage": "Frisch zubereiten, Dip bis zu 2 Tage gekühlt haltbar.",
+      "when": "Freitag – frisch (10 Min.)"
+    }
+  ],
+  "createdAt": 1795688215876,
+  "days": [
+    {
+      "day": "Montag",
+      "meals": [
+        {
+          "label": "",
+          "note": "Je 2 Muffins, kalt oder 1 Minute in der Mikrowelle",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "f07-ei-kartoffel-muffins",
+          "slot": "Frühstück"
+        },
+        {
+          "label": "",
+          "note": "Aufwärmen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "h44-rindfleischtopf-moehren",
+          "slot": "Mittagessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch kochen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "n1",
+          "slot": "Abendessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch anrühren (525 g Skyr)",
+          "portions": 3.5,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2.5,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s12-schoko-skyr",
+          "slot": "Snack"
+        },
+        {
+          "label": "",
+          "note": "1,5 Dosen Thunfisch, 5 Minuten",
+          "portions": 3,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s17-thunfischcreme-cracker",
+          "slot": "Snack"
+        }
+      ]
+    },
+    {
+      "day": "Dienstag",
+      "meals": [
+        {
+          "label": "",
+          "note": "Kalt essen oder kurz erwärmen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "f19-quarkauflauf-beeren",
+          "slot": "Frühstück"
+        },
+        {
+          "label": "",
+          "note": "Aufwärmen, Joghurt-Dip kalt dazu",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "h01-haehnchen-kartoffel-blech",
+          "slot": "Mittagessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch kochen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "n2",
+          "slot": "Abendessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch rollen, 10 Minuten",
+          "portions": 3.5,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2.5,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s11-putenroellchen-paprika",
+          "slot": "Snack"
+        },
+        {
+          "label": "",
+          "note": "Frisch schichten",
+          "portions": 3,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s06-skyr-beeren-becher",
+          "slot": "Snack"
+        }
+      ]
+    },
+    {
+      "day": "Mittwoch",
+      "meals": [
+        {
+          "label": "",
+          "note": "Je 2 Muffins, kalt oder kurz erwärmen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "f07-ei-kartoffel-muffins",
+          "slot": "Frühstück"
+        },
+        {
+          "label": "",
+          "note": "Aufwärmen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "h44-rindfleischtopf-moehren",
+          "slot": "Mittagessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch kochen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "n3",
+          "slot": "Abendessen"
+        },
+        {
+          "label": "",
+          "note": "2 Tortillas, 10 Minuten im Ofen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s15-tortilla-pizza-schinken",
+          "slot": "Snack"
+        },
+        {
+          "label": "",
+          "note": "Frisch anrühren",
+          "portions": 3.5,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2.5,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s12-schoko-skyr",
+          "slot": "Snack"
+        },
+        {
+          "label": "",
+          "note": "Nur Giuli, als Extra-Eiweiß",
+          "portions": 1.5,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1.5,
+            "j9bq3e1rj0enqn9qrh7n": 0
+          },
+          "ref": "s11-putenroellchen-paprika",
+          "slot": "Snack"
+        }
+      ]
+    },
+    {
+      "day": "Donnerstag",
+      "meals": [
+        {
+          "label": "",
+          "note": "Kalt essen oder kurz erwärmen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "f19-quarkauflauf-beeren",
+          "slot": "Frühstück"
+        },
+        {
+          "label": "",
+          "note": "Aufwärmen, Joghurt-Dip kalt dazu",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "h01-haehnchen-kartoffel-blech",
+          "slot": "Mittagessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch kochen. Danach Freitags-Muffins (und ggf. den Rindfleischtopf) zum Auftauen in den Kühlschrank stellen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "n4",
+          "slot": "Abendessen"
+        },
+        {
+          "label": "",
+          "note": "1,5 Dosen Thunfisch, 5 Minuten",
+          "portions": 3,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s17-thunfischcreme-cracker",
+          "slot": "Snack"
+        },
+        {
+          "label": "",
+          "note": "Frisch schichten",
+          "portions": 3,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s06-skyr-beeren-becher",
+          "slot": "Snack"
+        }
+      ]
+    },
+    {
+      "day": "Freitag",
+      "meals": [
+        {
+          "label": "",
+          "note": "Aufgetaute Muffins 1–2 Minuten in der Mikrowelle erwärmen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "f07-ei-kartoffel-muffins",
+          "slot": "Frühstück"
+        },
+        {
+          "label": "",
+          "note": "Gut durcherhitzen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "h44-rindfleischtopf-moehren",
+          "slot": "Mittagessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch kochen, Kabeljau am Morgen im Kühlschrank auftauen",
+          "portions": 2,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "n5",
+          "slot": "Abendessen"
+        },
+        {
+          "label": "",
+          "note": "Frisch, 10 Minuten",
+          "portions": 3,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 2,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s13-quarkdip-gemuesesticks",
+          "slot": "Snack"
+        },
+        {
+          "label": "",
+          "note": "3 Tortillas backen, Giuli isst 1,5",
+          "portions": 2.5,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1.5,
+            "j9bq3e1rj0enqn9qrh7n": 1
+          },
+          "ref": "s15-tortilla-pizza-schinken",
+          "slot": "Snack"
+        },
+        {
+          "label": "",
+          "note": "Nur Giuli",
+          "portions": 1.5,
+          "portionsByPerson": {
+            "6o7c7ilxp88izl8sn2yr": 1.5,
+            "j9bq3e1rj0enqn9qrh7n": 0
+          },
+          "ref": "s12-schoko-skyr",
+          "slot": "Snack"
+        }
+      ]
+    }
+  ],
+  "newRecipes": [
+    {
+      "category": "Hauptgerichte",
+      "ingredients": [
+        "500 g Hähnchenbrust",
+        "2 Zucchini (ca. 500 g)",
+        "1 rote Paprika",
+        "60 g Feta light",
+        "1 EL Olivenöl",
+        "1 TL Paprikapulver",
+        "Salz, Pfeffer, Oregano"
+      ],
+      "key": "n1",
+      "notes": "Low Carb. Wer mag, gibt einen Spritzer Zitrone dazu.",
+      "nutrition": {
+        "carbs": 11,
+        "fat": 12,
+        "fiber": 4,
+        "kcal": 440,
+        "protein": 66
+      },
+      "servings": 2,
+      "shelfLifeDays": 2,
+      "source": "Neu erstellt für diesen Wochenplan",
+      "sourceUrl": null,
+      "steps": [
+        "Ofen auf 200 °C (Umluft 180 °C) vorheizen.",
+        "Zucchini und Paprika in mundgerechte Stücke schneiden, mit der Hälfte des Öls, Salz und Oregano auf einem Blech verteilen.",
+        "Hähnchenbrust in grobe Stücke schneiden, mit restlichem Öl, Paprikapulver, Salz und Pfeffer mischen und zum Gemüse geben.",
+        "20–22 Minuten backen, bis das Hähnchen durch ist.",
+        "Feta darüberbröseln und 3 Minuten weiterbacken."
+      ],
+      "tags": [
+        "herzhaft",
+        "gesund",
+        "proteinreich",
+        "low carb",
+        "viel Gemüse"
+      ],
+      "time": "30 Min.",
+      "title": "Ofen-Hähnchen mit Zucchini, Paprika und Feta",
+      "updatedAt": 1795688215876
+    },
+    {
+      "category": "Hauptgerichte",
+      "ingredients": [
+        "440 g Schweinefilet",
+        "400 g grüne Bohnen (frisch oder TK)",
+        "300 g Champignons",
+        "100 g Kochcreme 7 %",
+        "1 Knoblauchzehe",
+        "1 EL Rapsöl",
+        "Salz, Pfeffer, Petersilie"
+      ],
+      "key": "n2",
+      "notes": "Low Carb. Die Bohnen können auch in der Pfanne mitgeschwenkt werden.",
+      "nutrition": {
+        "carbs": 12,
+        "fat": 13,
+        "fiber": 7,
+        "kcal": 415,
+        "protein": 57
+      },
+      "servings": 2,
+      "shelfLifeDays": 2,
+      "source": "Neu erstellt für diesen Wochenplan",
+      "sourceUrl": null,
+      "steps": [
+        "Bohnen putzen und in Salzwasser 8–10 Minuten garen, abgießen.",
+        "Schweinefilet in 3 cm dicke Medaillons schneiden, salzen und pfeffern. In der Hälfte des Öls je Seite 3–4 Minuten braten, herausnehmen und warm stellen.",
+        "Champignons in Scheiben schneiden und im restlichen Öl mit dem gehackten Knoblauch 4 Minuten braten.",
+        "Kochcreme zugeben, kurz aufkochen und abschmecken. Medaillons darin 1 Minute ziehen lassen.",
+        "Mit Bohnen und Petersilie servieren."
+      ],
+      "tags": [
+        "herzhaft",
+        "gesund",
+        "proteinreich",
+        "low carb",
+        "viel Gemüse",
+        "schnell"
+      ],
+      "time": "25 Min.",
+      "title": "Schweinemedaillons mit grünen Bohnen und Champignon-Rahm",
+      "updatedAt": 1795688215876
+    },
+    {
+      "category": "Hauptgerichte",
+      "ingredients": [
+        "500 g mageres Rinderhack (5 % Fett)",
+        "2 große Zucchini (ca. 500 g)",
+        "400 g passierte Tomaten",
+        "1 Knoblauchzehe",
+        "20 g Parmesan",
+        "1 TL Olivenöl",
+        "Salz, Pfeffer, Oregano"
+      ],
+      "key": "n3",
+      "notes": "Ganz ohne Zwiebeln. Zucchini nicht zu lange garen, sonst werden sie wässrig.",
+      "nutrition": {
+        "carbs": 13,
+        "fat": 18,
+        "fiber": 5,
+        "kcal": 470,
+        "protein": 61
+      },
+      "servings": 2,
+      "shelfLifeDays": 2,
+      "source": "Neu erstellt für diesen Wochenplan",
+      "sourceUrl": null,
+      "steps": [
+        "Hack im Öl krümelig anbraten, den gehackten Knoblauch kurz mitbraten.",
+        "Passierte Tomaten zugeben, mit Salz, Pfeffer und Oregano würzen und 10 Minuten köcheln lassen.",
+        "Zucchini mit einem Spiralschneider oder Sparschäler in Streifen schneiden.",
+        "Zucchinistreifen 2 Minuten in einer Pfanne anschwitzen, nur leicht salzen.",
+        "Mit der Bolognese anrichten und mit Parmesan bestreuen."
+      ],
+      "tags": [
+        "herzhaft",
+        "proteinreich",
+        "low carb",
+        "viel Gemüse",
+        "schnell"
+      ],
+      "time": "25 Min.",
+      "title": "Zucchini-Bolognese mit magerem Rinderhack",
+      "updatedAt": 1795688215876
+    },
+    {
+      "category": "Hauptgerichte",
+      "ingredients": [
+        "500 g Putenbrust",
+        "1 große rote Paprika",
+        "300 g Babyspinat",
+        "200 ml Kokosmilch (light)",
+        "1 EL Currypulver",
+        "1 Knoblauchzehe",
+        "1 TL Rapsöl"
+      ],
+      "key": "n4",
+      "notes": "Low Carb. Den Rest der Kokosmilch portionsweise einfrieren.",
+      "nutrition": {
+        "carbs": 9,
+        "fat": 13,
+        "fiber": 5,
+        "kcal": 425,
+        "protein": 66
+      },
+      "servings": 2,
+      "shelfLifeDays": 2,
+      "source": "Neu erstellt für diesen Wochenplan",
+      "sourceUrl": null,
+      "steps": [
+        "Putenbrust in Streifen und Paprika in Würfel schneiden.",
+        "Pute im Öl 4 Minuten scharf anbraten, Paprika und den gehackten Knoblauch zugeben und 2 Minuten mitbraten.",
+        "Currypulver darüberstreuen, kurz anrösten und mit Kokosmilch ablöschen. 5 Minuten köcheln lassen.",
+        "Spinat portionsweise unterheben, bis er zusammenfällt. Mit Salz abschmecken."
+      ],
+      "tags": [
+        "herzhaft",
+        "gesund",
+        "proteinreich",
+        "low carb",
+        "viel Gemüse",
+        "schnell"
+      ],
+      "time": "20 Min.",
+      "title": "Puten-Curry mit Spinat und Paprika",
+      "updatedAt": 1795688215876
+    },
+    {
+      "category": "Hauptgerichte",
+      "ingredients": [
+        "600 g Kabeljaufilet (TK, aufgetaut)",
+        "400 g Kirschtomaten",
+        "200 g Babyspinat",
+        "60 g Feta light",
+        "1 Knoblauchzehe",
+        "1 EL Olivenöl",
+        "Salz, Pfeffer, Oregano, Zitronensaft"
+      ],
+      "key": "n5",
+      "notes": "Low Carb. Statt Fisch passt auch 500 g Hähnchenbrust (dann ca. 20 Minuten backen).",
+      "nutrition": {
+        "carbs": 7,
+        "fat": 11,
+        "fiber": 5,
+        "kcal": 385,
+        "protein": 63
+      },
+      "servings": 2,
+      "shelfLifeDays": 1,
+      "source": "Neu erstellt für diesen Wochenplan",
+      "sourceUrl": null,
+      "steps": [
+        "Ofen auf 200 °C vorheizen.",
+        "Kirschtomaten halbieren und mit gehacktem Knoblauch, Öl, Salz und Oregano in einer Auflaufform mischen.",
+        "Kabeljau trocken tupfen, salzen und pfeffern und auf die Tomaten legen. Feta darüberbröseln.",
+        "15–18 Minuten backen.",
+        "Spinat in den letzten 3 Minuten unterheben oder frisch unter das heiße Gemüse geben. Mit Zitronensaft beträufeln."
+      ],
+      "tags": [
+        "herzhaft",
+        "gesund",
+        "proteinreich",
+        "low carb",
+        "schnell"
+      ],
+      "time": "25 Min.",
+      "title": "Kabeljau aus dem Ofen mit Kirschtomaten, Spinat und Feta",
+      "updatedAt": 1795688215876
+    }
+  ],
+  "pantry": [
+    {
+      "amount": "1,2 l",
+      "name": "Rinderbrühe"
+    },
+    {
+      "amount": "ca. 6 EL",
+      "name": "Olivenöl"
+    },
+    {
+      "amount": "ca. 3 EL",
+      "name": "Rapsöl"
+    },
+    {
+      "amount": "nach Bedarf",
+      "name": "Salz, Pfeffer"
+    },
+    {
+      "amount": "ca. 4 TL",
+      "name": "Paprikapulver"
+    },
+    {
+      "amount": "ca. 3 TL",
+      "name": "Oregano"
+    },
+    {
+      "amount": "1 TL",
+      "name": "Rosmarin, getrocknet"
+    },
+    {
+      "amount": "2 Stück",
+      "name": "Lorbeerblätter"
+    },
+    {
+      "amount": "1 EL",
+      "name": "Currypulver"
+    },
+    {
+      "amount": "ca. 9 TL",
+      "name": "Backkakao"
+    },
+    {
+      "amount": "ca. 12 TL",
+      "name": "Honig"
+    },
+    {
+      "amount": "2 EL",
+      "name": "Zucker oder Erythrit"
+    },
+    {
+      "amount": "1 TL",
+      "name": "Vanilleextrakt"
+    },
+    {
+      "amount": "1 Prise",
+      "name": "Zimt"
+    },
+    {
+      "amount": "3 EL",
+      "name": "Milch (1,5 %)"
+    }
+  ],
+  "prep": [
+    {
+      "step": "Rindfleischtopf starten: 900 g Rindergulasch portionsweise in etwas Rapsöl anbraten, mit 1,2 l Rinderbrühe ablöschen, 2 Lorbeerblätter zugeben und zugedeckt 60 Minuten köcheln lassen.",
+      "time": "0:00–0:15",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Ofen auf 180 °C vorheizen. 250 g Kartoffeln für die Muffins schälen, klein würfeln und ca. 12 Minuten in Salzwasser garen, dann abgießen.",
+      "time": "0:05–0:20",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Quarkauflauf: 500 g Magerquark, 3 Eier, 40 g Grieß, Zucker, Vanille und Zitronenschale verrühren, 250 g TK-Beeren unterheben. In eine gefettete Form geben und bei 180 °C ca. 40 Minuten backen (bis ca. 1:10).",
+      "time": "0:15–0:30",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Muffins: Paprika und Kochschinken würfeln und mit den Kartoffelwürfeln in einem 12er-Muffinblech verteilen. 8 Eier mit Hüttenkäse, Gouda, Salz, Pfeffer und Oregano verquirlen und eingießen. Ab 0:45 bei 180 °C ca. 25 Minuten mitbacken.",
+      "time": "0:30–0:45",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Für den Rindfleischtopf 1 kg Kartoffeln und 600 g Möhren schälen und würfeln. Für das Blech 800 g Kartoffeln würfeln und 2 Paprika sowie 1 Zucchini in Stücke schneiden.",
+      "time": "0:45–1:05",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Kartoffeln und Möhren in den Rindfleischtopf geben und weitere 25–30 Minuten köcheln lassen.",
+      "time": "1:05–1:10",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Auflauf und Muffins aus dem Ofen nehmen und abkühlen lassen. Ofen auf 200 °C hochschalten.",
+      "time": "1:10–1:15",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Blech-Kartoffeln mit 1 EL Olivenöl, Salz und Rosmarin mischen und 15 Minuten vorbacken. Inzwischen 600 g Hähnchenbrust würfeln und mit Paprika, Zucchini, restlichem Öl, gepresstem Knoblauch, Paprikapulver und Salz mischen.",
+      "time": "1:15–1:30",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Hähnchen und Gemüse zu den Kartoffeln geben und 20 Minuten fertig backen. Inzwischen den Joghurt-Dip (200 g Joghurt, Saft von ½ Zitrone, Salz) anrühren und auf 4 Döschen verteilen.",
+      "time": "1:30–1:50",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Rindfleischtopf abschmecken, Lorbeer entfernen, Petersilie unterrühren und den Topf zum Abkühlen vom Herd nehmen.",
+      "time": "1:40–1:45",
+      "when": "Sonntag"
+    },
+    {
+      "step": "Abfüllen: 6 Dosen Rindfleischtopf, 4 Dosen Hähnchen-Blech mit separatem Dip, Quarkauflauf in 4 Stücke, Muffins zu je 2 Stück in 6 Portionen. Die 2 Muffinportionen für Freitag einfrieren, alles andere in den Kühlschrank stellen. Fleisch für Mittwoch und Donnerstag einfrieren, falls es nicht frisch gekauft wird.",
+      "time": "1:50–2:10",
+      "when": "Sonntag"
+    }
+  ],
+  "shopping": [
+    {
+      "items": [
+        {
+          "amount": "2,1 kg (z. B. 1 Beutel à 2,5 kg)",
+          "name": "Festkochende Kartoffeln"
+        },
+        {
+          "amount": "ca. 850 g (1-kg-Beutel)",
+          "name": "Möhren"
+        },
+        {
+          "amount": "9 Stück",
+          "name": "Paprika (mind. 5 rote)"
+        },
+        {
+          "amount": "5 Stück",
+          "name": "Zucchini"
+        },
+        {
+          "amount": "300 g",
+          "name": "Champignons"
+        },
+        {
+          "amount": "400 g",
+          "name": "Grüne Bohnen (frisch oder TK)"
+        },
+        {
+          "amount": "500 g (am besten Mittwoch frisch kaufen)",
+          "name": "Babyspinat"
+        },
+        {
+          "amount": "400 g",
+          "name": "Kirschtomaten"
+        },
+        {
+          "amount": "2 Stück",
+          "name": "Bio-Zitronen"
+        },
+        {
+          "amount": "1 Knolle (6 Zehen)",
+          "name": "Knoblauch"
+        },
+        {
+          "amount": "1 Bund",
+          "name": "Petersilie"
+        },
+        {
+          "amount": "1 Bund",
+          "name": "Schnittlauch"
+        },
+        {
+          "amount": "700 g",
+          "name": "Beeren/Himbeeren (TK)"
+        }
+      ],
+      "section": "Gemüse & Obst"
+    },
+    {
+      "items": [
+        {
+          "amount": "12 Stück",
+          "name": "Eier"
+        },
+        {
+          "amount": "ca. 2,2 kg (z. B. 5 × 450 g)",
+          "name": "Skyr natur"
+        },
+        {
+          "amount": "1,25 kg (5 × 250 g)",
+          "name": "Magerquark"
+        },
+        {
+          "amount": "300 g",
+          "name": "Kochschinken"
+        },
+        {
+          "amount": "400 g",
+          "name": "Putenbrustaufschnitt"
+        },
+        {
+          "amount": "200 g",
+          "name": "Frischkäse light"
+        },
+        {
+          "amount": "1 Becher (200 g)",
+          "name": "Hüttenkäse"
+        },
+        {
+          "amount": "200 g",
+          "name": "Naturjoghurt"
+        },
+        {
+          "amount": "120 g (1 Packung à 150 g)",
+          "name": "Feta light"
+        },
+        {
+          "amount": "1 Packung (200 g)",
+          "name": "Kochcreme 7 %"
+        },
+        {
+          "amount": "60 g",
+          "name": "Geriebener Gouda"
+        },
+        {
+          "amount": "150 g",
+          "name": "Geriebener Mozzarella"
+        },
+        {
+          "amount": "20 g (1 kleines Stück)",
+          "name": "Parmesan"
+        }
+      ],
+      "section": "Kühlregal"
+    },
+    {
+      "items": [
+        {
+          "amount": "900 g",
+          "name": "Rindergulasch"
+        },
+        {
+          "amount": "1,1 kg",
+          "name": "Hähnchenbrust"
+        },
+        {
+          "amount": "440 g",
+          "name": "Schweinefilet"
+        },
+        {
+          "amount": "500 g",
+          "name": "Mageres Rinderhack (5 % Fett)"
+        },
+        {
+          "amount": "500 g",
+          "name": "Putenbrust"
+        },
+        {
+          "amount": "600 g",
+          "name": "Kabeljaufilet (TK)"
+        }
+      ],
+      "section": "Fleisch & Fisch"
+    },
+    {
+      "items": [
+        {
+          "amount": "5 Stück",
+          "name": "Vollkorn-Tortillas"
+        },
+        {
+          "amount": "24 Stück (1 Packung)",
+          "name": "Vollkorncracker"
+        },
+        {
+          "amount": "90 g",
+          "name": "Granola ohne Zuckerzusatz"
+        },
+        {
+          "amount": "40 g",
+          "name": "Weichweizengrieß"
+        }
+      ],
+      "section": "Brot & Getreide"
+    },
+    {
+      "items": [
+        {
+          "amount": "3 Dosen à 130 g",
+          "name": "Thunfisch im eigenen Saft"
+        },
+        {
+          "amount": "ca. 550 g (z. B. 1 Flasche à 700 g)",
+          "name": "Passierte Tomaten"
+        },
+        {
+          "amount": "1 Dose (400 ml), davon 200 ml",
+          "name": "Kokosmilch light"
+        }
+      ],
+      "section": "Konserven & Hülsenfrüchte"
+    }
+  ],
+  "summary": "Am Sonntag werden Frühstück (herzhafte Ei-Kartoffel-Muffins und süßer Quarkauflauf mit Beeren) und zwei abwechselnde Kartoffel-Mittagessen (Rindfleischtopf und Hähnchen-Kartoffel-Blech) vorbereitet. Abends gibt es jeden Tag ein anderes, schnell gekochtes Low-Carb-Gericht mit viel Eiweiß und Gemüse. Weil die Eiweißziele sehr hoch sind, ergänzen schnelle Snacks aus dem Kochbuch für den Fernsehabend den Tag. So liegt Isa täglich bei ca. 1440–1555 kcal und 158–176 g Eiweiß, Giuli bei ca. 1875–1990 kcal und 212–222 g Eiweiß. Geplant ist Montag bis Freitag.",
+  "tips": [
+    "Snack-Portionen: Eine Rezept-Portion ist die Hälfte der Kochbuch-Menge, z. B. 1 Portion Schoko-Skyr = 150 g Skyr und 1 Portion Thunfischcreme = ½ Dose. Halbe Portionen einfach nach Augenmaß aufteilen.",
+    "Fleisch-Frische: Hähnchen (Sonntag und Montag) und Schweinefilet (Dienstag) halten frisch gekauft. Rinderhack (Mittwoch) und Putenbrust (Donnerstag) am besten direkt einfrieren und am Vorabend im Kühlschrank auftauen oder erst am Mittwoch frisch kaufen.",
+    "Die Freitags-Muffins werden am Sonntag eingefroren, weil die Muffins nur 4 Tage halten. Am Donnerstagabend in den Kühlschrank legen.",
+    "Der Rindfleischtopf hält genau bis Freitag. Wer auf Nummer sicher gehen will, friert die 2 Freitagsdosen am Sonntag ein.",
+    "Babyspinat welkt schnell. Für Donnerstag und Freitag am besten am Mittwoch frisch kaufen.",
+    "Alle Rezepte kommen ohne Zwiebeln, Schalotten, Frühlingszwiebeln, Blumenkohl, Gurke, Brokkoli und Fenchel aus. Schnittlauch ist erlaubt.",
+    "Restliche Kokosmilch in einem Eiswürfelbehälter einfrieren, das ist praktisch für das nächste Curry.",
+    "Giuli braucht wegen des höheren Eiweißziels größere Snack-Portionen. Die Snacks sind alle in 5–15 Minuten fertig und passen gut zum Fernsehabend."
+  ],
+  "title": "Kartoffel-Power-Woche mit Low-Carb-Abenden",
+  "updatedAt": 1795688215876
+}

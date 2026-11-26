@@ -1,0 +1,14 @@
+{
+  "forbidden": [
+    "Zwiebeln",
+    "Schalotten",
+    "Frühlingszwiebeln",
+    "Blumenkohl",
+    "Gurke",
+    "Brokkoli",
+    "Fenchel"
+  ],
+  "preferences": "Hauptsächlich Kartoffeln, mit Fleisch, gesund oder proteinreich. Jedes Rezept ist entweder herzhaft oder süß. Viel Gemüse und gesunde Kohlenhydrate.",
+  "rules": "Einfache Rezepte mit höchstens ca. 7 Zutaten. Snacks in höchstens 10–15 Minuten fertig (schnell vor dem Fernsehabend). Zwiebeln können einfach weggelassen werden.",
+  "updatedAt": 1795687257554
+}

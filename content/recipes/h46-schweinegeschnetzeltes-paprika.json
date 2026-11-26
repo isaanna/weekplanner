@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524788,
+  "ingredients": [
+    "600 g Schweineschnitzel",
+    "3 Paprika",
+    "1 kg festkochende Kartoffeln",
+    "150 g Kochcreme 7 %",
+    "1 TL Paprikapulver",
+    "1 EL Rapsöl",
+    "Salz"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 46,
+    "fat": 10,
+    "fiber": 6,
+    "kcal": 450,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln 20 Minuten in Salzwasser kochen.",
+    "Fleisch in Streifen schneiden und im Öl scharf anbraten, herausnehmen.",
+    "Paprikastreifen 5 Minuten braten, Kochcreme und Paprikapulver zugeben, Fleisch zurückgeben und abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "30 Min.",
+  "title": "Schweinegeschnetzeltes mit Paprika und Kartoffeln",
+  "updatedAt": 1795674524788
+}

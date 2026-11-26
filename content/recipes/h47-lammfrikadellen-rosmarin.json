@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524789,
+  "ingredients": [
+    "500 g Lammhack",
+    "1 Ei",
+    "800 g Drillinge",
+    "2 Zweige Rosmarin",
+    "250 g Naturjoghurt",
+    "Minze",
+    "Salz, Pfeffer, Kreuzkümmel"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 38,
+    "fat": 27,
+    "fiber": 4,
+    "kcal": 520,
+    "protein": 30
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Drillinge halbieren, mit Rosmarin und Salz 30 Minuten rösten.",
+    "Hack mit Ei, Salz, Pfeffer und Kreuzkümmel verkneten, 12 kleine Frikadellen formen und 4 Minuten pro Seite braten.",
+    "Joghurt mit gehackter Minze und Salz verrühren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "einfrierbar"
+  ],
+  "time": "40 Min.",
+  "title": "Lammfrikadellen mit Rosmarinkartoffeln und Minzjoghurt",
+  "updatedAt": 1795674524789
+}

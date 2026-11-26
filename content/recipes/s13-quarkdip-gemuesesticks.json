@@ -1,0 +1,38 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795674524802,
+  "ingredients": [
+    "250 g Magerquark",
+    "2 EL Milch",
+    "Schnittlauch",
+    "2 Möhren",
+    "1 Paprika",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 14,
+    "fat": 1,
+    "fiber": 4,
+    "kcal": 150,
+    "protein": 19
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Quark mit Milch, Schnittlauch, Salz und Pfeffer verrühren.",
+    "Möhren und Paprika in Sticks schneiden und dazu servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "leicht",
+    "schnell",
+    "vegetarisch"
+  ],
+  "time": "10 Min.",
+  "title": "Kräuterquark-Dip mit Möhren- und Paprikasticks",
+  "updatedAt": 1795674524802
+}

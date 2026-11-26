@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524793,
+  "ingredients": [
+    "600 g Hähnchenbrust",
+    "800 g Süßkartoffeln",
+    "1 Dose Kichererbsen (240 g)",
+    "800 g stückige Tomaten",
+    "500 ml Hühnerbrühe",
+    "2 TL Currypulver",
+    "Salz"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 48,
+    "fat": 5,
+    "fiber": 10,
+    "kcal": 380,
+    "protein": 32
+  },
+  "servings": 6,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Süßkartoffeln würfeln und mit Tomaten, Brühe und Curry 15 Minuten köcheln.",
+    "Hähnchen würfeln und mit den abgespülten Kichererbsen zugeben.",
+    "Weitere 10 Minuten köcheln und mit Salz abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "40 Min.",
+  "title": "Hähnchen-Süßkartoffel-Eintopf mit Kichererbsen",
+  "updatedAt": 1795674524793
+}

@@ -1,0 +1,36 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524777,
+  "ingredients": [
+    "600 g Putenbrust oder Schweinelachs in Streifen",
+    "2 TL Gyrosgewürz",
+    "800 g festkochende Kartoffeln",
+    "300 g griechischer Joghurt (2 %)",
+    "2 Knoblauchzehen",
+    "2 EL Olivenöl",
+    "Salz"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 44,
+    "fat": 15,
+    "fiber": 4,
+    "kcal": 500,
+    "protein": 44
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln in Spalten schneiden, mit 1 EL Öl und Salz 30 Minuten backen.",
+    "Fleisch mit Gyrosgewürz und restlichem Öl mischen und scharf anbraten.",
+    "Joghurt mit Knoblauch und Salz verrühren und dazu servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich"
+  ],
+  "time": "40 Min.",
+  "title": "Gyros mit Ofenkartoffeln und Knoblauch-Joghurt",
+  "updatedAt": 1795674524777
+}

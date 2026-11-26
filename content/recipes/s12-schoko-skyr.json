@@ -1,0 +1,35 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795674524801,
+  "ingredients": [
+    "300 g Skyr natur",
+    "2 TL Backkakao",
+    "2 TL Honig",
+    "1 Prise Zimt"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 15,
+    "fat": 1,
+    "fiber": 1,
+    "kcal": 160,
+    "protein": 20
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Alles glatt rühren.",
+    "In 2 Schälchen füllen und sofort essen oder kurz kalt stellen."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "schnell",
+    "vegetarisch"
+  ],
+  "time": "3 Min.",
+  "title": "Schoko-Skyr-Creme",
+  "updatedAt": 1795674524801
+}

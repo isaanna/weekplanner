@@ -1,0 +1,36 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524779,
+  "ingredients": [
+    "2 Rinderhüftsteaks (à 180 g)",
+    "500 g festkochende Kartoffeln",
+    "300 g grüne Bohnen",
+    "1 EL Olivenöl",
+    "1 Zweig Rosmarin",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 44,
+    "fat": 17,
+    "fiber": 7,
+    "kcal": 540,
+    "protein": 48
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 220 °C vorheizen. Kartoffeln in Wedges schneiden, mit Öl und Salz 30 Minuten backen.",
+    "Bohnen 7 Minuten in Salzwasser garen.",
+    "Steaks mit Rosmarin in einer heißen Pfanne pro Seite 3 Minuten braten, 5 Minuten ruhen lassen, salzen und pfeffern."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich"
+  ],
+  "time": "35 Min.",
+  "title": "Rinderhüftsteak mit Ofenwedges und grünen Bohnen",
+  "updatedAt": 1795674524779
+}

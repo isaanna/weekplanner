@@ -1,0 +1,36 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524798,
+  "ingredients": [
+    "500 g Rinderhüfte",
+    "300 g Champignons",
+    "1 rote Paprika",
+    "150 g saure Sahne (10 %)",
+    "1 TL Senf",
+    "1 kg festkochende Kartoffeln",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 46,
+    "fat": 11,
+    "fiber": 6,
+    "kcal": 450,
+    "protein": 38
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln 20 Minuten in Salzwasser kochen.",
+    "Fleisch in dünne Streifen schneiden und portionsweise sehr heiß anbraten, herausnehmen.",
+    "Champignons und Paprika 5 Minuten braten, saure Sahne und Senf einrühren, Fleisch zurückgeben und nur noch erwärmen. Abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich"
+  ],
+  "time": "30 Min.",
+  "title": "Rindergeschnetzeltes Stroganoff-Art mit Kartoffeln",
+  "updatedAt": 1795674524798
+}

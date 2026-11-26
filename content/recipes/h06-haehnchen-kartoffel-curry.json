@@ -1,0 +1,48 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788389,
+  "ingredients": [
+    "600 g Hähnchenbrust",
+    "600 g festkochende Kartoffeln",
+    "200 g Babyspinat",
+    "1 rote Paprika",
+    "400 ml Kokosmilch (light)",
+    "200 g stückige Tomaten",
+    "2 Knoblauchzehen",
+    "1 Stück Ingwer (2 cm)",
+    "2 EL Currypulver",
+    "1 TL Kurkuma",
+    "1 EL Rapsöl",
+    "Saft von 1 Limette",
+    "Salz"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 35,
+    "fat": 15,
+    "fiber": 6,
+    "kcal": 450,
+    "protein": 42
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in 2 cm Würfel schneiden.",
+    "Hähnchen würfeln und im Öl anbraten, herausnehmen.",
+    "Knoblauch, Ingwer und Gewürze kurz anrösten, Kartoffeln, Paprika, Tomaten und Kokosmilch zugeben und 20 Minuten köcheln.",
+    "Hähnchen zurückgeben und 5 Minuten mitgaren, Spinat unterheben.",
+    "Mit Limettensaft und Salz abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "40 Min.",
+  "title": "Hähnchen-Kartoffel-Curry mit Spinat",
+  "updatedAt": 1795673788389
+}

@@ -1,0 +1,34 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795674524806,
+  "ingredients": [
+    "1 Dose Thunfisch im eigenen Saft (130 g)",
+    "100 g Magerquark",
+    "1 TL Zitronensaft",
+    "8 Vollkorncracker",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 20,
+    "fat": 3,
+    "fiber": 3,
+    "kcal": 220,
+    "protein": 25
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Thunfisch abtropfen lassen und mit Quark und Zitronensaft cremig verrühren.",
+    "Mit Salz und Pfeffer abschmecken und mit Crackern servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "5 Min.",
+  "title": "Thunfischcreme mit Vollkorncrackern",
+  "updatedAt": 1795674524806
+}

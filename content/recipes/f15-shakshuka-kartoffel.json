@@ -1,0 +1,44 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788378,
+  "ingredients": [
+    "250 g festkochende Kartoffeln",
+    "1 rote Paprika",
+    "1 Knoblauchzehe",
+    "400 g stückige Tomaten",
+    "4 Eier",
+    "1 TL Olivenöl",
+    "1 TL Kreuzkümmel",
+    "1 TL Paprikapulver",
+    "50 g Feta",
+    "Petersilie",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 32,
+    "fat": 18,
+    "fiber": 6,
+    "kcal": 380,
+    "protein": 22
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln klein würfeln und im Öl 8 Minuten anbraten.",
+    "Paprika und Knoblauch dazugeben, Gewürze kurz mitrösten.",
+    "Tomaten dazugeben und 10 Minuten köcheln lassen, abschmecken.",
+    "4 Mulden formen, Eier hineinschlagen und zugedeckt 6–8 Minuten stocken lassen.",
+    "Mit Feta und Petersilie bestreuen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "viel Gemüse",
+    "vegetarisch"
+  ],
+  "time": "30 Min.",
+  "title": "Shakshuka mit Kartoffelwürfeln",
+  "updatedAt": 1795673788378
+}

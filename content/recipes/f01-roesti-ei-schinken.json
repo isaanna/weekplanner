@@ -1,0 +1,39 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788364,
+  "ingredients": [
+    "400 g festkochende Kartoffeln",
+    "2 Eier (Spiegelei)",
+    "1 Ei (für die Rösti)",
+    "80 g magerer Kochschinken",
+    "1 EL Rapsöl",
+    "1 Handvoll Rucola",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "Kleine Portion: 1 Rösti und 1 Ei pro Person.",
+  "nutrition": {
+    "carbs": 36,
+    "fat": 18,
+    "fiber": 4,
+    "kcal": 420,
+    "protein": 25
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln schälen, grob reiben und in einem Tuch kräftig ausdrücken.",
+    "Mit 1 Ei, Salz, Pfeffer und Muskat vermengen.",
+    "In einer beschichteten Pfanne im Öl 4 flache Rösti von jeder Seite 4–5 Minuten goldbraun braten.",
+    "Daneben 2 Spiegeleier braten.",
+    "Rösti mit Schinken, Spiegelei und Rucola servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "gesund"
+  ],
+  "time": "25 Min.",
+  "title": "Kartoffelrösti mit Spiegelei und Schinken",
+  "updatedAt": 1795673788364
+}

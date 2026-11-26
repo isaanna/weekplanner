@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524784,
+  "ingredients": [
+    "800 g festkochende Kartoffeln",
+    "600 g Hähnchenbrust",
+    "2 Zucchini",
+    "1 Bio-Zitrone",
+    "2 Knoblauchzehen",
+    "2 EL Olivenöl",
+    "Salz, Pfeffer, Oregano"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 42,
+    "fat": 10,
+    "fiber": 6,
+    "kcal": 440,
+    "protein": 42
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln in Spalten schneiden, mit 1 EL Öl und Salz 20 Minuten backen.",
+    "Hähnchen und Zucchini in Stücke schneiden, mit restlichem Öl, Knoblauch, Zitronenschale und -saft, Oregano, Salz und Pfeffer mischen.",
+    "Zu den Kartoffeln geben und weitere 20 Minuten backen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "45 Min.",
+  "title": "Zitronen-Hähnchen mit Ofenkartoffeln und Zucchini",
+  "updatedAt": 1795674524784
+}

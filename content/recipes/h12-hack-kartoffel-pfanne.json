@@ -1,0 +1,44 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788395,
+  "ingredients": [
+    "500 g mageres Rinderhack",
+    "700 g festkochende Kartoffeln",
+    "1 Zucchini",
+    "2 Paprika",
+    "2 Knoblauchzehen",
+    "1 EL Tomatenmark",
+    "150 ml Brühe",
+    "1 TL Paprikapulver",
+    "1 TL Oregano",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer",
+    "100 g Naturjoghurt"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 38,
+    "fat": 19,
+    "fiber": 6,
+    "kcal": 470,
+    "protein": 33
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in kleine Würfel schneiden und im Öl 12 Minuten braten.",
+    "Hack in einer zweiten Pfanne krümelig braten, Knoblauch und Tomatenmark mitrösten.",
+    "Paprika und Zucchini würfeln, zum Hack geben, mit Brühe ablöschen und 5 Minuten garen.",
+    "Kartoffeln untermischen, würzen und mit einem Klecks Joghurt servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "schnell",
+    "viel Gemüse"
+  ],
+  "time": "30 Min.",
+  "title": "Rinderhack-Kartoffel-Pfanne mit Paprika und Zucchini",
+  "updatedAt": 1795673788395
+}

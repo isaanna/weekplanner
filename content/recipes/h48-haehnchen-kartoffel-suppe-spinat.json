@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524790,
+  "ingredients": [
+    "500 g Hähnchenbrust",
+    "700 g festkochende Kartoffeln",
+    "200 g Blattspinat",
+    "1,2 l Hühnerbrühe",
+    "1 Knoblauchzehe",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 29,
+    "fat": 4,
+    "fiber": 5,
+    "kcal": 300,
+    "protein": 36
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln würfeln und mit Knoblauch in der Brühe 15 Minuten köcheln.",
+    "Hähnchen würfeln, dazugeben und 8 Minuten garen.",
+    "Spinat unterrühren und abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "leicht"
+  ],
+  "time": "30 Min.",
+  "title": "Hähnchen-Kartoffel-Suppe mit Spinat",
+  "updatedAt": 1795674524790
+}

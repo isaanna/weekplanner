@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524782,
+  "ingredients": [
+    "600 g Schweinefilet",
+    "400 g Champignons",
+    "1 kg festkochende Kartoffeln",
+    "150 g Kochcreme 7 %",
+    "Petersilie",
+    "1 EL Rapsöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 44,
+    "fat": 11,
+    "fiber": 6,
+    "kcal": 450,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln schälen und 20 Minuten in Salzwasser kochen.",
+    "Filet in Medaillons schneiden und pro Seite 3 Minuten braten, herausnehmen.",
+    "Champignons in Scheiben in derselben Pfanne braten, Kochcreme zugeben, kurz aufkochen und würzen.",
+    "Medaillons zurück in die Soße legen und mit Petersilie servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich"
+  ],
+  "time": "30 Min.",
+  "title": "Schweinemedaillons mit Champignons und Salzkartoffeln",
+  "updatedAt": 1795674524782
+}

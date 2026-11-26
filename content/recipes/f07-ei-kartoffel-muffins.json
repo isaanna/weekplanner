@@ -1,0 +1,39 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795673788370,
+  "ingredients": [
+    "250 g gekochte Kartoffeln",
+    "8 Eier",
+    "120 g Kochschinken",
+    "1 rote Paprika",
+    "60 g geriebener Gouda",
+    "100 g Hüttenkäse",
+    "Salz, Pfeffer, Oregano"
+  ],
+  "notes": "1 Portion = 2 Muffins. Kalt essen oder 30 Sekunden in der Mikrowelle.",
+  "nutrition": {
+    "carbs": 9,
+    "fat": 13,
+    "fiber": 1,
+    "kcal": 230,
+    "protein": 18
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 180 °C vorheizen, ein 12er-Muffinblech einfetten oder mit Silikonförmchen auslegen.",
+    "Kartoffeln, Schinken und Paprika klein würfeln und auf die Mulden verteilen.",
+    "Eier mit Hüttenkäse, Salz, Pfeffer und Oregano verquirlen und darübergießen, Käse darauf streuen.",
+    "20–22 Minuten backen, bis die Muffins fest sind. Abkühlen lassen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "35 Min.",
+  "title": "Frühstücksmuffins mit Ei, Kartoffel und Schinken",
+  "updatedAt": 1795673788370
+}

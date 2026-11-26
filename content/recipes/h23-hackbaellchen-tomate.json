@@ -1,0 +1,44 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788406,
+  "ingredients": [
+    "500 g gemischtes Hack (oder Rinderhack mager)",
+    "1 Ei",
+    "2 EL Haferflocken",
+    "2 Knoblauchzehen",
+    "800 g passierte Tomaten",
+    "1 Zucchini",
+    "1 TL Oregano",
+    "1 TL Basilikum",
+    "1 kg festkochende Kartoffeln",
+    "1 Bund Petersilie",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 52,
+    "fat": 20,
+    "fiber": 8,
+    "kcal": 540,
+    "protein": 34
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hack mit Ei, Haferflocken, 1 Knoblauchzehe, Salz und Pfeffer verkneten und walnussgroße Bällchen formen.",
+    "Bällchen im Öl rundherum anbraten.",
+    "Restlichen Knoblauch, Zucchiniwürfel, Tomaten und Kräuter zugeben und 20 Minuten köcheln.",
+    "Kartoffeln kochen und mit gehackter Petersilie schwenken."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "45 Min.",
+  "title": "Hackbällchen in Tomatensoße mit Petersilienkartoffeln",
+  "updatedAt": 1795673788406
+}

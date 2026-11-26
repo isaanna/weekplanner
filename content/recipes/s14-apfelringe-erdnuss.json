@@ -1,0 +1,32 @@
+{
+  "category": "Snacks",
+  "createdAt": 1795674524803,
+  "ingredients": [
+    "2 Äpfel",
+    "2 EL Erdnussmus",
+    "1 TL Zimt"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 23,
+    "fat": 8,
+    "fiber": 5,
+    "kcal": 190,
+    "protein": 5
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Äpfel entkernen und in Ringe schneiden.",
+    "Mit Erdnussmus bestreichen und mit Zimt bestäuben."
+  ],
+  "tags": [
+    "süß",
+    "schnell",
+    "vegetarisch"
+  ],
+  "time": "5 Min.",
+  "title": "Apfelringe mit Erdnussmus und Zimt",
+  "updatedAt": 1795674524803
+}

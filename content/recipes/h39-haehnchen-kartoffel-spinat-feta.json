@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524781,
+  "ingredients": [
+    "700 g festkochende Kartoffeln",
+    "500 g Hähnchenbrust",
+    "200 g Babyspinat",
+    "100 g Feta",
+    "1 Knoblauchzehe",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 36,
+    "fat": 12,
+    "fiber": 5,
+    "kcal": 430,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln würfeln und im Öl 15 Minuten knusprig braten.",
+    "Hähnchen würfeln, mit Knoblauch dazugeben und 6 Minuten mitbraten.",
+    "Spinat unterheben, bis er zusammenfällt, würzen und mit zerbröseltem Feta bestreuen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "30 Min.",
+  "title": "Hähnchen-Kartoffel-Pfanne mit Spinat und Feta",
+  "updatedAt": 1795674524781
+}

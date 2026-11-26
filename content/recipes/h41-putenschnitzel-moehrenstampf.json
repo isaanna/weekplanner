@@ -1,0 +1,37 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524783,
+  "ingredients": [
+    "4 Putenschnitzel (à 150 g)",
+    "800 g mehligkochende Kartoffeln",
+    "400 g Möhren",
+    "150 ml Milch",
+    "1 EL Rapsöl",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 42,
+    "fat": 6,
+    "fiber": 7,
+    "kcal": 400,
+    "protein": 42
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln und Möhren schälen, würfeln und zusammen 20 Minuten kochen.",
+    "Mit warmer Milch stampfen und mit Salz und Muskat würzen.",
+    "Schnitzel salzen und pfeffern und im Öl pro Seite 3–4 Minuten braten."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "schnell"
+  ],
+  "time": "30 Min.",
+  "title": "Putenschnitzel mit Kartoffel-Möhren-Stampf",
+  "updatedAt": 1795674524783
+}

@@ -1,0 +1,46 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788385,
+  "ingredients": [
+    "900 g Rindergulasch (aus der Keule)",
+    "1 kg festkochende Kartoffeln",
+    "3 Paprika (rot und gelb)",
+    "3 Möhren",
+    "3 Knoblauchzehen",
+    "2 EL Tomatenmark",
+    "2 EL edelsüßes Paprikapulver",
+    "1 TL Kümmel, gemahlen",
+    "1 TL Majoran",
+    "800 ml Rinderbrühe",
+    "1 EL Rapsöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "Schmeckt aufgewärmt noch besser. Ohne Zwiebeln wird das Gulasch durch die Paprika und Möhren trotzdem schön sämig.",
+  "nutrition": {
+    "carbs": 38,
+    "fat": 11,
+    "fiber": 6,
+    "kcal": 430,
+    "protein": 40
+  },
+  "servings": 6,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Fleisch trocken tupfen und portionsweise im Öl scharf anbraten.",
+    "Tomatenmark und Knoblauch kurz mitrösten, Paprikapulver unterrühren und sofort mit Brühe ablöschen.",
+    "Kümmel und Majoran zugeben und zugedeckt 75 Minuten schmoren.",
+    "Kartoffeln, Möhren und Paprika würfeln, dazugeben und weitere 30 Minuten garen, bis alles weich ist.",
+    "Mit Salz und Pfeffer abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "2 Std.",
+  "title": "Rindergulasch mit Kartoffeln und Paprika",
+  "updatedAt": 1795673788385
+}

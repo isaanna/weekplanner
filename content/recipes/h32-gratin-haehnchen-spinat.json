@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795674524774,
+  "ingredients": [
+    "900 g festkochende Kartoffeln",
+    "500 g Hähnchenbrust",
+    "300 g Blattspinat (TK)",
+    "400 ml Milch (1,5 %)",
+    "80 g geriebener Bergkäse",
+    "Salz, Pfeffer, Muskat"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 47,
+    "fat": 12,
+    "fiber": 7,
+    "kcal": 480,
+    "protein": 44
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 190 °C vorheizen. Kartoffeln in dünne Scheiben schneiden, Hähnchen würfeln, Spinat auftauen und ausdrücken.",
+    "Alles in eine Auflaufform schichten.",
+    "Milch mit Salz, Pfeffer und Muskat würzen und darüber gießen, Käse aufstreuen.",
+    "Abgedeckt 30 Minuten, dann offen 15 Minuten backen."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "55 Min.",
+  "title": "Kartoffelgratin mit Hähnchen und Spinat",
+  "updatedAt": 1795674524774
+}

@@ -1,0 +1,47 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795673788394,
+  "ingredients": [
+    "600 g mageres Rinderhack",
+    "800 g festkochende Kartoffeln",
+    "2 rote Paprika",
+    "1 Dose Kidneybohnen (240 g Abtropfgewicht)",
+    "1 Dose Mais (140 g)",
+    "800 g stückige Tomaten",
+    "2 EL Tomatenmark",
+    "3 Knoblauchzehen",
+    "2 TL Kreuzkümmel",
+    "1 TL Chiliflocken",
+    "1 TL Kakao",
+    "300 ml Rinderbrühe",
+    "1 EL Rapsöl",
+    "Salz"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 14,
+    "fiber": 11,
+    "kcal": 450,
+    "protein": 32
+  },
+  "servings": 6,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hack im Öl krümelig anbraten, Knoblauch und Tomatenmark mitrösten.",
+    "Gewürze und Kakao kurz mitrösten.",
+    "Kartoffeln und Paprika würfeln, mit Tomaten und Brühe zugeben, 30 Minuten köcheln.",
+    "Bohnen und Mais abspülen, zugeben und 10 Minuten mitkochen. Abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "60 Min.",
+  "title": "Chili con Carne mit Kartoffeln",
+  "updatedAt": 1795673788394
+}
