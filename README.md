@@ -10,7 +10,7 @@ Die App ist eine einzelne HTML-Seite, die als Artifact auf claude.ai läuft:
 | Reiter | Was er kann |
 | --- | --- |
 | **Start** | Zwei Wege: *Rezepte* oder *Wochenplan*, der Zufallsgenerator und darunter, was heute pro Person schon gegessen wurde, verglichen mit dem Tagesbedarf. |
-| **Rezepte** | Große Suche oben: Lebensmittel eingeben, Treffer erscheinen als Karten. Ohne Suche: Kapitel als farbige Kacheln und der Zufallsgenerator „Was koche ich heute?“. Filter nach Eigenschaften. Pro Rezept: Foto, Portionsrechner, Nährwerttabelle, Haltbarkeit, Knopf zum Tracken. |
+| **Rezepte** | Große Suche oben: Lebensmittel eingeben, Treffer erscheinen als Kacheln mit Titel. Ohne Suche: Kapitel als Kacheln und der Zufallsgenerator „Was koche ich heute?“. Filter nach Eigenschaften. Pro Rezept: Portionsrechner, Nährwerttabelle, Haltbarkeit, Knopf zum Tracken. |
 | **Wochenplan** | Vorgaben in eigenen Worten eingeben (wann vorkochen, für wen). Claude plant Frühstück, Mittag- und Abendessen (keine Snacks) mit Vorkoch-Ablauf, Nährwerten pro Person, Einkaufsliste und schlägt bei Bedarf neue Rezepte vor. Der ganze Plan lässt sich ins Tracking übernehmen. |
 | **Tracking** | Wochenraster Montag–Sonntag × Frühstück/Mittagessen/Abendessen/Snack. Per Klick Rezept oder freien Eintrag hinzufügen, Tagessumme gegen Profilziel. „Ganze Woche löschen“ leert die angezeigte Woche. |
 | **Profil & Regeln** | Profile pro Person (Alter, Größe, Gewicht, Aktivität, Ziel, optional kcal-Maximum) mit berechnetem Tagesbedarf. Regeln für Claude: verbotene Lebensmittel, Vorlieben, weitere Regeln. |
@@ -21,10 +21,6 @@ Die App ist eine einzelne HTML-Seite, die als Artifact auf claude.ai läuft:
 - **Instagram / Website:** Link ins Feld „Link zum Original“ eintragen und zusätzlich die Bildunterschrift einfügen oder Screenshots hochladen. Die Seite kann fremde Webseiten nicht selbst öffnen; der Link wird als Quelle gespeichert.
 - **Foto:** Kochbuchseite, Zettel oder Screenshot hochladen.
 - **Über Claude im Chat:** Rezepte schicken, Claude trägt sie direkt in die Datenbank ein.
-
-## Fotos
-
-Auf der Rezeptseite „Foto hinzufügen“: Das Bild wird verkleinert und im Speicher des Artifacts abgelegt (`imageId`, `imageUrl` im Rezept). Ohne Foto zeigt die App einen Platzhalter in der Kapitelfarbe. Bilder aus dem Internet kann die App nicht laden.
 
 ## Einkaufsliste in Bring!
 
@@ -58,7 +54,7 @@ Die App selbst enthält keine Inhalte. Alles liegt in der Datenbank des Artifact
 
 | Sammlung | Inhalt |
 | --- | --- |
-| `recipes` | Rezepte: `title, category, tags[], servings, time, shelfLifeDays, ingredients[], steps[], notes, source, sourceUrl, imageId, imageUrl, nutrition{kcal, protein, carbs, fat, fiber}` (pro Portion) |
+| `recipes` | Rezepte: `title, category, tags[], servings, time, shelfLifeDays, ingredients[], steps[], notes, source, sourceUrl, nutrition{kcal, protein, carbs, fat, fiber}` (pro Portion) |
 | `plans` | Wochenpläne: `title, summary, brief, newRecipes[], cook[], prep[], days[{day, meals[{slot, ref, portions, portionsByPerson{}, note}]}], shopping[], pantry[], tips[], checked{}` |
 | `profiles` | Personen: `name, sex, age, height, weight, activity, goal, kcalMax` |
 | `tracking` | Einträge: `date (YYYY-MM-DD), slot, profileId, recipeId, title, portions, nut{}` |

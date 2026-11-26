@@ -145,3 +145,8 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Eigenes Foto pro Rezept hochladen (wird in der App gespeichert)
 - [x] Ohne Foto: gestaltetes Platzhalterbild in der Kapitelfarbe mit Anfangsbuchstaben
 - **Einschränkung:** Bilder aus dem Internet kann die App nicht laden, und automatisch erzeugte Fotos gibt es hier nicht. Fotos müssen also von dir kommen (Handyfoto beim Kochen, Screenshot vom Instagram-Post)
+
+## Runde 4 – Farbpalette und schlichte Kacheln
+- [x] Bilder und Foto-Upload entfernt, Rezepte nur noch als Kacheln mit Titel
+- [x] Ganze App in der 12-Ton-Palette (Beige bis Espresso)
+- [x] Alle Kacheln gleich: Hintergrund `#DACCBF`, Kachel `#957A69`, Schrift `#47362E`
