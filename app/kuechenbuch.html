@@ -2,7 +2,7 @@
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Young+Serif&family=Figtree:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap">
 <style>
 /* Layout: Startseite mit zwei Wegen (Rezepte / Wochenplan); Kochbuch und Planer als aufgeschlagenes Buch, Tracking und Profil als volle Seite. Farbwelt: Beige, Braun, Olive. */
 :root {
@@ -19,9 +19,13 @@
   --ok: #4f7a2e;
   --warn: #b07a12;
   --over: #b23b2a;
-  --display: "Bricolage Grotesque", "Avenir Next", "Segoe UI", system-ui, sans-serif;
-  --body: "Literata", Georgia, "Times New Roman", serif;
-  --ui: "Bricolage Grotesque", system-ui, sans-serif;
+  --display: "Young Serif", Georgia, "Times New Roman", serif;
+  --body: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --ui: "Figtree", "Segoe UI", system-ui, -apple-system, sans-serif;
+  /* Kapitelfarben: warme Erdtöne */
+  --c-fr: #c08a2e; --c-sa: #6f8a4e; --c-su: #8a7a3a; --c-ha: #9a4f2c; --c-be: #7d8c5c;
+  --c-sn: #b5653a; --c-ba: #a9824c; --c-de: #9a5568; --c-ge: #4f7f7a; --c-so: #85776a;
+  --radius: 14px;
 }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
@@ -49,7 +53,7 @@ a { color: var(--accent); }
 
 .wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 18px; }
 header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 12px; }
-header.top h1 { font-family: var(--display); font-weight: 700; font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1; margin: 0; letter-spacing: -0.02em; }
+header.top h1 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1; margin: 0; letter-spacing: -0.02em; }
 header.top h1 button { all: unset; cursor: pointer; }
 header.top p { margin: 6px 0 0; color: var(--muted); font-family: var(--ui); font-size: 0.95rem; }
 .tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); overflow-x: auto; }
@@ -90,7 +94,7 @@ button.chip:hover { border-color: var(--muted); }
 
 .sheet { padding: 28px clamp(18px, 4vw, 48px) 36px; min-width: 0; }
 .eyebrow { font-family: var(--ui); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--herb); font-weight: 700; display: flex; gap: 12px; flex-wrap: wrap; }
-h2.title { font-family: var(--display); font-weight: 700; font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.08; margin: 8px 0 12px; text-wrap: balance; letter-spacing: -0.01em; }
+h2.title { font-family: var(--display); font-weight: 400; font-size: clamp(1.7rem, 4vw, 2.4rem); line-height: 1.08; margin: 8px 0 12px; text-wrap: balance; letter-spacing: -0.01em; }
 h3.sec { font-family: var(--ui); font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; margin: 0 0 10px; color: var(--muted); }
 .meta { display: flex; flex-wrap: wrap; gap: 8px 18px; font-family: var(--ui); color: var(--muted); font-size: 0.95rem; align-items: center; }
 .scaler { display: inline-flex; align-items: center; gap: 4px; border: 1px solid var(--line); border-radius: 999px; padding: 2px; }
@@ -102,7 +106,7 @@ ul.ing li { padding: 6px 0; border-bottom: 1px solid var(--line); display: flex;
 ul.ing li b { font-family: var(--ui); font-weight: 700; min-width: 4.8em; font-variant-numeric: tabular-nums; color: var(--accent); }
 ol.steps { margin: 0; padding: 0; list-style: none; counter-reset: s; display: grid; gap: 14px; }
 ol.steps li { counter-increment: s; display: grid; grid-template-columns: 2rem minmax(0,1fr); gap: 8px; max-width: 62ch; }
-ol.steps li::before { content: counter(s); font-family: var(--display); font-weight: 700; font-size: 1.35rem; color: var(--accent); line-height: 1.2; }
+ol.steps li::before { content: counter(s); font-family: var(--display); font-weight: 400; font-size: 1.35rem; color: var(--accent); line-height: 1.2; }
 .note { margin-top: 22px; padding: 14px 16px; border-left: 3px solid var(--accent); background: var(--paper); font-style: italic; max-width: 70ch; white-space: pre-wrap; }
 .source { margin-top: 18px; font-family: var(--ui); font-size: 0.85rem; color: var(--muted); overflow-wrap: anywhere; }
 .actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 28px; padding-top: 16px; border-top: 1px dashed var(--line); align-items: center; }
@@ -149,7 +153,7 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
 .doors { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
 .door { text-align: left; border: 1px solid var(--line); background: var(--paper); border-radius: 10px; padding: 22px 22px 20px; display: grid; gap: 6px; transition: border-color .15s, transform .15s; }
 .door:hover { border-color: var(--accent); transform: translateY(-1px); }
-.door .big { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1; }
+.door .big { font-family: var(--display); font-weight: 400; font-size: clamp(1.6rem, 4vw, 2.2rem); line-height: 1; }
 .door .sub { font-family: var(--ui); color: var(--muted); }
 .door .n { font-family: var(--ui); color: var(--accent); font-weight: 700; font-size: 0.9rem; }
 .today { display: grid; gap: 10px; }
@@ -231,6 +235,66 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
 .targets { font-family: var(--ui); font-size: 0.9rem; display: grid; grid-template-columns: auto auto; gap: 2px 14px; font-variant-numeric: tabular-nums; }
 .targets dt { color: var(--muted); } .targets dd { margin: 0; font-weight: 700; text-align: right; }
 
+/* ---------- Runde 3: Suche, Karten, Kapitel, Würfel ---------- */
+body { font-size: 16.5px; }
+.full, .book { border-radius: var(--radius); }
+.full { padding-block: 32px 40px; }
+.eyebrow { font-weight: 600; letter-spacing: 0.12em; }
+h2.title { font-size: clamp(1.9rem, 4.6vw, 2.8rem); letter-spacing: -0.005em; line-height: 1.1; }
+.btn { font-weight: 600; }
+.chip { font-size: 0.85rem; padding: 5px 12px; }
+.backlink { border: 0; background: none; font-family: var(--ui); font-weight: 600; color: var(--accent); padding: 4px 0; margin-bottom: 10px; }
+.backlink:hover { text-decoration: underline; }
+.searchwrap { margin: 6px 0 12px; }
+.bigsearch { width: 100%; font-family: var(--ui); font-size: 1.15rem; padding: 16px 20px 16px 50px; border-radius: 999px; border: 1.5px solid var(--line); color: var(--ink);
+  background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%238b5a2b' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 18px center; }
+.bigsearch:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
+.results { display: grid; gap: 14px; margin-top: 18px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(210px, 1fr)); gap: 16px; }
+.cards.three { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+.rcard { display: grid; grid-template-rows: auto 1fr; text-align: left; padding: 0; border: 1px solid var(--line); border-radius: var(--radius); background: var(--page); overflow: hidden; transition: transform .15s, box-shadow .15s, border-color .15s; min-width: 0; }
+.rcard:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 10px 24px -16px rgba(60,40,20,.5); }
+.rbody { display: grid; gap: 4px; padding: 12px 14px 14px; align-content: start; }
+.rcat { font-family: var(--ui); font-size: 0.72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.rtitle { font-family: var(--display); font-size: 1.12rem; line-height: 1.25; color: var(--ink); }
+.rfacts { font-family: var(--ui); font-size: 0.82rem; color: var(--muted); }
+.thumb { aspect-ratio: 4 / 3; width: 100%; max-width: 100%; overflow: hidden; background: var(--paper); }
+.thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumb.ph { aspect-ratio: 5 / 2; display: grid; place-items: center; color: rgba(255,255,255,.9);
+  background-image: radial-gradient(circle at var(--x1) var(--y1), rgba(255,255,255,.15) 0 var(--s1), transparent calc(var(--s1) + 1%)), radial-gradient(circle at var(--x2) var(--y2), rgba(0,0,0,.09) 0 var(--s2), transparent calc(var(--s2) + 1%)); }
+.thumb.ph span { font-family: var(--display); font-size: 2.2rem; line-height: 1; }
+.bigsearch::-webkit-search-cancel-button { filter: sepia(1) saturate(3) hue-rotate(-10deg); }
+.thumb.big { aspect-ratio: 16 / 7; border-radius: var(--radius); }
+.thumb.big.ph span { font-size: 5rem; }
+.hero { display: grid; gap: 8px; margin-bottom: 18px; }
+.photoctl { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+.c-fr { background-color: var(--c-fr); } .c-sa { background-color: var(--c-sa); } .c-su { background-color: var(--c-su); } .c-ha { background-color: var(--c-ha); } .c-be { background-color: var(--c-be); }
+.c-sn { background-color: var(--c-sn); } .c-ba { background-color: var(--c-ba); } .c-de { background-color: var(--c-de); } .c-ge { background-color: var(--c-ge); } .c-so { background-color: var(--c-so); }
+.t-fr { color: var(--c-fr); } .t-sa { color: var(--c-sa); } .t-su { color: var(--c-su); } .t-ha { color: var(--c-ha); } .t-be { color: var(--c-be); }
+.t-sn { color: var(--c-sn); } .t-ba { color: var(--c-ba); } .t-de { color: var(--c-de); } .t-ge { color: var(--c-ge); } .t-so { color: var(--c-so); }
+.chapters { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
+.chapter { display: grid; gap: 4px; text-align: left; border: 0; border-radius: var(--radius); padding: 22px 20px 20px; color: #fffaf2; min-height: 140px; align-content: end; transition: transform .15s, filter .15s;
+  background-image: radial-gradient(circle at 88% 12%, rgba(255,255,255,.18) 0 22%, transparent 23%); }
+.chapter:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.chn { font-family: var(--ui); font-size: 0.78rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; opacity: .9; }
+.chname { font-family: var(--display); font-size: 1.6rem; line-height: 1.1; }
+.chdesc { font-family: var(--ui); font-size: 0.9rem; opacity: .9; }
+.chapterhead { display: flex; justify-content: space-between; align-items: end; gap: 12px; flex-wrap: wrap; border-radius: var(--radius); padding: 22px 22px 20px; color: #fffaf2; }
+.chapterhead h3 { font-family: var(--display); font-weight: 400; font-size: 2rem; margin: 2px 0; line-height: 1.1; }
+.chapterhead p { margin: 0; font-family: var(--ui); opacity: .9; }
+.chapterhead .btn { background: rgba(255,255,255,.92); color: #3b2a1e; border-color: transparent; }
+.dice { border: 1px solid var(--line); border-radius: var(--radius); background: var(--paper); padding: 20px; display: grid; gap: 12px; margin-top: 10px; }
+.dicehead { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; }
+.dtitle { font-family: var(--display); font-weight: 400; font-size: 1.5rem; margin: 0; }
+.dice .hint { margin-top: 2px; }
+.door { border-radius: var(--radius); }
+.door .big { font-size: clamp(1.8rem, 4.4vw, 2.5rem); }
+.door:first-child { background: var(--c-ha); color: #fffaf2; border-color: transparent; }
+.door:last-child { background: var(--c-sa); color: #fffaf2; border-color: transparent; }
+.door .sub, .door .n { color: inherit; opacity: .9; }
+ul.ing li { padding: 8px 0; }
+ol.steps li { gap: 12px; }
+
 @media (max-width: 760px) {
   .book { grid-template-columns: 1fr; }
   .toc { border-right: 0; border-bottom: 1px dashed var(--line); }
@@ -288,9 +352,10 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
     sel: null, mode: "read", q: "", tag: null, scale: null, draft: null, confirmDel: false,
     busy: false, status: "", statusErr: false, trackMsg: "",
     planSel: null, planMode: "read", brief: "", feedback: "", planBusy: false, planStatus: "", planErr: false, confirmPlanDel: false, adoptMsg: "",
-    weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
+    chapter: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
     editProfile: null, settingsMsg: "",
   };
+  let assets = null;
   let db = null, col = null, plansCol = null, profCol = null, trackCol = null, sample = null, imagesOk = false, unsubTrack = null;
 
   const $ = (id) => document.getElementById(id);
@@ -435,7 +500,7 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
         h("button", { type: "button", class: "door", onclick: () => go("book") },
           h("span", { class: "n" }, S.loaded ? `${S.recipes.length} Rezepte` : "…"),
           h("span", { class: "big" }, "Rezepte"),
-          h("span", { class: "sub" }, "Kochbuch durchblättern, suchen, neue Rezepte einfügen")),
+          h("span", { class: "sub" }, "Nach Lebensmitteln suchen, Kapitel durchblättern")),
         h("button", { type: "button", class: "door", onclick: () => go("plan") },
           h("span", { class: "n" }, S.plansLoaded ? `${plansN} ${plansN === 1 ? "Woche" : "Wochen"} geplant` : "…"),
           h("span", { class: "big" }, "Wochenplan"),
@@ -456,7 +521,7 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
           h("p", { class: "hint" }, meals.length ? meals.join(" · ") : "Noch nichts eingetragen."));
       })));
     }
-    wrap.append(t);
+    wrap.append(diceBox(), t);
     box.append(wrap);
   }
 
@@ -465,34 +530,147 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
   // =====================================================================
   function renderSide() {
     const box = $("side"); box.replaceChildren();
-    if (S.view === "plan") return renderPlanSide(box);
-    box.setAttribute("aria-label", "Inhaltsverzeichnis");
-    box.append(h("input", { type: "search", id: "q", placeholder: "Rezept oder Zutat suchen…", "aria-label": "Suchen", value: S.q,
-      oninput: (e) => { S.q = e.target.value; renderTocList(); } }));
-    const used = TAGS.filter(t => S.recipes.some(r => arr(r.tags).includes(t)));
-    if (used.length) box.append(h("div", { class: "chips", "aria-label": "Nach Eigenschaft filtern" }, used.map(t =>
-      h("button", { type: "button", class: "chip", "aria-pressed": S.tag === t ? "true" : "false", onclick: () => { S.tag = S.tag === t ? null : t; renderSide(); } }, t))));
-    box.append(h("div", { id: "tocList" }));
-    renderTocList();
-  }
-  function renderTocList() {
-    const box = $("tocList"); if (!box) return; box.replaceChildren();
-    if (!S.loaded) { box.append(h("p", { class: "count" }, "Inhalt wird geladen…")); return; }
-    const q = S.q.trim().toLowerCase();
-    const list = ordered();
-    const hits = list.filter(r => (!S.tag || arr(r.tags).includes(S.tag)) &&
-      (!q || [r.title, r.category, ...arr(r.tags), ...arr(r.ingredients), r.notes].join(" ").toLowerCase().includes(q)));
-    box.append(h("p", { class: "count" }, (q || S.tag) ? `${hits.length} von ${list.length} Rezepten` : `${list.length} ${list.length === 1 ? "Rezept" : "Rezepte"}`));
-    for (const cat of [...CATS, null]) {
-      const group = hits.filter(r => cat ? r.category === cat : !CATS.includes(r.category));
-      if (!group.length) continue;
-      box.append(h("h2", null, cat || "Ohne Kapitel"));
-      box.append(h("ol", null, group.map(r => h("li", null,
-        h("button", { type: "button", "aria-current": r.id === S.sel && S.mode === "read" ? "true" : "false", onclick: () => openRecipe(r.id) },
-          h("span", { class: "t" }, r.title || "Ohne Titel"), h("span", { class: "dots" }), h("span", { class: "pg" }, "S. " + pageOf(r.id)))))));
-    }
+    renderPlanSide(box);
   }
   function backBtn(fn) { return h("button", { class: "btn ghost back", type: "button", onclick: fn }, "← Übersicht"); }
+  function backLink(label, fn) { return h("button", { class: "backlink", type: "button", onclick: fn }, "← " + label); }
+
+  // ---------- Bilder ----------
+  const CAT_KEY = { "Frühstück": "fr", "Vorspeisen & Salate": "sa", "Suppen": "su", "Hauptgerichte": "ha", "Beilagen": "be", "Snacks": "sn", "Backen": "ba", "Desserts": "de", "Getränke": "ge", "Sonstiges": "so" };
+  const CAT_DESC = { "Frühstück": "Für den Start in den Tag", "Vorspeisen & Salate": "Leicht und frisch", "Suppen": "Wärmt von innen", "Hauptgerichte": "Mittag- und Abendessen", "Beilagen": "Passt dazu", "Snacks": "Schnell vor dem Fernsehabend", "Backen": "Aus dem Ofen", "Desserts": "Zum Schluss etwas Süßes", "Getränke": "Zum Trinken", "Sonstiges": "Alles andere" };
+  const catKey = (c) => CAT_KEY[c] || "so";
+  function imgSrc(r) { if (r.imageUrl && /^(https:\/\/|\/_blob\/)/.test(r.imageUrl)) return r.imageUrl; if (r.imageId) return "/_blob/" + r.imageId; return null; }
+  function thumb(r, cls) {
+    const src = imgSrc(r);
+    if (src) return h("div", { class: `thumb ${cls || ""}` }, h("img", { src, alt: "", loading: "lazy" }));
+    const letter = (str(r.title).trim()[0] || "?").toUpperCase();
+    let hs = 0; for (const ch of str(r.title)) hs = (hs * 31 + ch.charCodeAt(0)) >>> 0;
+    const style = `--x1:${10 + hs % 35}%;--y1:${15 + (hs >> 3) % 55}%;--x2:${60 + (hs >> 6) % 35}%;--y2:${40 + (hs >> 9) % 55}%;--s1:${14 + (hs >> 12) % 14}%;--s2:${18 + (hs >> 15) % 18}%`;
+    return h("div", { class: `thumb ph c-${catKey(r.category)} ${cls || ""}`, style, "aria-hidden": "true" }, h("span", null, letter));
+  }
+  async function shrink(file) {
+    const bmp = await createImageBitmap(file);
+    const max = 1600, sc = Math.min(1, max / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas"); c.width = Math.round(bmp.width * sc); c.height = Math.round(bmp.height * sc);
+    c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+    return await new Promise(res => c.toBlob(res, "image/jpeg", 0.85));
+  }
+  async function setPhoto(r, file, statusEl) {
+    if (!assets) { statusEl.textContent = "Fotos hochladen kann nur, wer das Kochbuch bearbeiten darf."; return; }
+    statusEl.textContent = "Foto wird hochgeladen …";
+    try {
+      const blob = await shrink(file);
+      const up = await assets.upload(blob, { type: "image/jpeg" });
+      const old = r.imageId;
+      await col.doc(r.id).update({ imageId: up.id, imageUrl: up.url, updatedAt: Date.now() });
+      r.imageId = up.id; r.imageUrl = up.url;
+      if (old) assets.delete(old).catch(() => {});
+      renderMain();
+    } catch (e) { statusEl.textContent = e && e.code === "too_large" ? "Das Foto ist zu groß." : "Hochladen hat nicht geklappt. Versuch es noch einmal."; }
+  }
+  async function removePhoto(r) {
+    const old = r.imageId;
+    try { await col.doc(r.id).update({ imageId: { __delete__: true }, imageUrl: { __delete__: true } }); } catch {
+      try { await col.doc(r.id).update({ imageId: null, imageUrl: null }); } catch {} }
+    r.imageId = null; r.imageUrl = null;
+    if (old && assets) assets.delete(old).catch(() => {});
+    renderMain();
+  }
+
+  // ---------- Rezeptkarten ----------
+  function recipeCard(r) {
+    const n = cleanNut(r.nutrition);
+    const facts = [r.time, n ? `${n.kcal} kcal` : "", n ? `${n.protein} g Eiweiß` : ""].filter(Boolean).join(" · ");
+    return h("button", { type: "button", class: "rcard", onclick: () => openRecipe(r.id) },
+      thumb(r),
+      h("span", { class: "rbody" },
+        h("span", { class: `rcat t-${catKey(r.category)}` }, r.category || "Sonstiges"),
+        h("span", { class: "rtitle" }, r.title || "Ohne Titel"),
+        facts ? h("span", { class: "rfacts" }, facts) : null));
+  }
+  function matches(r, q) {
+    const words = q.toLowerCase().split(/\s+/).filter(Boolean);
+    const blob = [r.title, r.category, ...arr(r.tags), ...arr(r.ingredients)].join(" ").toLowerCase();
+    return words.every(w => blob.includes(w));
+  }
+
+  // ---------- Zufallsgenerator ----------
+  const DICE = { slot: "Abendessen", taste: "egal", quick: false, picks: [] };
+  function rollDice() {
+    const cats = SLOT_CAT[DICE.slot] || [];
+    let pool = S.recipes.filter(r => cats.includes(r.category));
+    if (DICE.taste !== "egal") pool = pool.filter(r => arr(r.tags).includes(DICE.taste));
+    if (DICE.quick) pool = pool.filter(r => arr(r.tags).includes("schnell") || (parseInt(r.time) && parseInt(r.time) <= 30 && !/std/i.test(str(r.time))));
+    const a = [...pool];
+    for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; }
+    DICE.picks = a.slice(0, 3).map(r => r.id);
+    DICE.rolled = true;
+  }
+  function diceBox() {
+    const box = h("section", { class: "dice" });
+    const draw = () => {
+      box.replaceChildren(
+        h("div", { class: "dicehead" },
+          h("div", null, h("h3", { class: "dtitle" }, "Was koche ich heute?"), h("p", { class: "hint" }, "Drei zufällige Vorschläge aus deinem Kochbuch.")),
+          h("button", { class: "btn primary", type: "button", onclick: () => { rollDice(); draw(); } }, DICE.rolled ? "Neu würfeln" : "Würfeln")),
+        h("div", { class: "chips" }, ["Frühstück", "Mittagessen", "Abendessen", "Snack"].map(s =>
+          h("button", { type: "button", class: "chip", "aria-pressed": DICE.slot === s ? "true" : "false", onclick: () => { DICE.slot = s; rollDice(); draw(); } }, s))),
+        h("div", { class: "chips" },
+          ["egal", "herzhaft", "süß"].map(t => h("button", { type: "button", class: "chip", "aria-pressed": DICE.taste === t ? "true" : "false", onclick: () => { DICE.taste = t; rollDice(); draw(); } }, t === "egal" ? "herzhaft oder süß" : t)),
+          h("button", { type: "button", class: "chip", "aria-pressed": DICE.quick ? "true" : "false", onclick: () => { DICE.quick = !DICE.quick; rollDice(); draw(); } }, "nur schnell")));
+      if (DICE.rolled) {
+        const picks = DICE.picks.map(id => S.recipes.find(r => r.id === id)).filter(Boolean);
+        box.append(picks.length ? h("div", { class: "cards three" }, picks.map(recipeCard))
+          : h("p", { class: "hint" }, "Nichts gefunden. Lockere die Auswahl, zum Beispiel ohne „nur schnell“."));
+      }
+    };
+    draw();
+    return box;
+  }
+
+  // ---------- Rezepte durchsuchen ----------
+  function renderBrowse(box) {
+    box.append(h("div", { class: "eyebrow" }, "Kochbuch"), h("h2", { class: "title" }, "Was hast du da?"));
+    const input = h("input", { type: "search", id: "rq", class: "bigsearch", placeholder: "Lebensmittel oder Rezept eingeben, z. B. Kartoffeln Hähnchen", value: S.q, "aria-label": "Rezepte suchen", autocomplete: "off" });
+    const chips = h("div", { class: "chips" });
+    const results = h("div", { class: "results" });
+    const drawChips = () => {
+      const used = TAGS.filter(t => S.recipes.some(r => arr(r.tags).includes(t)));
+      chips.replaceChildren(...used.map(t => h("button", { type: "button", class: "chip", "aria-pressed": S.tag === t ? "true" : "false", onclick: () => { S.tag = S.tag === t ? null : t; drawChips(); drawResults(); } }, t)));
+    };
+    const drawResults = () => {
+      results.replaceChildren();
+      if (!S.loaded) { results.append(h("p", { class: "hint" }, "Kochbuch wird geladen…")); return; }
+      const q = S.q.trim();
+      if (q || S.tag) {
+        const hits = ordered().filter(r => (!S.tag || arr(r.tags).includes(S.tag)) && (!q || matches(r, q)));
+        results.append(h("p", { class: "count" }, `${hits.length} ${hits.length === 1 ? "Treffer" : "Treffer"}${q ? ` für „${q}“` : ""}${S.tag ? ` · ${S.tag}` : ""}`));
+        results.append(hits.length ? h("div", { class: "cards" }, hits.map(recipeCard)) : h("p", { class: "hint" }, "Kein Rezept passt. Versuch ein anderes Lebensmittel."));
+        return;
+      }
+      if (S.chapter) {
+        const list = ordered().filter(r => (r.category || "Sonstiges") === S.chapter);
+        results.append(h("div", { class: `chapterhead c-${catKey(S.chapter)}` },
+          h("div", null, h("span", { class: "chn" }, `${list.length} Rezepte`), h("h3", null, S.chapter), h("p", null, CAT_DESC[S.chapter] || "")),
+          h("button", { type: "button", class: "btn small", onclick: () => { S.chapter = null; drawResults(); } }, "Alle Kapitel")));
+        results.append(h("div", { class: "cards" }, list.map(recipeCard)));
+        return;
+      }
+      const cats = CATS.filter(c => S.recipes.some(r => (r.category || "Sonstiges") === c));
+      if (!cats.length) { results.append(renderBookEmpty()); return; }
+      results.append(h("h3", { class: "sec", style: "margin-top:8px" }, "Kapitel"));
+      results.append(h("div", { class: "chapters" }, cats.map(c => {
+        const n = S.recipes.filter(r => (r.category || "Sonstiges") === c).length;
+        return h("button", { type: "button", class: `chapter c-${catKey(c)}`, onclick: () => { S.chapter = c; drawResults(); window.scrollTo({ top: 0 }); } },
+          h("span", { class: "chn" }, `${n} ${n === 1 ? "Rezept" : "Rezepte"}`), h("span", { class: "chname" }, c), h("span", { class: "chdesc" }, CAT_DESC[c] || ""));
+      })));
+      results.append(diceBox());
+    };
+    input.addEventListener("input", (e) => { S.q = e.target.value; drawResults(); });
+    box.append(h("div", { class: "searchwrap" }, input), chips, results);
+    drawChips(); drawResults();
+    if (!S.q) setTimeout(() => { if (document.activeElement === document.body) input.focus({ preventScroll: true }); }, 30);
+  }
 
   function nutTable(n, base, now) {
     const tot = base && now ? now : null;
@@ -532,12 +710,17 @@ legend { font-family: var(--ui); font-size: 0.9rem; color: var(--muted); padding
 
   function renderRecipe(sh) {
     const r = current();
-    if (!r) { sh.append(renderBookEmpty()); return; }
     const base = Number(r.servings) || null;
     const now = S.scale || base;
     const factor = base && now ? now / base : 1;
-    sh.append(backBtn(() => { S.sel = null; setHash("rezepte"); render(); }),
-      h("div", { class: "eyebrow" }, h("span", null, r.category || "Ohne Kapitel"), h("span", null, "Seite " + pageOf(r.id))),
+    const photoStatus = h("span", { class: "hint", role: "status" });
+    const fileIn = h("input", { type: "file", accept: "image/*", id: "photo-in", hidden: true, onchange: (e) => { if (e.target.files[0]) setPhoto(r, e.target.files[0], photoStatus); } });
+    sh.append(backLink(S.q || S.tag ? "Zurück zur Suche" : S.chapter ? `Zurück zu ${S.chapter}` : "Zurück zu den Rezepten", () => { S.sel = null; setHash("rezepte"); render(); }),
+      h("div", { class: "hero" }, thumb(r, "big"),
+        h("div", { class: "photoctl" }, fileIn,
+          assets ? h("button", { class: "btn small", type: "button", onclick: () => fileIn.click() }, imgSrc(r) ? "Foto ändern" : "Foto hinzufügen") : null,
+          assets && imgSrc(r) ? h("button", { class: "btn small ghost", type: "button", onclick: () => removePhoto(r) }, "Foto entfernen") : null, photoStatus)),
+      h("div", { class: "eyebrow" }, h("span", { class: `t-${catKey(r.category)}` }, r.category || "Ohne Kapitel"), h("span", null, "Seite " + pageOf(r.id))),
       h("h2", { class: "title" }, r.title || "Ohne Titel"));
 
     const meta = h("div", { class: "meta" });
@@ -694,7 +877,7 @@ ${JSON.stringify({ title: r.title, servings: r.servings, ingredients: r.ingredie
         h("button", { class: "btn primary", type: "button", disabled: S.busy, onclick: save }, S.mode === "add" ? "Ins Buch eintragen" : "Änderungen speichern"),
         h("button", { class: "btn", type: "button", onclick: () => { S.mode = "read"; S.status = ""; render(); } }, "Abbrechen"),
         S.mode === "edit" ? h("p", { class: `status${S.statusErr ? " err" : ""}`, role: "status" }, S.status) : null));
-    sh.append(backBtn(() => { S.mode = "read"; S.sel = null; render(); }), wrap);
+    sh.append(backLink("Abbrechen", () => { S.mode = "read"; render(); }), wrap);
   }
 
   async function tidy(fileInput) {
@@ -1350,11 +1533,12 @@ Regeln:
   // RAHMEN
   // =====================================================================
   function renderMain() {
-    const bookViews = S.view === "book" || S.view === "plan";
+    const bookViews = S.view === "plan";
     $("book").hidden = !bookViews; $("full").hidden = bookViews;
     if (!bookViews) {
       const box = $("full"); box.replaceChildren();
       if (S.view === "home") renderHome(box);
+      else if (S.view === "book") { if (S.mode === "add" || S.mode === "edit") renderForm(box); else if (S.sel && current()) renderRecipe(box); else renderBrowse(box); }
       else if (S.view === "track") renderTrack(box);
       else renderSettings(box);
       return;
@@ -1365,18 +1549,17 @@ Regeln:
       if (S.planMode === "new") renderPlanNew(sh); else renderPlan(sh);
       return;
     }
-    $("book").classList.toggle("reading", S.mode !== "read" || !!S.sel);
-    if (S.mode === "add" || S.mode === "edit") renderForm(sh); else renderRecipe(sh);
   }
   function render() {
     document.querySelectorAll(".tabs button").forEach(b => b.setAttribute("aria-selected", b.dataset.view === S.view));
-    if (S.view === "book" || S.view === "plan") renderSide();
+    if (S.view === "plan") renderSide();
     renderMain();
     const n = S.recipes.length, w = S.plans.length;
     $("sub").textContent = S.loaded ? `${n} ${n === 1 ? "Rezept" : "Rezepte"} · ${w} ${w === 1 ? "Woche" : "Wochen"} geplant` : "Rezepte sammeln, Wochen planen, Essen tracken.";
   }
   const HASH = { home: "start", book: "rezepte", plan: "wochenplan", track: "tracking", settings: "profil" };
   function go(view) {
+    if (view === "book" && S.view === "book") { S.sel = null; S.chapter = null; S.q = ""; S.tag = null; S.mode = "read"; }
     S.view = view; S.pick = null;
     if (view === "track" && !S.weekStart) S.weekStart = ymd(mondayOf(new Date()));
     setHash(view === "book" && S.sel ? S.sel : view === "plan" && S.planSel ? "woche-" + S.planSel : HASH[view]);
@@ -1404,7 +1587,7 @@ Regeln:
   // ---------- Daten ----------
   const ready = new Promise(res => { let n = 0; (function w() { if (window.claude || n++ > 30) res(); else setTimeout(w, 100); })(); });
   const busyEditing = () => (S.view === "book" && S.mode !== "read") || (S.view === "plan" && S.planMode === "new") || S.planBusy || !!S.editProfile || !!S.pick ||
-    ["p-feedback", "b-forbidden", "b-pref", "b-rules"].includes(document.activeElement?.id);
+    ["p-feedback", "b-forbidden", "b-pref", "b-rules", "rq"].includes(document.activeElement?.id);
   (async () => {
     await ready;
     const timer = setTimeout(() => { S.loaded = S.plansLoaded = S.profilesLoaded = true; render(); }, 10000);
@@ -1412,7 +1595,7 @@ Regeln:
     if (!db) { clearTimeout(timer); S.loaded = S.plansLoaded = S.profilesLoaded = true; render(); return; }
     col = db.collection("recipes"); plansCol = db.collection("plans"); profCol = db.collection("profiles"); trackCol = db.collection("tracking");
     let routed = false;
-    const after = () => { if (!routed && S.loaded && S.plansLoaded) { routed = true; routeFromHash(); } if (busyEditing()) { if (S.view === "book" || S.view === "plan") renderSide(); } else render(); };
+    const after = () => { if (!routed && S.loaded && S.plansLoaded) { routed = true; routeFromHash(); } if (busyEditing()) { if (S.view === "plan") renderSide(); } else render(); };
     col.onSnapshot((snap) => { clearTimeout(timer); S.recipes = snap.docs.map(d => ({ id: d.id, ...d.data() })); S.loaded = true; after(); }, () => { clearTimeout(timer); S.loaded = true; render(); });
     plansCol.onSnapshot((snap) => { S.plans = snap.docs.map(d => ({ id: d.id, ...d.data() })); S.plansLoaded = true; after(); }, () => { S.plansLoaded = true; render(); });
     profCol.onSnapshot((snap) => { S.profiles = snap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0)); S.profilesLoaded = true; after(); }, () => { S.profilesLoaded = true; });
@@ -1423,6 +1606,7 @@ Regeln:
     await ready;
     try { sample = window.claude ? await window.claude.use("sample") : null; } catch { sample = null; }
     if (sample) { try { const l = await sample.limits(); imagesOk = !!(l && l.images); } catch { imagesOk = false; } }
+    try { assets = window.claude ? await window.claude.use("assets") : null; } catch { assets = null; }
     if (!busyEditing() || S.mode === "add" || S.planMode === "new") renderMain();
   })();
 })();

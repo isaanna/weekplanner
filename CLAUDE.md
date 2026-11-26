@@ -11,6 +11,7 @@ Niemals in Rezepten, Plänen oder Vorschlägen verwenden:
 - Gurke
 - Brokkoli
 - Fenchel
+- **Bananen** (starke Allergie, auch Bananenmus, Bananenchips, Bananenbrot)
 
 Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten, Schritte, Notizen).
 
@@ -54,7 +55,9 @@ content/    Inhalte: Sicherung der Datenbank als JSON (recipes/, plans/, setting
 ## Design
 
 - Farbschema Beige / Braun (Akzent Karamell-Braun, Zweitfarbe Olive), mit Dunkelmodus in Espresso-Tönen
-- Schriften: Bricolage Grotesque (Überschriften, Bedienelemente), Literata (Text)
+- Schriften: Young Serif (Überschriften), Figtree (Text und Bedienung)
+- Kapitel haben eigene Farben (Erdtöne); Rezepte erscheinen als Karten mit Foto oder Platzhalter in der Kapitelfarbe
+- Rezeptbereich: Suche oben, Treffer erst nach Eingabe; ohne Suche nur Kapitel-Kacheln und Zufallsgenerator
 
 ## Arbeitsweise
 
