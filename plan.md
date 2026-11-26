@@ -109,3 +109,39 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - Soll das Tracking nur für dich sichtbar sein oder für alle, mit denen das Kochbuch geteilt ist?
 - Snacks im Tracking und im Plan als eigene Mahlzeit führen?
 - Hast du die Bring!-App auf dem Handy? Dann kann ich dir sagen, was du einmal ausprobieren musst, um das Importformat zu klären.
+
+---
+
+# Runde 3 – Rezepte finden, Zufall, neues Layout, Bilder
+
+## 10. Bananen-Allergie
+- [ ] „Bananen“ zu den verbotenen Lebensmitteln (App-Regeln `settings/brain` und CLAUDE.md)
+- [ ] Rezepte mit Banane löschen (betrifft: Protein-Porridge mit Banane und Erdnussmus)
+- [ ] Warnhinweis auf Rezeptseiten greift automatisch über die Regeln
+
+## 11. Rezepte: Suche statt langer Liste
+- [ ] Rezeptbereich als eigene, volle Seite statt Buch mit Seitenleiste
+- [ ] Große Suchleiste oben: Lebensmittel oder Rezeptname eingeben → Treffer erscheinen darunter als Karten
+- [ ] Ohne Suchbegriff keine lange Liste, nur die Kapitel als klar getrennte Kacheln
+- [ ] Klick auf Treffer öffnet das Rezept; „← Zurück zur Suche“ behält den Suchbegriff
+- [ ] Filter nach Eigenschaften (herzhaft, süß, proteinreich …) als Chips unter der Suche
+
+## 12. Kapitel deutlich abgrenzen
+- [ ] Jedes Kapitel (Frühstück, Hauptgerichte, Snacks, Desserts …) als eigene Kachel mit eigener Farbe, Anzahl Rezepte und kurzer Beschreibung
+- [ ] Klick auf Kapitel zeigt nur dessen Rezepte, mit Kapitelfarbe als Kopf
+
+## 13. Zufallsgenerator „Was koche ich heute?“
+- [ ] Auf der Startseite und im Rezeptbereich
+- [ ] Auswahl: Frühstück / Mittagessen / Abendessen / Snack, optional herzhaft oder süß, nur schnell
+- [ ] Zeigt 3 Vorschläge aus dem Kochbuch als Karten, „Neu würfeln“, Klick öffnet das Rezept
+
+## 14. Neues Layout und neue Schriften
+- [ ] Neue Schriften: Young Serif (Überschriften, Kochbuch-Charakter) und Figtree (Text und Bedienung, gut lesbar)
+- [ ] Mehr Weißraum, Karten mit Bild statt Textlisten, weichere Ecken
+- [ ] Beige/Braun bleibt, Kapitelfarben als warme Erdtöne
+- [ ] Rezeptseite: großes Bild oben, Zutaten und Schritte klar getrennt
+
+## 15. Bilder für Rezepte
+- [ ] Eigenes Foto pro Rezept hochladen (wird in der App gespeichert)
+- [ ] Ohne Foto: gestaltetes Platzhalterbild in der Kapitelfarbe mit Anfangsbuchstaben
+- **Einschränkung:** Bilder aus dem Internet kann die App nicht laden, und automatisch erzeugte Fotos gibt es hier nicht. Fotos müssen also von dir kommen (Handyfoto beim Kochen, Screenshot vom Instagram-Post)
