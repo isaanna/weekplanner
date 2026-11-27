@@ -168,9 +168,9 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 
 # Runde 7 – Zykluskalender (Plan, noch nicht umgesetzt)
 
-## 7.1 Datenschutz zuerst
-- [ ] Zyklusdaten in einem **privaten Bereich** der Datenbank speichern (`data/users/<eigene id>/…`): nur die angemeldete Person selbst sieht und ändert sie, auch wenn das Kochbuch per Link geteilt ist
-- [ ] Dafür bekommt die App die Berechtigung „wer schaut gerade“ (`user`)
+## 7.1 Datenschutz und Zugriff
+- [ ] Isa und Giuli dürfen den Kalender beide sehen. Die Zyklusdaten liegen deshalb in einem gemeinsamen Bereich der Datenbank (`cycle/…`), nicht in einem privaten pro Person
+- [ ] **Empfehlung:** Teilen von „Jeder mit dem Link“ auf **nur eingeladene Personen** umstellen und Giuli einladen, sonst kann jeder mit dem Link den Zyklus sehen
 - [ ] Zyklusdaten werden **nicht** nach `content/` gesichert und nicht ins Repository geschrieben
 
 ## 7.2 Neuer Reiter „Zyklus“
@@ -184,6 +184,10 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [ ] Kleine Markierungen im Tag: Punkt = Notiz vorhanden, Tropfen-Symbol = Blutung, Kreis = Eisprung gespürt
 - [ ] Oben eine Zeile: „Zyklustag 12 · Follikelphase · Nächste Tage in 16 Tagen (Di 23.12.) · Nächster Eisprung ca. Mo 08.12.“
 - [ ] Legende der vier Farben
+
+- [ ] **PMS-Tage:** die 5 Tage vor der nächsten Menstruation, innerhalb der Lutealphase markiert (gleiche blaue Farbe, zusätzlich schraffiert und mit „PMS“ beschriftet)
+- [ ] **Stimmungslage je Phase:** unter dem Kalender bzw. beim gewählten Tag ein kurzer, prägnanter Satz, wie es einem in dieser Phase gehen kann (Menstruation, Follikel, Eisprung, Luteal, PMS)
+- [ ] Die Stimmungstexte sind Inhalt, nicht Code: Sie liegen in der Datenbank (`settings/cycle`) und lassen sich im Reiter „Zyklus“ anpassen
 
 ## 7.3 Eintragen pro Tag (Klick auf einen Tag)
 - [ ] „Tage – mit Blutung“
@@ -203,6 +207,7 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [ ] Lutealphase = Abstand gespürter Eisprung → nächster Zyklusbeginn, Durchschnitt; ohne Daten 14 Tage
 - [ ] Eisprung (vorausgesagt) = nächster Zyklusbeginn − Lutealphase; Eisprungphase = Eisprungtag ± 1 Tag
 - [ ] Phasen: Menstruation (Tag 1 bis Dauer) → Follikel (bis vor Eisprungphase) → Eisprung (3 Tage) → Luteal (bis zum nächsten Beginn)
+- [ ] PMS = die letzten 5 Tage vor dem (vorausgesagten) nächsten Zyklusbeginn
 - [ ] Eigene Einträge haben immer Vorrang vor der Rechnung; alles wird nach jedem Eintrag neu berechnet
 - [ ] Vorhersage für die nächsten 3 Zyklen sichtbar
 - [ ] Nachtragen: in den Vormonaten einfach die Tage und den Eisprung anklicken
@@ -215,21 +220,30 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
   - Follikelphase: leichter, frisch, proteinreich
   - Eisprung: viel Gemüse und Ballaststoffe
   - Lutealphase: komplexe Kohlenhydrate, magnesiumreich (Hülsenfrüchte, Haferflocken, Kartoffeln), sättigend
+  - PMS-Tage: zusätzlich wohltuend und sättigend, weniger Salz, warme Gerichte
 - [ ] Im Wochenplan steht bei jedem Tag die Phase als kleiner Farbpunkt
 - [ ] Gemeinsame Mahlzeiten (für Isa und Giuli) richten sich nach Isas Phase
 
-## 7.7 Design
+## 7.7 Neue Startseite
+- [ ] Kacheln „Rezepte“ und „Wochenplan“ sowie „Was koche ich heute?“ fallen auf der Startseite weg (der Zufallsgenerator bleibt im Reiter „Rezepte“)
+- [ ] Begrüßung **„Hoi, Isa“** bzw. **„Hoi, Giuli“**: Wer die Seite öffnet, wählt einmal „Das bin ich“ bei seinem Profil; die App merkt sich das pro Konto
+- [ ] Darunter die **Tracking-Übersicht von heute für beide** nebeneinander: Kalorien, Eiweiß, Kohlenhydrate, Fett, Ballaststoffe als Balken gegen das Ziel, plus was schon gegessen wurde
+- [ ] Ganz unten: **Isas aktuelle Phase** (Farbpunkt, Name der Phase, Zyklustag, ggf. „PMS“) und der kurze Satz, wie es ihr heute gehen könnte
+- [ ] Auf dem Handy untereinander, am Computer die beiden Tracking-Karten nebeneinander
+
+## 7.8 Design
 - [ ] Die vier Phasenfarben sind die einzige Ausnahme von der 12-Ton-Palette (in CLAUDE.md festhalten)
 - [ ] Rest des Reiters in der bestehenden Palette und Schrift
 
-## 7.8 Vorgehen
-1. Privaten Speicherbereich und Berechtigung einrichten
+## 7.9 Vorgehen
+1. Speicherbereich `cycle/…` und „Das bin ich“ (Konto ↔ Profil) einrichten
 2. Reiter mit Monatsansicht und Tageseingabe
-3. Berechnung und Vorhersage, mit Testdaten aus 3 Zyklen lokal prüfen
-4. Einstellungen (Verhütung, Dauer)
-5. Anbindung an den Wochenplaner
-6. Veröffentlichen, README/CLAUDE.md, Commit und Push
+3. Berechnung, Vorhersage und PMS, mit Testdaten aus 3 Zyklen lokal prüfen
+4. Einstellungen (Verhütung, Dauer, Zuordnung zu Isas Profil) und Stimmungstexte in der Datenbank
+5. Neue Startseite (Begrüßung, Tracking beider, Phase und Stimmung)
+6. Anbindung an den Wochenplaner
+7. Veröffentlichen, README/CLAUDE.md, Commit und Push
 
-## Offene Fragen
-- Soll Giuli den Kalender sehen können, oder bleibt er nur für Isa sichtbar?
-- Soll die aktuelle Phase auch auf der Startseite stehen (eine Zeile), oder nur im Reiter „Zyklus“?
+## Entschieden
+- Giuli darf den Kalender sehen
+- Die Phase steht auf der Startseite (mit Stimmung), „Was koche ich heute?“ nur noch bei Rezepten
