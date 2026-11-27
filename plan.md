@@ -267,3 +267,8 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] App: Knopf „In Bring! öffnen“ im Wochenplan, Adresse des Helfers unter „Profil & Regeln“ → „Bring!“
 - [x] Worker bei Cloudflare anlegen (`bring-liste`) und Adresse in der App eintragen
 - [x] Import in Bring! echt getestet – funktioniert (Bestätigung beim Öffnen des Links lässt sich nicht abschalten)
+
+# Runde 11 – Handy-Ansicht
+- [x] App in der claude.ai-Seitenleiste angeheftet
+- [x] Tracking mit Tagesansicht (Umschalter „Tag | Woche“, auf dem Handy Standard): Wochenleiste, Nährwert-Balken, eine Karte pro Mahlzeit
+- [x] Handy: Reiter dreispaltig, kleinere Kopfzeile, Kapitel zweispaltig, kompakter Auswahl-Dialog, Zyklus-Zusammenfassung zeilenweise

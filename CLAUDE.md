@@ -97,6 +97,8 @@ personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json)
 - Eingabefelder (Text, Suche, Auswahl) immer hell `#FAF6F1` mit Rahmen `#79685A`, beim Schreiben Rahmen `#5A473A`
 - Rezeptbereich: Suche oben mit Knopf „+ Rezept einfügen“, ohne Eigenschafts-Filter darunter; Treffer erst nach Eingabe; ohne Suche nur Kapitel-Kacheln und Zufallsgenerator
 - Kopfzeile nur mit Titel, ohne Knöpfe
+- Tracking: Umschalter „Tag | Woche“. Auf dem Handy startet die Tagesansicht (Wochenleiste zum Antippen, Nährwert-Balken, eine Karte pro Mahlzeit mit „+ … eintragen“), am Computer die Wochentabelle
+- Handy: Reiter in drei Spalten, Kapitel-Kacheln zweispaltig, alles ohne seitliches Scrollen
 - Startseite: „Hoi, Name“ (Konto ↔ Profil über „Wer bist du?“), Tracking von heute für beide, Zyklusphase von Isa mit Stimmungssatz
 
 ## Arbeitsweise
