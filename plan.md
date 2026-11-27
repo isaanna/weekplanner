@@ -225,6 +225,7 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [ ] Gemeinsame Mahlzeiten (für Isa und Giuli) richten sich nach Isas Phase
 
 ## 7.7 Neue Startseite
+- [ ] Knopf „+ Rezept einfügen“ oben in der Kopfzeile entfernen; er erscheint nur noch im Reiter „Rezepte“ neben der Suche
 - [ ] Kacheln „Rezepte“ und „Wochenplan“ sowie „Was koche ich heute?“ fallen auf der Startseite weg (der Zufallsgenerator bleibt im Reiter „Rezepte“)
 - [ ] Begrüßung **„Hoi, Isa“** bzw. **„Hoi, Giuli“**: Wer die Seite öffnet, wählt einmal „Das bin ich“ bei seinem Profil; die App merkt sich das pro Konto
 - [ ] Darunter die **Tracking-Übersicht von heute für beide** nebeneinander: Kalorien, Eiweiß, Kohlenhydrate, Fett, Ballaststoffe als Balken gegen das Ziel, plus was schon gegessen wurde
