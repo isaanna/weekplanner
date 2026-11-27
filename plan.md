@@ -275,3 +275,4 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Wischen auf dem Handy: Tag und Woche im Tracking, Monat im Zyklus
 - [x] Profil: genaues Geburtsdatum statt Alter, Alter wird tagesgenau berechnet
 - [x] Fotoassistent im Tracking: Essen fotografieren, Claude schätzt Nährwerte, prüfen und eintragen (Foto wird nicht gespeichert, Warnung bei verbotenen Lebensmitteln)
+- [x] Nährwert-Balken: „zu wenig“/„zu viel“ als Wort, am laufenden Tag und an leeren Tagen kein „zu wenig“

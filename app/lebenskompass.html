@@ -160,7 +160,9 @@ input, textarea, select { background-color: var(--page); }
 .bar i { display: block; height: 100%; background: var(--ok); border-radius: 999px; }
 .bar i.low { background: var(--warn); }
 .bar i.over { background: var(--over); }
-.st-ok { color: var(--ok); } .st-low { color: var(--warn); } .st-over { color: var(--over); }
+.st-ok { color: var(--ok); } .st-low { color: var(--warn); } .st-over { color: var(--over); } .st-part { color: var(--ink); }
+.bar i.part { background: var(--tile); }
+.gw { font-style: normal; font-family: var(--ui); font-size: 0.72rem; font-weight: 700; margin-right: 6px; letter-spacing: .02em; }
 .pcard { border: 1px solid var(--line); border-radius: 8px; padding: 12px 14px; display: grid; gap: 8px; background: var(--page); }
 .pcard h4 { margin: 0; font-family: var(--display); font-size: 1.1rem; }
 
@@ -544,19 +546,23 @@ ol.steps li { gap: 12px; }
   }
   function profName(id) { if (id === "all" || !id) return "Alle"; return S.profiles.find(p => p.id === id)?.name || "Person"; }
   const BAR = { kcal: ["Kalorien", "kcal", 0.9, 1.05], protein: ["Eiweiß", "g", 0.9, 9], carbs: ["Kohlenhydrate", "g", 0.85, 1.15], fat: ["Fett", "g", 0.8, 1.15], fiber: ["Ballaststoffe", "g", 0.9, 9] };
-  function goalBar(k, have, want, short) {
+  // partial = Tag läuft noch (heute/Zukunft): "zu wenig" wird dann nicht markiert, nur "zu viel"
+  function goalBar(k, have, want, short, partial) {
     if (!want) return null;
     const [label, unit, lo, hi] = BAR[k];
     const r = have / want;
-    const cls = r < lo ? "low" : r > hi ? "over" : "";
-    return h("div", { class: "goal" },
-      h("div", { class: "gl" }, h("span", null, short ? label.replace("Kohlenhydrate", "KH").replace("Ballaststoffe", "Ballastst.") : label), h("span", null, h("b", { class: cls === "low" ? "st-low" : cls === "over" ? "st-over" : "st-ok" }, de(have)), short ? ` / ${de(want)}` : ` / ${de(want)} ${unit}`)),
-      h("div", { class: "bar" }, h("i", { class: cls || null, style: `width:${Math.min(100, Math.round(r * 100))}%` })));
+    let cls = r < lo ? "low" : r > hi ? "over" : "ok";
+    if (cls === "low" && partial) cls = "part";
+    const word = cls === "low" ? "zu wenig" : cls === "over" ? "zu viel" : "";
+    return h("div", { class: "goal", title: word || null },
+      h("div", { class: "gl" }, h("span", null, short ? label.replace("Kohlenhydrate", "KH").replace("Ballaststoffe", "Ballastst.") : label),
+        h("span", null, word ? h("em", { class: `gw st-${cls}` }, word) : null, h("b", { class: `st-${cls}` }, de(have)), short ? ` / ${de(want)}` : ` / ${de(want)} ${unit}`)),
+      h("div", { class: "bar" }, h("i", { class: cls, style: `width:${Math.min(100, Math.round(r * 100))}%` })));
   }
-  function goalBars(sum, t, short) { return h("div", { style: "display:grid;gap:5px" }, ["kcal", "protein", "carbs", "fat", "fiber"].map(k => goalBar(k, sum[k], t[k], short))); }
-  function goalBlock(sum, t) {
+  function goalBars(sum, t, short, partial) { return h("div", { style: "display:grid;gap:5px" }, ["kcal", "protein", "carbs", "fat", "fiber"].map(k => goalBar(k, sum[k], t[k], short, partial))); }
+  function goalBlock(sum, t, partial) {
     if (!t) return h("p", { class: "hint" }, "Im Profil Geburtsdatum, Größe und Gewicht eintragen, dann erscheint hier der Tagesbedarf.");
-    return goalBars(sum, t);
+    return goalBars(sum, t, false, partial);
   }
   const fmtKg = (x) => String(num(x)).replace(".", ",");
   const zero = () => ({ kcal: 0, protein: 0, carbs: 0, fat: 0, fiber: 0 });
@@ -623,7 +629,7 @@ ol.steps li { gap: 12px; }
       const sum = zero();
       todays.filter(e => e.profileId === p.id).forEach(e => addNut(sum, e.nut, e.portions || 1));
       const meals = SLOTS.map(sl => todays.filter(e => e.profileId === p.id && e.slot === sl).map(e => e.title).join(", ")).map((x, i) => x ? `${SLOTS[i]}: ${x}` : null).filter(Boolean);
-      return h("div", { class: "pcard" }, h("h4", null, p.name), goalBlock(sum, targets(p)),
+      return h("div", { class: "pcard" }, h("h4", null, p.name), goalBlock(sum, targets(p), true),
         h("p", { class: "hint" }, meals.length ? meals.join(" · ") : "Noch nichts eingetragen."));
     })));
     wrap.append(t);
@@ -1492,7 +1498,7 @@ Regeln:
     if (S.pick) box.append(renderPicker(pid));
     const t = targets(S.profiles.find(p => p.id === pid) || {});
     const sum = zero(); mine.filter(e => e.date === ds).forEach(e => addNut(sum, e.nut, e.portions || 1));
-    box.append(h("section", { class: "panel daysum" }, t ? goalBars(sum, t) : h("p", { class: "hint", style: "margin:0" }, `${de(sum.kcal)} kcal · ${de(sum.protein)} g Eiweiß · ${de(sum.carbs)} g KH · ${de(sum.fat)} g Fett · ${de(sum.fiber)} g Ballaststoffe`)));
+    box.append(h("section", { class: "panel daysum" }, t ? goalBars(sum, t, false, ds >= todayStr() || !mine.some(e => e.date === ds)) : h("p", { class: "hint", style: "margin:0" }, `${de(sum.kcal)} kcal · ${de(sum.protein)} g Eiweiß · ${de(sum.carbs)} g KH · ${de(sum.fat)} g Fett · ${de(sum.fiber)} g Ballaststoffe`)));
     box.append(h("div", { class: "slots" }, SLOTS.map(sl => {
       const es = mine.filter(e => e.date === ds && e.slot === sl);
       const kcal = es.reduce((a, e) => a + (e.nut?.kcal || 0) * (e.portions || 1), 0);
@@ -1545,7 +1551,8 @@ Regeln:
       })))),
       h("tfoot", null, h("tr", null, h("th", { scope: "row" }, "Summe"), days.map(d => {
         const sum = zero(); mine.filter(e => e.date === ymd(d)).forEach(e => addNut(sum, e.nut, e.portions || 1));
-        return h("td", null, t ? goalBars(sum, t, true)
+        const has = mine.some(e => e.date === ymd(d));
+        return h("td", null, t ? goalBars(sum, t, true, ymd(d) >= todayStr() || !has)
           : h("small", { class: "hint" }, `${de(sum.kcal)} kcal · ${de(sum.protein)} g Eiweiß · ${de(sum.carbs)} g KH · ${de(sum.fat)} g Fett · ${de(sum.fiber)} g Ballaststoffe`));
       }))));
     box.append(h("div", { class: "tgrid" }, table));
