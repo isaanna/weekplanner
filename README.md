@@ -30,11 +30,12 @@ Ein „Teilen“-Knopf mit Auswahl der Bring!-App ist in claude.ai nicht möglic
 
 ## Tagesbedarf
 
-- Grundumsatz nach Mifflin-St Jeor: `10 × kg + 6,25 × cm − 5 × Alter + 5` (Männer) bzw. `− 161` (Frauen)
-- × Aktivitätsfaktor (1,2 – 1,9)
-- Ziel: Abnehmen −15 %, Halten ±0, Aufbauen +10 %
+- Im Profil: Gewicht jetzt, Zielgewicht und Tempo (0,25 – 1 kg pro Woche)
+- Grundumsatz nach Mifflin-St Jeor: `10 × kg + 6,25 × cm − 5 × Alter + 5` (Männer) bzw. `− 161` (Frauen), × Aktivitätsfaktor (1,2 – 1,9)
+- Abnehmen/Zunehmen: pro 1 kg pro Woche täglich 1.100 kcal weniger bzw. mehr (7.700 kcal pro kg), nie unter den Grundumsatz
+- Eiweiß 1,8 g pro kg Zielgewicht (Halten: 1,6 g pro kg), Fett 30 % der kcal, Ballaststoffe mind. 30 g, Rest Kohlenhydrate
 - Ein eingetragenes **kcal-Maximum** ersetzt den berechneten Wert
-- Eiweiß 1,6 g/kg (halten) bzw. 2,0 g/kg, Fett 30 % der kcal, Ballaststoffe mind. 30 g, Rest Kohlenhydrate
+- Tracking und Wochenplan zeigen pro Person und Tag alle fünf Werte mit Balken (gelb = zu wenig, rot = zu viel)
 
 ## Ordner
 
@@ -56,7 +57,7 @@ Die App selbst enthält keine Inhalte. Alles liegt in der Datenbank des Artifact
 | --- | --- |
 | `recipes` | Rezepte: `title, category, tags[], servings, time, shelfLifeDays, ingredients[], steps[], notes, source, sourceUrl, nutrition{kcal, protein, carbs, fat, fiber}` (pro Portion) |
 | `plans` | Wochenpläne: `title, summary, brief, newRecipes[], cook[], prep[], days[{day, meals[{slot, ref, portions, portionsByPerson{}, note}]}], shopping[], pantry[], tips[], checked{}` |
-| `profiles` | Personen: `name, sex, age, height, weight, activity, goal, kcalMax` |
+| `profiles` | Personen: `name, sex, age, height, weight, targetWeight, pace, activity, kcalMax` |
 | `tracking` | Einträge: `date (YYYY-MM-DD), slot, profileId, recipeId, title, portions, nut{}` |
 | `settings/brain` | Regeln: `forbidden[], preferences, rules` |
 

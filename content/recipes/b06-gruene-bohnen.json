@@ -1,0 +1,33 @@
+{
+  "category": "Beilagen",
+  "createdAt": 1795777241148,
+  "ingredients": [
+    "200 g grüne Bohnen (TK)",
+    "Salz"
+  ],
+  "notes": "Baustein: zu einer Mahlzeit dazunehmen, um Nährwerte auszugleichen.",
+  "nutrition": {
+    "carbs": 8,
+    "fat": 0,
+    "fiber": 6,
+    "kcal": 60,
+    "protein": 4
+  },
+  "servings": 1,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Bohnen 7 Minuten in Salzwasser garen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "leicht",
+    "vegetarisch",
+    "vegan",
+    "schnell"
+  ],
+  "time": "5 Min.",
+  "title": "Grüne Bohnen",
+  "updatedAt": 1795777241148
+}

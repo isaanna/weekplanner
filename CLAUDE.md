@@ -37,7 +37,17 @@ Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten,
 - Vorgekochte Gerichte müssen bis zum letzten Esstag halten
 - Sonst einfrieren, getrennt lagern oder Mitte der Woche nachkochen
 - Der Wochenplan enthält nur **Frühstück, Mittagessen und Abendessen**. Snacks werden nicht eingeplant und zählen nicht zur Woche
-- Nährwerte im Wochenplan müssen pro Person und Tag zum Profil passen (kcal ±10 %, Eiweiß ≥ 90 %), ausgeglichen nur über diese drei Mahlzeiten und Portionsgrößen
+- Nährwerte im Wochenplan müssen pro Person und Tag **alle** Zielwerte treffen: Kalorien ±10 %, Eiweiß ≥ 90 %, Kohlenhydrate ±15 %, Fett ±15 %, Ballaststoffe ≥ 90 %. Ausgeglichen über die drei Mahlzeiten, Portionsgrößen und Bausteine
+- **Bausteine** (Kapitel Beilagen, IDs `b01`–`b16`: Pellkartoffeln, Vollkornbrot, Linsen, Beeren, Skyr, Nüsse …) dürfen zu jeder Mahlzeit dazukommen, um einzelne Nährwerte auszugleichen
+- **Kurze Einkaufsliste:** Gerichte mit gemeinsamen Grundzutaten wählen, Gerichte lieber wiederholen, Ziel höchstens ca. 20 Artikel (ohne Vorrat)
+- **Abwechslung zwischen Wochen:** andere Gerichte als in den letzten zwei Wochen, aber gern ähnliche Grundzutaten
+
+## Profile und Tagesbedarf
+
+- Pro Person: Gewicht jetzt, **Zielgewicht** und **Tempo** (0,25 / 0,5 / 0,75 / 1 kg pro Woche)
+- Kalorien = Grundumsatz (Mifflin-St Jeor) × Aktivität ± Tempo × 1.100 kcal pro Tag, nie unter den Grundumsatz
+- Eiweiß 1,8 g pro kg Zielgewicht (beim Halten 1,6 g pro kg), Fett 30 % der Kalorien, Ballaststoffe mind. 30 g, Rest Kohlenhydrate
+- Ein eingetragenes Kalorien-Maximum ersetzt die Berechnung
 
 ## Programm und Inhalt trennen
 

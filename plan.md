@@ -155,3 +155,11 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Rezepte unter den Kategorien als Liste über die ganze Breite, Trennstrich unter jedem Rezept (auch Suchtreffer und Zufallsvorschläge)
 - [x] Kategorie-Kacheln in `#BAA99A`
 - [x] Reiterleiste ohne Scrollleiste, Reiter brechen bei wenig Platz um
+
+## Runde 6 – Zielgewicht, alle Nährwerte, kurze Einkaufsliste
+- [x] Profil: Zielgewicht und Tempo statt −15 %, Dauer bis zum Ziel
+- [x] Eiweiß nach Zielgewicht (1,8 g/kg)
+- [x] Tracking, Startseite und Wochenplan zeigen Kalorien, Eiweiß, Kohlenhydrate, Fett und Ballaststoffe
+- [x] Planer muss alle fünf Werte pro Person und Tag treffen
+- [x] 16 Bausteine (Beilagen) zum Ausgleichen der Nährwerte
+- [x] Planer: kurze Einkaufsliste (ca. 20 Artikel), gemeinsame Grundzutaten, andere Gerichte als in den letzten Wochen

@@ -323,7 +323,7 @@ ol.steps li { gap: 12px; }
   const SLOT_CAT = { "Frühstück": ["Frühstück"], "Mittagessen": ["Hauptgerichte", "Suppen", "Vorspeisen & Salate"], "Abendessen": ["Hauptgerichte", "Suppen", "Vorspeisen & Salate"], "Snack": ["Snacks", "Desserts", "Backen"] };
   const DAYS = ["Montag", "Dienstag", "Mittwoch", "Donnerstag", "Freitag", "Samstag", "Sonntag"];
   const ACT = [["1.2", "kaum Bewegung (Büro)"], ["1.375", "leicht aktiv (1–2× Sport/Woche)"], ["1.55", "mäßig aktiv (3–4×)"], ["1.725", "sehr aktiv (5–6×)"], ["1.9", "extrem aktiv (körperliche Arbeit + Sport)"]];
-  const GOALS = [["abnehmen", "Abnehmen (−15 %)"], ["halten", "Gewicht halten"], ["aufbauen", "Muskeln aufbauen (+10 %)"]];
+  const PACES = [["0.25", "langsam: 0,25 kg pro Woche"], ["0.5", "mittel: 0,5 kg pro Woche"], ["0.75", "zügig: 0,75 kg pro Woche"], ["1", "schnell: 1 kg pro Woche"]];
 
   const S = {
     view: "home", recipes: [], plans: [], profiles: [], brain: null, brainVersion: null, entries: [],
@@ -399,33 +399,48 @@ ol.steps li { gap: 12px; }
   // ---------- Profile & Bedarf ----------
   function targets(p) {
     const w = num(p.weight), hgt = num(p.height), a = num(p.age), act = num(p.activity) || 1.375;
-    let kcal = null;
+    const tw = num(p.targetWeight);
+    let goal = p.goal || "halten";
+    if (w && tw) goal = tw < w - 0.5 ? "abnehmen" : tw > w + 0.5 ? "aufbauen" : "halten";
+    const pace = num(p.pace) || (goal === "aufbauen" ? 0.25 : 0.5);
+    let kcal = null, bmr = null, floored = false, weeks = null;
     if (w && hgt && a) {
-      const bmr = 10 * w + 6.25 * hgt - 5 * a + (p.sex === "m" ? 5 : -161);
-      kcal = bmr * act * (p.goal === "abnehmen" ? 0.85 : p.goal === "aufbauen" ? 1.1 : 1);
+      bmr = 10 * w + 6.25 * hgt - 5 * a + (p.sex === "m" ? 5 : -161);
+      const tdee = bmr * act;
+      const delta = pace * 7700 / 7;
+      if (tw) kcal = goal === "abnehmen" ? tdee - delta : goal === "aufbauen" ? tdee + delta : tdee;
+      else kcal = tdee * (goal === "abnehmen" ? 0.85 : goal === "aufbauen" ? 1.1 : 1);
+      const floor = Math.max(bmr, p.sex === "m" ? 1500 : 1200);
+      if (kcal < floor) { kcal = floor; floored = true; }
     }
+    if (w && tw && goal !== "halten") weeks = Math.ceil(Math.abs(w - tw) / pace);
     const manual = num(p.kcalMax);
     if (manual) kcal = manual;
     if (!kcal) return null;
-    const protein = w ? w * (p.goal === "halten" ? 1.6 : 2.0) : kcal * 0.25 / 4;
+    const refW = goal === "abnehmen" && tw ? tw : w;
+    const protein = refW ? refW * (goal === "halten" ? 1.6 : 1.8) : kcal * 0.25 / 4;
     const fat = kcal * 0.3 / 9;
     const carbs = Math.max(0, (kcal - protein * 4 - fat * 9) / 4);
     const fiber = Math.max(30, kcal / 1000 * 14);
-    return { kcal: Math.round(kcal), protein: Math.round(protein), carbs: Math.round(carbs), fat: Math.round(fat), fiber: Math.round(fiber), manual: !!manual };
+    return { kcal: Math.round(kcal), protein: Math.round(protein), carbs: Math.round(carbs), fat: Math.round(fat), fiber: Math.round(fiber), manual: !!manual, goal, pace, weeks, floored };
   }
   function profName(id) { if (id === "all" || !id) return "Alle"; return S.profiles.find(p => p.id === id)?.name || "Person"; }
-  function goalBar(label, have, want, unit) {
+  const BAR = { kcal: ["Kalorien", "kcal", 0.9, 1.05], protein: ["Eiweiß", "g", 0.9, 9], carbs: ["Kohlenhydrate", "g", 0.85, 1.15], fat: ["Fett", "g", 0.8, 1.15], fiber: ["Ballaststoffe", "g", 0.9, 9] };
+  function goalBar(k, have, want, short) {
     if (!want) return null;
+    const [label, unit, lo, hi] = BAR[k];
     const r = have / want;
-    const cls = label === "Kalorien" ? (r < 0.9 ? "low" : r > 1.05 ? "over" : "") : (r < 0.9 ? "low" : "");
+    const cls = r < lo ? "low" : r > hi ? "over" : "";
     return h("div", { class: "goal" },
-      h("div", { class: "gl" }, h("span", null, label), h("span", null, h("b", { class: cls === "low" ? "st-low" : cls === "over" ? "st-over" : "st-ok" }, de(have)), ` / ${de(want)} ${unit}`)),
+      h("div", { class: "gl" }, h("span", null, short ? label.replace("Kohlenhydrate", "KH").replace("Ballaststoffe", "Ballastst.") : label), h("span", null, h("b", { class: cls === "low" ? "st-low" : cls === "over" ? "st-over" : "st-ok" }, de(have)), short ? ` / ${de(want)}` : ` / ${de(want)} ${unit}`)),
       h("div", { class: "bar" }, h("i", { class: cls || null, style: `width:${Math.min(100, Math.round(r * 100))}%` })));
   }
+  function goalBars(sum, t, short) { return h("div", { style: "display:grid;gap:5px" }, ["kcal", "protein", "carbs", "fat", "fiber"].map(k => goalBar(k, sum[k], t[k], short))); }
   function goalBlock(sum, t) {
     if (!t) return h("p", { class: "hint" }, "Im Profil Alter, Größe und Gewicht eintragen, dann erscheint hier der Tagesbedarf.");
-    return h("div", { style: "display:grid;gap:6px" }, goalBar("Kalorien", sum.kcal, t.kcal, "kcal"), goalBar("Eiweiß", sum.protein, t.protein, "g"), goalBar("Ballaststoffe", sum.fiber, t.fiber, "g"));
+    return goalBars(sum, t);
   }
+  const fmtKg = (x) => String(num(x)).replace(".", ",");
   const zero = () => ({ kcal: 0, protein: 0, carbs: 0, fat: 0, fiber: 0 });
   function addNut(sum, n, f) { if (!n) return; for (const [k] of NUT) sum[k] += (n[k] || 0) * f; }
 
@@ -895,7 +910,7 @@ ${d.raw || "(kein Text – siehe Bilder)"}`;
     const info = h("div", { class: "panel", style: "margin-top:16px" }, h("h3", { class: "sec", style: "margin:0" }, "Das bekommt Claude automatisch mit"));
     info.append(h("p", { class: "hint" }, `Dein Kochbuch: ${n} ${n === 1 ? "Rezept" : "Rezepte"}. Fehlt etwas Passendes, schlägt Claude neue Rezepte vor.`));
     info.append(h("p", { class: "hint" }, S.profiles.length
-      ? "Profile: " + S.profiles.map(p => { const t = targets(p); return `${p.name}${t ? ` (${de(t.kcal)} kcal, ${t.protein} g Eiweiß)` : " (ohne Zielwerte)"}`; }).join(" · ") + ". Portionen werden so verteilt, dass jeder Tag pro Person passt. Geplant werden nur Frühstück, Mittag- und Abendessen, Snacks zählen nicht dazu."
+      ? "Profile: " + S.profiles.map(p => { const t = targets(p); return `${p.name}${t ? ` (${de(t.kcal)} kcal · ${t.protein} g Eiweiß · ${t.carbs} g KH · ${t.fat} g Fett · ${t.fiber} g Ballaststoffe)` : " (ohne Zielwerte)"}`; }).join(" · ") + ". Portionen werden so verteilt, dass jeder Tag pro Person passt. Geplant werden nur Frühstück, Mittag- und Abendessen, Snacks zählen nicht dazu."
       : "Noch keine Profile. Lege unter „Profil & Regeln“ Profile an, damit die Nährwerte pro Person stimmen."));
     info.append(h("p", { class: "hint" }, brain ? "Deine Regeln und verbotenen Lebensmittel werden beachtet." : "Noch keine Regeln hinterlegt (verbotene Lebensmittel, Vorlieben)."));
     sh.append(info);
@@ -915,6 +930,15 @@ ${d.raw || "(kein Text – siehe Bilder)"}`;
   function profilesForPrompt() {
     return S.profiles.map(p => ({ id: p.id, name: p.name, dailyTargets: targets(p) && (({ manual, ...t }) => t)(targets(p)) }));
   }
+  function recentWeeks() {
+    const last = [...S.plans].sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0)).slice(0, 2);
+    if (!last.length) return "";
+    const rows = last.map(p => {
+      const titles = [...new Set(arr(p.days).flatMap(d => arr(d.meals).map(m => resolve(p, m.ref, m.label).title)))];
+      return `- „${p.title}“: ${titles.join(", ")}`;
+    });
+    return `LETZTE WOCHEN (diese Gerichte diesmal möglichst nicht wiederholen):\n${rows.join("\n")}\n`;
+  }
   function planPrompt(brief) {
     const profs = profilesForPrompt();
     const brain = brainText();
@@ -926,6 +950,7 @@ ${brain ? `\nHAUSREGELN (immer einhalten):\n${brain}\n` : ""}
 PERSONEN MIT TAGESZIELEN (pro Person und Tag):
 ${profs.length ? JSON.stringify(profs) : "keine Profile – plane einfach pro Portion"}
 
+${recentWeeks()}
 KOCHBUCH (verwende diese Rezepte bevorzugt; "ingredients" gelten für "servings" Portionen; nutritionPerPortion pro Portion):
 ${JSON.stringify(catalog())}
 
@@ -944,10 +969,13 @@ Antworte ausschließlich mit JSON in dieser Form:
 Jedes Rezept in newRecipes hat die Form ${RECIPE_SHAPE} plus "key". Zutatenmengen in newRecipes gelten für "servings".
 Regeln:
 - Nur die Mahlzeiten Frühstück, Mittagessen und Abendessen. Nimm nur die Tage und Mahlzeiten auf, die in den Vorgaben vorkommen. Fehlt eine Angabe, plane Montag bis Freitag.
-- NÄHRWERTE PRO PERSON: Wähle Gerichte und "portionsByPerson" (auch Bruchteile wie 0.75, 1.25) so, dass jede Person an jedem geplanten Tag ihr kcal-Ziel um höchstens ±10 % verfehlt und das Eiweißziel mindestens zu 90 % erreicht. Plane KEINE Snacks und nimm keine Snack-Rezepte in den Plan: Snacks zählen nicht zur Woche. Gleiche die Zielwerte nur über Frühstück, Mittag- und Abendessen und deren Portionsgrößen aus. Sind Mahlzeiten vorgegeben, die nicht im Plan stehen (z. B. auswärts), erwähne das in summary.
+- NÄHRWERTE PRO PERSON (wichtigste Regel): Wähle Gerichte und "portionsByPerson" (auch Bruchteile wie 0.75, 1.25) so, dass jede Person an jedem geplanten Tag ALLE Zielwerte trifft: Kalorien ±10 %, Eiweiß mindestens 90 %, Kohlenhydrate ±15 %, Fett ±15 %, Ballaststoffe mindestens 90 %. Rechne mit nutritionPerPortion nach. Kombiniere dafür Gerichte mit unterschiedlichem Nährwertprofil über den Tag.
+- BAUSTEINE: Zu jeder Mahlzeit darf zusätzlich ein Rezept aus dem Kapitel "Beilagen" als eigener Eintrag mit demselben slot stehen (z. B. Pellkartoffeln, Vollkornbrot, Linsen, Beeren, Skyr, Nüsse), um Kohlenhydrate, Fett, Eiweiß oder Ballaststoffe auszugleichen. Bausteine brauchen kein Vorkochen und keine Haltbarkeitsprüfung, wenn sie frisch dazugenommen werden. Plane KEINE Snacks und nimm keine Snack-Rezepte in den Plan: Snacks zählen nicht zur Woche. Gleiche die Zielwerte nur über Frühstück, Mittag- und Abendessen und deren Portionsgrößen aus. Sind Mahlzeiten vorgegeben, die nicht im Plan stehen (z. B. auswärts), erwähne das in summary.
 - "cook" listet jedes Gericht genau einmal mit der Gesamtzahl der Portionen (Summe über alle Personen und Tage). Frisch gekochte Gerichte stehen mit "when" = Wochentag in cook.
 - Haltbarkeit ernst nehmen: Ein vorgekochtes Gericht muss bis zum letzten Esstag halten (shelfLifeDays). Sonst einfrieren, getrennt lagern oder Mitte der Woche nachkochen und das in storage oder tips erklären.
 - "prep" ist ein sinnvoller, paralleler Ablauf mit Zeitangaben, inklusive Abfüllen.
+- KURZE EINKAUFSLISTE: Wähle Gerichte, die sich Grundzutaten teilen (dieselbe Fleischsorte, dasselbe Gemüse, dieselbe Kohlenhydratquelle in mehreren Gerichten). Wiederhole Gerichte lieber, statt viele verschiedene zu nehmen. Ziel: höchstens ca. 20 verschiedene Artikel auf der Einkaufsliste (ohne Vorrat).
+- ABWECHSLUNG ZWISCHEN WOCHEN: Nimm überwiegend andere Gerichte als in den letzten Wochen (siehe unten), aber gern ähnliche Grundzutaten, damit das Einkaufen überschaubar bleibt.
 - Einkaufsliste: alle Zutaten, auf die geplanten Portionen umgerechnet, zusammengefasst, in Einkaufsmengen. Vorräte (Salz, Pfeffer, Öl, Gewürze, Brühe) unter "pantry".
 - Neue Rezepte: einfach, höchstens ca. 7 Zutaten, Supermarkt-Zutaten, realistische Nährwerte pro Portion, Hausregeln beachten.
 - Alles auf Deutsch.`;
@@ -1089,7 +1117,7 @@ Regeln:
           for (const m of arr(d.meals)) { const it = resolve(p, m.ref, m.label); const n = it.recipe ? cleanNut(it.recipe.nutrition) : null; if (!n) missing = true; addNut(sum, n, mealShare(m, pr.id)); }
           const t = targets(pr);
           nutBox.append(h("div", { style: "display:grid;gap:4px" }, h("small", { style: "font-family:var(--ui);font-weight:700" }, pr.name + (missing ? " (unvollständig)" : "")),
-            t ? h("div", { style: "display:grid;gap:4px" }, goalBar("Kalorien", sum.kcal, t.kcal, "kcal"), goalBar("Eiweiß", sum.protein, t.protein, "g"))
+            t ? goalBars(sum, t, true)
               : h("small", { class: "hint" }, `≈ ${de(sum.kcal)} kcal · ${de(sum.protein)} g Eiweiß`)));
         }
       } else {
@@ -1113,7 +1141,7 @@ Regeln:
     const copyStatus = h("span", { class: "hint", role: "status" });
     wrap.append(h("section", null,
       h("div", { class: "trackhead", style: "margin-bottom:10px" },
-        h("h3", { class: "sec", style: "margin:0" }, "Einkaufsliste"),
+        h("h3", { class: "sec", style: "margin:0" }, `Einkaufsliste · ${arr(p.shopping).reduce((n, s) => n + s.items.length, 0)} Artikel`),
         h("span", { class: "row-inline" }, copyStatus,
           h("button", { class: "btn small primary", type: "button", onclick: () => copyList(p, copyStatus, "bring") }, "Für Bring! kopieren"),
           h("button", { class: "btn small", type: "button", onclick: () => copyList(p, copyStatus, "text") }, "Als Text kopieren"))),
@@ -1303,8 +1331,8 @@ Regeln:
       })))),
       h("tfoot", null, h("tr", null, h("th", { scope: "row" }, "Summe"), days.map(d => {
         const sum = zero(); mine.filter(e => e.date === ymd(d)).forEach(e => addNut(sum, e.nut, e.portions || 1));
-        return h("td", null, t ? h("div", { style: "display:grid;gap:4px" }, goalBar("Kalorien", sum.kcal, t.kcal, ""), goalBar("Eiweiß", sum.protein, t.protein, "g"))
-          : h("small", { class: "hint" }, `${de(sum.kcal)} kcal · ${de(sum.protein)} g Eiweiß`));
+        return h("td", null, t ? goalBars(sum, t, true)
+          : h("small", { class: "hint" }, `${de(sum.kcal)} kcal · ${de(sum.protein)} g Eiweiß · ${de(sum.carbs)} g KH · ${de(sum.fat)} g Fett · ${de(sum.fiber)} g Ballaststoffe`));
       }))));
     box.append(h("div", { class: "tgrid" }, table));
 
@@ -1313,7 +1341,7 @@ Regeln:
       const sum = zero(); mine.filter(e => tracked.some(d => ymd(d) === e.date)).forEach(e => addNut(sum, e.nut, e.portions || 1));
       const n = tracked.length;
       box.append(h("p", { class: "hint", style: "margin-top:12px" },
-        `Durchschnitt an ${n} ${n === 1 ? "Tag" : "Tagen"} mit Einträgen: ${de(sum.kcal / n)} kcal · ${de(sum.protein / n)} g Eiweiß · ${de(sum.carbs / n)} g KH · ${de(sum.fat / n)} g Fett · ${de(sum.fiber / n)} g Ballaststoffe${t ? ` (Ziel ${de(t.kcal)} kcal, ${t.protein} g Eiweiß)` : ""}.`));
+        `Durchschnitt an ${n} ${n === 1 ? "Tag" : "Tagen"} mit Einträgen: ${de(sum.kcal / n)} kcal · ${de(sum.protein / n)} g Eiweiß · ${de(sum.carbs / n)} g KH · ${de(sum.fat / n)} g Fett · ${de(sum.fiber / n)} g Ballaststoffe${t ? ` (Ziel ${de(t.kcal)} kcal · ${t.protein} g Eiweiß · ${t.carbs} g KH · ${t.fat} g Fett · ${t.fiber} g Ballaststoffe)` : ""}.`));
     }
     box.append(h("p", { class: "hint", style: "margin-top:6px" }, "Einen ganzen Wochenplan übernimmst du im Reiter „Wochenplan“ mit „Ganzen Plan eintragen“."));
     const weekEntries = S.entries.filter(e => e.date >= ymd(mon) && e.date <= ymd(days[6]));
@@ -1383,17 +1411,22 @@ Regeln:
       if (S.editProfile && S.editProfile.id === p.id) return profileForm();
       const t = targets(p);
       return h("div", { class: "pcard" }, h("h4", null, p.name),
-        h("p", { class: "hint" }, [p.sex === "m" ? "männlich" : "weiblich", p.age ? `${p.age} J.` : "", p.height ? `${p.height} cm` : "", p.weight ? `${p.weight} kg` : "", GOALS.find(g => g[0] === p.goal)?.[1]].filter(Boolean).join(" · ")),
+        h("p", { class: "hint" }, [p.sex === "m" ? "männlich" : "weiblich", p.age ? `${p.age} J.` : "", p.height ? `${p.height} cm` : ""].filter(Boolean).join(" · ")),
+        p.weight ? h("p", { class: "hint", style: "color:var(--ink)" }, p.targetWeight
+          ? `${fmtKg(p.weight)} → ${fmtKg(p.targetWeight)} kg` + (t && t.goal !== "halten" ? ` · ${String(t.pace).replace(".", ",")} kg pro Woche · Ziel in ca. ${t.weeks} Wochen` : " · Gewicht halten")
+          : `${fmtKg(p.weight)} kg · noch kein Zielgewicht`) : null,
         t ? h("dl", { class: "targets" }, h("dt", null, t.manual ? "Kalorien (selbst festgelegt)" : "Kalorien (berechnet)"), h("dd", null, `${de(t.kcal)} kcal`),
           h("dt", null, "Eiweiß"), h("dd", null, `${t.protein} g`), h("dt", null, "Kohlenhydrate"), h("dd", null, `${t.carbs} g`),
           h("dt", null, "Fett"), h("dd", null, `${t.fat} g`), h("dt", null, "Ballaststoffe"), h("dd", null, `${t.fiber} g`))
           : h("p", { class: "hint" }, "Für den Bedarf fehlen Alter, Größe oder Gewicht."),
+        t && t.floored && !t.manual ? h("p", { class: "hint" }, "Hinweis: Das Tempo wäre zu schnell. Die Kalorien sind auf den Grundumsatz begrenzt.") : null,
+        t && t.manual ? h("p", { class: "hint" }, "Das selbst eingetragene Kalorien-Maximum ersetzt den berechneten Wert. Lösch es im Profil, um mit Zielgewicht und Tempo zu rechnen.") : null,
         h("div", { class: "row-inline" }, h("button", { class: "btn small", type: "button", onclick: () => { S.editProfile = { ...p }; renderMain(); } }, "Bearbeiten")));
     }));
     if (S.editProfile && !S.editProfile.id) cards.append(profileForm());
     sec.append(cards);
-    if (!S.editProfile) sec.append(h("div", null, h("button", { class: "btn primary", type: "button", onclick: () => { S.editProfile = { name: "", sex: "w", age: "", height: "", weight: "", activity: "1.375", goal: "halten", kcalMax: "" }; renderMain(); } }, "+ Profil anlegen")));
-    sec.append(h("p", { class: "hint" }, "Berechnung: Grundumsatz nach Mifflin-St Jeor × Aktivität, angepasst ans Ziel. Eiweiß 1,6 g/kg (halten) bzw. 2,0 g/kg, Fett 30 % der Kalorien, Ballaststoffe mindestens 30 g. Ein selbst eingetragenes Kalorien-Maximum ersetzt den berechneten Wert."));
+    if (!S.editProfile) sec.append(h("div", null, h("button", { class: "btn primary", type: "button", onclick: () => { S.editProfile = { name: "", sex: "w", age: "", height: "", weight: "", targetWeight: "", pace: "0.5", activity: "1.375", kcalMax: "" }; renderMain(); } }, "+ Profil anlegen")));
+    sec.append(h("p", { class: "hint" }, "Berechnung: Grundumsatz nach Mifflin-St Jeor × Aktivität. Zum Abnehmen oder Zunehmen werden pro 1 kg pro Woche täglich 1.100 kcal abgezogen bzw. dazugerechnet (7.700 kcal pro kg), höchstens bis zum Grundumsatz. Eiweiß 1,8 g pro kg Zielgewicht (beim Halten 1,6 g pro kg), Fett 30 % der Kalorien, Ballaststoffe mindestens 30 g, Rest Kohlenhydrate. Ein selbst eingetragenes Kalorien-Maximum ersetzt den berechneten Wert."));
     box.append(sec);
 
     // Regeln
@@ -1422,7 +1455,7 @@ Regeln:
     const p = S.editProfile;
     const bind = (k) => (e) => { p[k] = e.target.value; };
     const preview = h("p", { class: "hint", role: "status" });
-    const upd = () => { const t = targets(p); preview.textContent = t ? `Ergibt: ${de(t.kcal)} kcal · ${t.protein} g Eiweiß · ${t.carbs} g KH · ${t.fat} g Fett · ${t.fiber} g Ballaststoffe pro Tag` : "Alter, Größe und Gewicht eintragen oder ein Kalorien-Maximum festlegen."; };
+    const upd = () => { const t = targets(p); preview.textContent = t ? `Ergibt: ${de(t.kcal)} kcal · ${t.protein} g Eiweiß · ${t.carbs} g KH · ${t.fat} g Fett · ${t.fiber} g Ballaststoffe pro Tag${t.weeks ? ` · Ziel in ca. ${t.weeks} Wochen` : ""}${t.manual ? " (Kalorien-Maximum gilt)" : ""}` : "Alter, Größe und Gewicht eintragen oder ein Kalorien-Maximum festlegen."; };
     const inp = (label, k, extra = {}) => h("label", { for: "pf-" + k }, label, h("input", { id: "pf-" + k, value: str(p[k]), inputmode: extra.num ? "decimal" : null, oninput: (e) => { p[k] = e.target.value; upd(); } }));
     upd();
     return h("div", { class: "pcard form", style: "max-width:720px;grid-column:1/-1" },
@@ -1431,8 +1464,9 @@ Regeln:
         h("label", { for: "pf-sex" }, "Geschlecht", h("select", { id: "pf-sex", onchange: (e) => { p.sex = e.target.value; upd(); } },
           h("option", { value: "w", selected: p.sex !== "m" }, "weiblich"), h("option", { value: "m", selected: p.sex === "m" }, "männlich"))),
         inp("Alter", "age", { num: true }), inp("Größe (cm)", "height", { num: true })),
-      h("div", { class: "row3" }, inp("Gewicht (kg)", "weight", { num: true }), inp("Kalorien-Maximum (optional)", "kcalMax", { num: true }),
-        h("label", { for: "pf-goal" }, "Ziel", h("select", { id: "pf-goal", onchange: (e) => { p.goal = e.target.value; upd(); } }, GOALS.map(([v, l]) => h("option", { value: v, selected: p.goal === v }, l))))),
+      h("div", { class: "row3" }, inp("Gewicht jetzt (kg)", "weight", { num: true }), inp("Zielgewicht (kg)", "targetWeight", { num: true }),
+        h("label", { for: "pf-pace" }, "Tempo", h("select", { id: "pf-pace", onchange: (e) => { p.pace = e.target.value; upd(); } }, PACES.map(([v, l]) => h("option", { value: v, selected: str(p.pace || "0.5") === v }, l))))),
+      inp("Kalorien-Maximum (optional, ersetzt die Berechnung)", "kcalMax", { num: true }),
       h("label", { for: "pf-act" }, "Aktivität", h("select", { id: "pf-act", onchange: (e) => { p.activity = e.target.value; upd(); } }, ACT.map(([v, l]) => h("option", { value: v, selected: str(p.activity) === v }, l)))),
       preview,
       h("div", { class: "row-inline" },
@@ -1446,7 +1480,7 @@ Regeln:
   async function saveProfile() {
     const p = S.editProfile;
     if (!str(p.name).trim()) { $("pf-name")?.focus(); return; }
-    const data = { name: str(p.name).trim(), sex: p.sex === "m" ? "m" : "w", age: num(p.age), height: num(p.height), weight: num(p.weight), activity: num(p.activity) || 1.375, goal: p.goal || "halten", kcalMax: num(p.kcalMax), updatedAt: Date.now() };
+    const data = { name: str(p.name).trim(), sex: p.sex === "m" ? "m" : "w", age: num(p.age), height: num(p.height), weight: num(p.weight), activity: num(p.activity) || 1.375, targetWeight: num(p.targetWeight), pace: num(p.pace) || 0.5, kcalMax: num(p.kcalMax), updatedAt: Date.now() };
     try {
       if (p.id) { await profCol.doc(p.id).update(data); Object.assign(S.profiles.find(x => x.id === p.id), data); }
       else { const ref = await profCol.add({ ...data, createdAt: Date.now() }); if (!S.profiles.some(x => x.id === ref.id)) S.profiles.push({ id: ref.id, ...data }); }

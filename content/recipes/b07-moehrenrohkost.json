@@ -1,0 +1,36 @@
+{
+  "category": "Beilagen",
+  "createdAt": 1795777241149,
+  "ingredients": [
+    "150 g Möhren",
+    "1 TL Rapsöl",
+    "1 TL Zitronensaft",
+    "Salz"
+  ],
+  "notes": "Baustein: zu einer Mahlzeit dazunehmen, um Nährwerte auszugleichen.",
+  "nutrition": {
+    "carbs": 12,
+    "fat": 5,
+    "fiber": 4,
+    "kcal": 100,
+    "protein": 1
+  },
+  "servings": 1,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Möhren grob reiben.",
+    "Mit Öl, Zitronensaft und Salz mischen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "leicht",
+    "vegetarisch",
+    "vegan",
+    "schnell"
+  ],
+  "time": "5 Min.",
+  "title": "Möhren-Rohkost mit Zitrone",
+  "updatedAt": 1795777241149
+}

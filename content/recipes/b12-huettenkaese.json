@@ -1,0 +1,33 @@
+{
+  "category": "Beilagen",
+  "createdAt": 1795777241154,
+  "ingredients": [
+    "200 g Hüttenkäse",
+    "Schnittlauch",
+    "Pfeffer"
+  ],
+  "notes": "Baustein: zu einer Mahlzeit dazunehmen, um Nährwerte auszugleichen.",
+  "nutrition": {
+    "carbs": 7,
+    "fat": 9,
+    "fiber": 0,
+    "kcal": 195,
+    "protein": 22
+  },
+  "servings": 1,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Mit Schnittlauch und Pfeffer würzen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "vegetarisch",
+    "schnell"
+  ],
+  "time": "5 Min.",
+  "title": "Hüttenkäse",
+  "updatedAt": 1795777241154
+}
