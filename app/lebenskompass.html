@@ -334,6 +334,15 @@ ol.steps li { gap: 12px; }
 .slotcard .x { font-size: 1.3rem; padding: 4px 10px; }
 .addrow { border: 1px dashed var(--herb); background: none; border-radius: 10px; padding: 10px; font-family: var(--ui); font-weight: 600; color: var(--accent); text-align: center; }
 .addrow:hover { background: var(--herb-soft); }
+.photobox { display: grid; gap: 10px; padding: 12px; border: 1px dashed var(--herb); border-radius: 12px; background: var(--page); }
+.phhead { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 12px; align-items: start; }
+.phthumb { width: 84px; height: 84px; object-fit: cover; border-radius: 10px; border: 1px solid var(--line); }
+.phitems { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.phitems li { display: flex; justify-content: space-between; gap: 10px; padding: 5px 0; border-bottom: 1px solid var(--line); font-size: 0.95rem; }
+.phitems small { font-family: var(--ui); color: var(--muted); white-space: nowrap; }
+.phnut { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
+.phnut label { display: grid; gap: 3px; font-family: var(--ui); font-size: 0.75rem; color: var(--muted); }
+.photobox input:not([type=file]) { border: 1.5px solid var(--herb); background: var(--page); border-radius: 6px; padding: 7px 9px; font-family: var(--ui); font-size: 0.95rem; color: var(--ink); width: 100%; min-width: 0; }
 .sumpart::before { content: "·"; margin: 0 6px 0 2px; color: var(--muted); }
 .swipehint { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 30px; }
 .swipehint span { font-family: var(--ui); font-size: 0.78rem; color: var(--muted); }
@@ -368,6 +377,7 @@ ol.steps li { gap: 12px; }
   .pickrow small { display: block; font-size: 0.78rem; }
   .pickrow .btn { padding: 6px 12px; font-size: 0.85rem; flex: none; }
   .picklist { max-height: 55vh; }
+  .phnut { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .sumpart { display: block; width: 100%; }
   .sumpart::before { content: ""; margin: 0; }
   .calday { min-height: 52px; padding: 4px 5px; border-radius: 8px; }
@@ -430,7 +440,7 @@ ol.steps li { gap: 12px; }
     sel: null, mode: "read", q: "", tag: null, scale: null, draft: null, confirmDel: false,
     busy: false, status: "", statusErr: false, trackMsg: "",
     planSel: null, planMode: "read", brief: "", feedback: "", planBusy: false, planStatus: "", planErr: false, confirmPlanDel: false, adoptMsg: "",
-    chapter: null, trackMode: null, trackDay: null, cycleDays: {}, cycleCfg: null, cycleMoods: null, cycleMonth: null, cycleSel: null, me: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
+    chapter: null, photo: null, trackMode: null, trackDay: null, cycleDays: {}, cycleCfg: null, cycleMoods: null, cycleMonth: null, cycleSel: null, me: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
     editProfile: null, settingsMsg: "",
   };
   let downloads = null, cycleCol = null, userId = null;
@@ -490,10 +500,10 @@ ol.steps li { gap: 12px; }
     return parts.join("\n");
   }
   function forbiddenHits(r) {
-    const list = arr(S.brain?.forbidden).map(x => x.trim().toLowerCase()).filter(Boolean);
+    const list = arr(S.brain?.forbidden).map(x => str(x).trim()).filter(Boolean);
     if (!list.length) return [];
     const blob = arr(r.ingredients).join(" ").toLowerCase();
-    return list.filter(f => blob.includes(f.replace(/n$/, "")));
+    return list.filter(f => blob.includes(f.toLowerCase().replace(/n$/, "")));
   }
 
   // ---------- Profile & Bedarf ----------
@@ -1443,7 +1453,7 @@ Regeln:
   function entryRow(e) {
     return h("div", { class: "entry" },
       h("span", null, e.recipeId && S.recipes.some(r => r.id === e.recipeId) ? h("button", { type: "button", class: "linkish", onclick: () => openRecipe(e.recipeId) }, e.title) : e.title,
-        h("small", null, [e.portions && e.portions != 1 ? `${fmt(e.portions)} Port.` : "", e.nut?.kcal ? `${de(e.nut.kcal * (e.portions || 1))} kcal` : ""].filter(Boolean).join(" · "))),
+        h("small", null, [e.source === "foto" ? "per Foto" : "", e.portions && e.portions != 1 ? `${fmt(e.portions)} Port.` : "", e.nut?.kcal ? `${de(e.nut.kcal * (e.portions || 1))} kcal` : ""].filter(Boolean).join(" · "))),
       h("button", { type: "button", class: "x", "aria-label": `${e.title} entfernen`, onclick: () => delEntry(e.id) }, "×"));
   }
   function openPick(ds, sl) { S.pick = { date: ds, slot: sl }; S.pickQ = ""; renderMain(); setTimeout(() => { const el = $("pk-q"); if (el) { el.focus({ preventScroll: true }); el.closest(".picker")?.scrollIntoView({ behavior: "smooth", block: "start" }); } }, 30); }
@@ -1584,7 +1594,8 @@ Regeln:
     fill();
     return h("div", { class: "panel picker" },
       h("div", { class: "trackhead" }, h("strong", { style: "font-family:var(--ui)" }, `${slot} · ${parseYmd(date).toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" })}${S.profiles.length ? " · " + profName(pid) : ""}`),
-        h("button", { type: "button", class: "btn small ghost", onclick: () => { S.pick = null; renderMain(); } }, "Schließen")),
+        h("button", { type: "button", class: "btn small ghost", onclick: () => { S.pick = null; S.photo = null; renderMain(); } }, "Schließen")),
+      photoBox(pid, date, slot),
       h("div", { class: "row-inline" },
         h("input", { type: "search", id: "pk-q", placeholder: "Rezept suchen…", value: S.pickQ, style: "flex:1;min-width:12em", oninput: (e) => { S.pickQ = e.target.value; fill(); } }),
         h("label", { class: "hint", for: "pk-port" }, "Portionen"),
@@ -1599,6 +1610,74 @@ Regeln:
           const nut = cleanNut({ kcal: st.kcal, protein: st.protein });
           await addEntries([{ date, slot, profileId: pid, recipeId: null, title: st.free.trim(), portions: num(st.portions) || 1, nut }]);
           S.pick = null; renderMain(); } }, "Frei eintragen")));
+  }
+
+  // ---------- Fotoassistent: Essen fotografieren, Claude schätzt die Nährwerte ----------
+  // Das Foto wird nur für die Schätzung an Claude geschickt und nicht gespeichert.
+  async function shrinkPhoto(file) {
+    const bmp = await createImageBitmap(file);
+    const sc = Math.min(1, 1280 / Math.max(bmp.width, bmp.height));
+    const c = document.createElement("canvas"); c.width = Math.round(bmp.width * sc); c.height = Math.round(bmp.height * sc);
+    c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+    return await new Promise(res => c.toBlob(res, "image/jpeg", 0.82));
+  }
+  function photoBox(pid, date, slot) {
+    if (!sample || !imagesOk) return null;
+    const ph = S.photo || {};
+    const box = h("section", { class: "photobox" });
+    const fileIn = h("input", { type: "file", accept: "image/*", capture: "environment", id: "ph-file", hidden: true,
+      onchange: (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) analyzePhoto(f); } });
+    if (!ph.draft && !ph.busy) {
+      box.append(...[fileIn,
+        h("div", { class: "row-inline" },
+          h("button", { type: "button", class: "btn primary", onclick: () => fileIn.click() }, "Essen fotografieren"),
+          h("span", { class: "hint" }, "Claude erkennt das Essen und schätzt die Nährwerte.")),
+        h("input", { id: "ph-hint", placeholder: "Optional: Hinweis, z. B. „halbe Portion“ oder „mit Olivenöl“", value: str(ph.hint), oninput: (e) => { S.photo = { ...(S.photo || {}), hint: e.target.value }; } }),
+        ph.err ? h("p", { class: "status err" }, ph.err) : null].filter(Boolean));
+      return box;
+    }
+    if (ph.busy) { box.append(h("div", { class: "row-inline" }, ph.preview ? h("img", { class: "phthumb", src: ph.preview, alt: "" }) : null, h("p", { class: "status" }, "Claude schaut sich das Foto an …"))); return box; }
+    const d = ph.draft;
+    const warn = forbiddenHits({ ingredients: arr(d.items).map(i => i.name) });
+    box.append(...[
+      h("div", { class: "phhead" }, ph.preview ? h("img", { class: "phthumb", src: ph.preview, alt: "Dein Foto" }) : null,
+        h("div", { style: "display:grid;gap:4px;min-width:0" },
+          h("label", { class: "hint", for: "ph-title" }, "Was es war"),
+          h("input", { id: "ph-title", value: d.title, oninput: (e) => { d.title = e.target.value; } }),
+          d.confidence ? h("small", { class: "hint" }, `Sicherheit der Schätzung: ${d.confidence}`) : null)),
+      warn.length ? h("p", { class: "status err" }, `Achtung, laut deinen Regeln verboten: ${warn.join(", ")}.`) : null,
+      arr(d.items).length ? h("ul", { class: "phitems" }, d.items.map(i => h("li", null, h("span", null, i.name), h("small", null, [i.amount, i.kcal ? `${de(i.kcal)} kcal` : ""].filter(Boolean).join(" · "))))) : null,
+      d.note ? h("p", { class: "hint" }, d.note) : null,
+      h("div", { class: "phnut" }, NUT.map(([k, label, unit]) => h("label", { for: "ph-" + k }, `${label} (${unit})`,
+        h("input", { id: "ph-" + k, inputmode: "decimal", value: str(d.nutrition[k] ?? ""), oninput: (e) => { d.nutrition[k] = e.target.value; } })))),
+      h("div", { class: "row-inline" },
+        h("button", { type: "button", class: "btn primary", onclick: async () => {
+          const nut = cleanNut(d.nutrition);
+          const ok = await addEntries([{ date, slot, profileId: pid, recipeId: null, title: str(d.title).trim() || "Foto-Mahlzeit", portions: 1, nut, source: "foto", items: arr(d.items).map(i => ({ name: str(i.name), amount: str(i.amount) })) }]);
+          if (ok) { S.photo = null; S.pick = null; } else { S.photo = { ...ph, err: "Eintragen hat nicht geklappt." }; }
+          renderMain();
+        } }, "Eintragen"),
+        h("button", { type: "button", class: "btn", onclick: () => { S.photo = { hint: ph.hint }; renderMain(); setTimeout(() => $("ph-file")?.click(), 30); } }, "Neues Foto"),
+        h("button", { type: "button", class: "btn ghost", onclick: () => { S.photo = null; renderMain(); } }, "Verwerfen")),
+      h("p", { class: "hint" }, "Die Werte sind eine Schätzung aus dem Foto. Prüfe sie kurz, bevor du einträgst. Das Foto selbst wird nicht gespeichert.")].filter(Boolean));
+    return box;
+  }
+  async function analyzePhoto(file) {
+    const hint = str(S.photo?.hint).trim();
+    let preview = null; try { preview = URL.createObjectURL(file); } catch {}
+    S.photo = { busy: true, hint, preview }; renderMain();
+    try {
+      const img = await shrinkPhoto(file);
+      const out = await ask(`Du bist ein Ernährungsassistent. Auf dem Foto ist eine Mahlzeit, die eine Person gegessen hat oder gleich isst.
+Erkenne alle Lebensmittel und schätze die Mengen anhand üblicher Teller-, Schüssel- und Besteckgrößen. Schätze die Nährwerte für ALLES, was auf dem Foto zu sehen ist (so wie abgebildet), nach üblichen Nährwerttabellen (BLS/USDA).
+${hint ? `Hinweis der Person: ${hint}\n` : ""}Antworte ausschließlich mit JSON:
+{"title": "kurzer deutscher Name der Mahlzeit", "items": [{"name": string, "amount": "z. B. 150 g oder 1 Stück", "kcal": Zahl}], "nutrition": {"kcal": Zahl, "protein": Zahl, "carbs": Zahl, "fat": Zahl, "fiber": Zahl}, "confidence": "hoch" | "mittel" | "niedrig", "note": "kurz, was unsicher ist (z. B. Öl oder Soße nicht sichtbar)"}
+Gramm für Eiweiß, Kohlenhydrate, Fett, Ballaststoffe; ganze Zahlen. Wenn auf dem Foto kein Essen zu erkennen ist: {"title": "", "items": [], "nutrition": {}, "confidence": "niedrig", "note": "Kein Essen erkannt."}`, "default", { images: [img] });
+      const nut = cleanNut(out && out.nutrition) || {};
+      if (!str(out?.title).trim() && !arr(out?.items).length) { S.photo = { hint, err: str(out?.note) || "Auf dem Foto wurde kein Essen erkannt. Versuch es mit einem anderen Bild." }; }
+      else S.photo = { hint, preview, draft: { title: str(out.title), items: arr(out.items).slice(0, 20).map(i => ({ name: str(i?.name), amount: str(i?.amount), kcal: num(i?.kcal) })), nutrition: Object.fromEntries(NUT.map(([k]) => [k, nut[k] ?? ""])), confidence: ["hoch", "mittel", "niedrig"].includes(out.confidence) ? out.confidence : "", note: str(out.note) } };
+    } catch (e) { S.photo = { hint, err: errText(e, "Die Schätzung hat nicht geklappt. Versuch es noch einmal.") }; }
+    renderMain();
   }
 
   // =====================================================================
@@ -2034,7 +2113,7 @@ Regeln:
   // ---------- Daten ----------
   const ready = new Promise(res => { let n = 0; (function w() { if (window.claude || n++ > 30) res(); else setTimeout(w, 100); })(); });
   const busyEditing = () => (S.view === "book" && S.mode !== "read") || (S.view === "plan" && S.planMode === "new") || S.planBusy || !!S.editProfile || !!S.pick ||
-    ["p-feedback", "b-forbidden", "b-pref", "b-rules", "rq", "br-url"].includes(document.activeElement?.id) || /^(cy-|mood-)/.test(document.activeElement?.id || "");
+    ["p-feedback", "b-forbidden", "b-pref", "b-rules", "rq", "br-url"].includes(document.activeElement?.id) || /^(cy-|mood-|ph-|pk-)/.test(document.activeElement?.id || "") || !!(S.photo && (S.photo.busy || S.photo.draft));
   (async () => {
     await ready;
     const timer = setTimeout(() => { S.loaded = S.plansLoaded = S.profilesLoaded = true; render(); }, 10000);
