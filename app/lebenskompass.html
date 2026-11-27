@@ -1202,10 +1202,10 @@ Regeln:
       h("div", { class: "trackhead", style: "margin-bottom:10px" },
         h("h3", { class: "sec", style: "margin:0" }, `Einkaufsliste · ${arr(p.shopping).reduce((n, s) => n + s.items.length, 0)} Artikel`),
         h("span", { class: "row-inline" }, copyStatus,
-          h("button", { class: "btn small primary", type: "button", onclick: () => copyList(p, copyStatus, "bring") }, "Für Bring! kopieren"),
+          bringLink(p),
           h("button", { class: "btn small", type: "button", onclick: () => copyList(p, copyStatus, "text") }, "Als Text kopieren"))),
       arr(p.shopping).length ? shopBox : h("p", { class: "hint" }, "Keine Einkaufsliste im Plan."),
-      h("p", { class: "hint", style: "margin-top:8px" }, "„Für Bring!“ kopiert jeden noch nicht abgehakten Artikel in eine eigene Zeile (Artikel, dann Menge). In Bring! ins Eingabefeld einfügen."),
+      h("p", { class: "hint", style: "margin-top:8px" }, bringHelper() ? "„In Bring! öffnen“ schickt alle noch nicht abgehakten Artikel an die Bring!-App. Auf dem Handy öffnet sich Bring! direkt, am Computer erscheint ein Link zur App." : "Für „In Bring! öffnen“ einmal unter „Profil & Regeln“ → „Bring!“ die Adresse des Bring!-Helfers eintragen."),
       h("textarea", { id: "copyFallback", hidden: true, readonly: true, rows: 8, style: "width:100%;margin-top:10px" })));
 
     // Neue Rezepte
@@ -1283,6 +1283,26 @@ Regeln:
     const lab = document.querySelector(`label[for="chk-${key}"]`); if (lab) lab.classList.toggle("done", on);
     clearTimeout(checkTimer);
     checkTimer = setTimeout(() => { plansCol?.doc(p.id).update({ checked: p.checked }).catch(() => {}); }, 600);
+  }
+  // ---------- Bring! über den eigenen Helfer (integrations/bring-worker.js) ----------
+  function bringHelper() { const u = str(S.integrations?.bringHelper).trim(); return /^https:\/\/[^\s?#]+$/i.test(u) ? u.replace(/\/+$/, "") + "/" : null; }
+  function openItems(p) {
+    const checked = p.checked || {}; const out = [];
+    arr(p.shopping).forEach((s, si) => s.items.forEach((i, ii) => { if (!checked[`${si}-${ii}`]) out.push(i); }));
+    arr(p.pantry).forEach((i, ii) => { if (!checked[`v-${ii}`]) out.push(i); });
+    return out.map(i => [str(i.amount).trim(), str(i.name).trim()].filter(Boolean).join(" ")).filter(Boolean);
+  }
+  function bringUrl(p) {
+    const helper = bringHelper(); if (!helper) return null;
+    const q = new URLSearchParams(); q.set("t", str(p.title).slice(0, 100) || "Einkaufsliste");
+    openItems(p).forEach(x => q.append("i", x));
+    return "https://api.getbring.com/rest/bringrecipes/deeplink?" + new URLSearchParams({ url: helper + "?" + q.toString(), source: "web", baseQuantity: "4", requestedQuantity: "4" }).toString();
+  }
+  function bringLink(p) {
+    const u = bringUrl(p);
+    if (!u) return h("button", { class: "btn small primary", type: "button", onclick: () => go("settings") }, "Bring! einrichten");
+    return h("a", { class: "btn small primary", href: u, target: "_blank", rel: "noopener", style: "text-decoration:none",
+      onclick: (e) => { const fresh = bringUrl(p); if (fresh) e.currentTarget.href = fresh; } }, "In Bring! öffnen");
   }
   async function copyList(p, statusEl, mode) {
     const checked = p.checked || {};
@@ -1508,12 +1528,31 @@ Regeln:
         catch { S.settingsMsg = "Speichern hat nicht geklappt."; }
         msg.textContent = S.settingsMsg;
       } }, "Regeln speichern")), msg));
+    box.append(bringSection());
     box.append(transferSection());
+  }
+
+  function bringSection() {
+    const st = { url: str(S.integrations?.bringHelper) };
+    const msg = h("p", { class: "status", role: "status" });
+    return h("section", { class: "form", style: "margin-top:30px" },
+      h("h3", { class: "sec", style: "margin:0" }, "Bring!"),
+      h("p", { class: "hint" }, "Damit „In Bring! öffnen“ funktioniert, braucht es einen kleinen Helfer im Internet (Cloudflare Worker), der die Einkaufsliste für Bring! lesbar macht. Anleitung und Code liegen im Repository unter integrations/BRING.md."),
+      h("label", { for: "br-url" }, "Adresse des Bring!-Helfers",
+        h("input", { id: "br-url", type: "url", placeholder: "https://bring-liste.…workers.dev", value: st.url, oninput: (e) => { st.url = e.target.value; } })),
+      h("div", { class: "row-inline" }, h("button", { class: "btn primary small", type: "button", onclick: async () => {
+        const u = st.url.trim();
+        if (u && !/^https:\/\/[^\s?#]+$/i.test(u)) { msg.textContent = "Bitte die Adresse vollständig mit https:// und ohne ? oder # eintragen."; return; }
+        try { await db.doc("settings/integrations").set({ bringHelper: u, updatedAt: Date.now() }); S.integrations = { bringHelper: u }; msg.textContent = u ? "Gespeichert. Der Knopf „In Bring! öffnen“ ist jetzt im Wochenplan aktiv." : "Entfernt."; }
+        catch { msg.textContent = "Speichern hat nicht geklappt."; }
+      } }, "Speichern"),
+        bringHelper() ? h("a", { class: "btn small", href: bringHelper() + "?t=Test&i=1%20kg%20Kartoffeln&i=2%20Paprika", target: "_blank", rel: "noopener", style: "text-decoration:none" }, "Helfer testen") : null),
+      msg);
   }
 
   // ---------- Weitergeben: Programm und Rezepte ja, persönliche und Gesundheitsdaten nie ----------
   // Datenbereiche der App. Nur "content" verlässt je die App.
-  const DATA_GROUPS = { content: ["recipes"], personal: ["plans", "settings/brain", "settings/cycle"], health: ["profiles", "tracking", "cycle"] };
+  const DATA_GROUPS = { content: ["recipes"], personal: ["plans", "settings/brain", "settings/cycle", "settings/integrations"], health: ["profiles", "tracking", "cycle"] };
   const BUNDLE = "lebenskompass-rezepte";
   const BUNDLE_OLD = "kuechenbuch-rezepte";
   function transferSection() {
@@ -1845,7 +1884,7 @@ Regeln:
   // ---------- Daten ----------
   const ready = new Promise(res => { let n = 0; (function w() { if (window.claude || n++ > 30) res(); else setTimeout(w, 100); })(); });
   const busyEditing = () => (S.view === "book" && S.mode !== "read") || (S.view === "plan" && S.planMode === "new") || S.planBusy || !!S.editProfile || !!S.pick ||
-    ["p-feedback", "b-forbidden", "b-pref", "b-rules", "rq"].includes(document.activeElement?.id) || /^(cy-|mood-)/.test(document.activeElement?.id || "");
+    ["p-feedback", "b-forbidden", "b-pref", "b-rules", "rq", "br-url"].includes(document.activeElement?.id) || /^(cy-|mood-)/.test(document.activeElement?.id || "");
   (async () => {
     await ready;
     const timer = setTimeout(() => { S.loaded = S.plansLoaded = S.profilesLoaded = true; render(); }, 10000);
@@ -1865,6 +1904,7 @@ Regeln:
       for (const d of snap.docs) { const x = d.data() || {}; if (d.id === "config") cfg = x; else if (d.id.startsWith("d-") && x.date) days[x.date] = x; }
       S.cycleDays = days; S.cycleCfg = cfg; if (!busyEditing()) renderMain();
     }, () => {});
+    db.doc("settings/integrations").onSnapshot((snap) => { S.integrations = snap.exists ? snap.data() : null; if (!busyEditing()) renderMain(); }, () => {});
     db.doc("settings/cycle").onSnapshot((snap) => { S.cycleMoods = snap.exists ? (snap.data() || {}).moods || null : null; if (!busyEditing()) renderMain(); }, () => {});
     try {
       const user = window.claude ? await window.claude.use("user") : null;

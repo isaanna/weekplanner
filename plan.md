@@ -260,3 +260,10 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 # Runde 9 – Umbenennung
 - [x] App heißt jetzt „Mein Lebenskompass“ (Titel, Kopfzeile, Programmdatei `app/lebenskompass.html`, Weitergabe-Paket)
 - [x] Import nimmt auch alte Rezept-Exporte (`kuechenbuch-rezepte`) an
+
+# Runde 10 – Bring! und Suche
+- [x] Eigenschafts-Filter unter der Rezeptsuche entfernt
+- [x] Bring!: Helfer als Cloudflare Worker (`integrations/bring-worker.js`, Anleitung `integrations/BRING.md`)
+- [x] App: Knopf „In Bring! öffnen“ im Wochenplan, Adresse des Helfers unter „Profil & Regeln“ → „Bring!“
+- [ ] Worker bei Cloudflare anlegen und Adresse in der App eintragen (Isa)
+- [ ] Import in Bring! einmal echt testen

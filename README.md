@@ -25,9 +25,8 @@ Die App ist eine einzelne HTML-Seite, die als Artifact auf claude.ai läuft:
 
 ## Einkaufsliste in Bring!
 
-Im Wochenplan „Für Bring! kopieren“ wählen. Kopiert wird jeder noch nicht abgehakte Artikel in einer eigenen Zeile (`Artikel, Menge`). In Bring! ins Eingabefeld einfügen.
-Ein „Teilen“-Knopf mit Auswahl der Bring!-App ist in claude.ai nicht möglich: Die App läuft in einem geschützten Rahmen, der das Teilen-Menü des Handys sperrt.
-*Noch zu prüfen:* ob Bring! mehrere Zeilen beim Einfügen in einzelne Artikel aufteilt.
+Im Wochenplan **„In Bring! öffnen“**: Alle noch nicht abgehakten Artikel gehen an die Bring!-App.
+Dafür braucht es einmalig einen kleinen Helfer (kostenloser Cloudflare Worker), weil Bring! nur öffentliche Seiten lesen kann und die App privat ist. Code und Anleitung: [`integrations/`](integrations/BRING.md). Die Adresse des Helfers wird in der App unter „Profil & Regeln“ → „Bring!“ eingetragen.
 
 ## Tagesbedarf
 
@@ -45,6 +44,7 @@ app/        Programm – lebenskompass.html, enthält keine Inhalte
 content/    Teilbare Inhalte – Rezepte als JSON (ein Rezept pro Datei)
 personal/   Persönlich – Regeln/Allergien und Wochenpläne, nie weitergeben
 scripts/    weitergeben.sh – packt Programm + Rezepte als ZIP
+integrations/ bring-worker.js + BRING.md – Bring!-Helfer (Cloudflare Worker)
 ```
 
 Gesundheitsdaten (Profile, Tracking, Zyklus) liegen nur in der Datenbank der App und nirgends im Repository.

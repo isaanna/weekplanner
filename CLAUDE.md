@@ -69,6 +69,12 @@ personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json)
 - In der App: „Profil & Regeln“ → „App weitergeben“ exportiert/importiert nur Rezepte
 - Diese Datei (CLAUDE.md) enthält persönliche Regeln und wird nicht weitergegeben
 
+## Bring!
+
+- Bring! übernimmt Artikel nur von einer öffentlichen Seite. Dafür gibt es den Helfer `integrations/bring-worker.js` (Cloudflare Worker, speichert nichts), Anleitung in `integrations/BRING.md`
+- Die Adresse des Helfers steht in der App unter „Profil & Regeln“ → „Bring!“ (`settings/integrations.bringHelper`), nicht im Code
+- „In Bring! öffnen“ baut den Link `api.getbring.com/rest/bringrecipes/deeplink?url=<Helfer>?t=Titel&i=Artikel…&source=web` aus allen noch nicht abgehakten Artikeln
+
 ## Zyklus
 
 - Reiter „Zyklus“: Monatsansicht, pro Tag „Tage mit Blutung“, „Tage gespürt ohne Blutung“, „Eisprung gespürt“, Notiz – mehr nicht
