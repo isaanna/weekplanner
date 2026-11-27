@@ -1,4 +1,4 @@
-# Plan: Mein Küchenbuch – nächster Ausbau
+# Plan: Mein Lebenskompass (früher „Mein Küchenbuch“)
 
 Stand: 26.11.2026 – umgesetzt bis auf die offenen Kästchen (Bring!-Format prüfen, Instagram über Chat, Punkt 9) · Kochbuch: https://claude.ai/artifact/NEMo2yd7AXeyKKwiYcJ9Hb
 Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eigene), noch keine Wochenpläne.
@@ -255,3 +255,7 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Gesundheitsdaten (Profile, Tracking, Zyklus) nur in der App-Datenbank, nie im Repository oder in einem Export
 - [x] `scripts/weitergeben.sh`: ZIP mit Programm + Rezepten + Anleitung
 - [x] In der App: „App weitergeben“ mit Rezept-Export und -Import
+
+# Runde 9 – Umbenennung
+- [x] App heißt jetzt „Mein Lebenskompass“ (Titel, Kopfzeile, Programmdatei `app/lebenskompass.html`, Weitergabe-Paket)
+- [x] Import nimmt auch alte Rezept-Exporte (`kuechenbuch-rezepte`) an

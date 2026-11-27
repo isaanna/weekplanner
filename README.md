@@ -1,4 +1,4 @@
-# weekplanner – Mein Küchenbuch
+# weekplanner – Mein Lebenskompass
 
 Persönliches Kochbuch mit Wochenplaner, Meal-Prep-Ablauf, Einkaufsliste und Ernährungs-Tracking.
 Die App ist eine einzelne HTML-Seite, die als Artifact auf claude.ai läuft:
@@ -40,7 +40,7 @@ Ein „Teilen“-Knopf mit Auswahl der Bring!-App ist in claude.ai nicht möglic
 ## Ordner
 
 ```
-app/        Programm – kuechenbuch.html, enthält keine Inhalte
+app/        Programm – lebenskompass.html, enthält keine Inhalte
 content/    Teilbare Inhalte – Rezepte als JSON (ein Rezept pro Datei)
 personal/   Persönlich – Regeln/Allergien und Wochenpläne, nie weitergeben
 scripts/    weitergeben.sh – packt Programm + Rezepte als ZIP
@@ -50,7 +50,7 @@ Gesundheitsdaten (Profile, Tracking, Zyklus) liegen nur in der Datenbank der App
 
 ## Weitergeben
 
-- **Aus dem Repository:** `./scripts/weitergeben.sh` → `dist/kuechenbuch-weitergabe-<datum>.zip` mit `kuechenbuch.html`, `kuechenbuch-rezepte.json` und einer Anleitung ([WEITERGEBEN.md](WEITERGEBEN.md))
+- **Aus dem Repository:** `./scripts/weitergeben.sh` → `dist/lebenskompass-weitergabe-<datum>.zip` mit `lebenskompass.html`, `lebenskompass-rezepte.json` und einer Anleitung ([WEITERGEBEN.md](WEITERGEBEN.md))
 - **Aus der App:** „Profil & Regeln“ → „App weitergeben“ → „Rezepte exportieren“ bzw. „Rezepte importieren“
 - In beiden Fällen gehen nur Programm und Rezepte mit – keine Profile, kein Tracking, kein Zyklus, keine Wochenpläne, keine Regeln oder Allergien
 
@@ -68,6 +68,6 @@ Die App selbst enthält keine Inhalte. Alles liegt in der Datenbank des Artifact
 
 ## Entwicklung
 
-- Quellcode: `app/kuechenbuch.html` (eine Datei, kein Build-Schritt)
+- Quellcode: `app/lebenskompass.html` (eine Datei, kein Build-Schritt)
 - Veröffentlichen: Datei als Artifact auf dieselbe URL publizieren (Capabilities `db` und `sample` bleiben bestehen)
 - Ausbauplan: [`plan.md`](plan.md)

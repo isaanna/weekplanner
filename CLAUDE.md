@@ -1,6 +1,6 @@
-# CLAUDE.md – Gehirn des Küchenbuchs
+# CLAUDE.md – Gehirn von „Mein Lebenskompass“
 
-Anweisungen für Claude bei der Arbeit an diesem Repository und an den Daten des Küchenbuchs.
+Anweisungen für Claude bei der Arbeit an diesem Repository und an den Daten von „Mein Lebenskompass“ (App mit Kochbuch, Wochenplaner, Tracking und bald Zyklus).
 
 ## Verbotene Lebensmittel
 
@@ -55,17 +55,17 @@ Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten,
 Drei Teile, streng getrennt:
 
 ```
-app/        Programm: kuechenbuch.html – keine Inhalte, keine persönlichen Daten
+app/        Programm: lebenskompass.html – keine Inhalte, keine persönlichen Daten
 content/    Teilbare Inhalte: nur Rezepte (recipes/<id>.json)
 personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json), Wochenpläne (plans/)
 ```
 
 **Gesundheitsdaten** – `profiles` (Gewicht, Größe, Alter), `tracking` (Essprotokoll), `cycle` (Zyklus) – liegen **nur** in der Datenbank der App. Sie werden nie exportiert, nie ins Repository geschrieben und nie in ein Weitergabe-Paket gepackt.
 
-- `app/kuechenbuch.html` enthält keine Rezepte, Profile, Regeln oder Beispieltexte mit Rezeptdaten. Im Code steht die Einteilung als `DATA_GROUPS` (content / personal / health)
+- `app/lebenskompass.html` enthält keine Rezepte, Profile, Regeln oder Beispieltexte mit Rezeptdaten. Im Code steht die Einteilung als `DATA_GROUPS` (content / personal / health)
 - Die Datenbank ist die Quelle. Nach Änderungen an Rezepten nach `content/recipes/` exportieren, nach Änderungen an Regeln oder Plänen nach `personal/` – und committen
 - Die Regeln oben stehen zusätzlich in `settings/brain` (App) und `personal/settings/brain.json`. Bei Änderungen alle drei aktualisieren
-- Weitergeben: `scripts/weitergeben.sh` erzeugt `dist/kuechenbuch-weitergabe-<datum>.zip` mit Programm + Rezepten (ohne Originaltexte). `dist/` ist nicht im Repository
+- Weitergeben: `scripts/weitergeben.sh` erzeugt `dist/lebenskompass-weitergabe-<datum>.zip` mit Programm + Rezepten (ohne Originaltexte). `dist/` ist nicht im Repository
 - In der App: „Profil & Regeln“ → „App weitergeben“ exportiert/importiert nur Rezepte
 - Diese Datei (CLAUDE.md) enthält persönliche Regeln und wird nicht weitergegeben
 
@@ -83,6 +83,6 @@ personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json)
 ## Arbeitsweise
 
 - App-URL: https://claude.ai/artifact/NEMo2yd7AXeyKKwiYcJ9Hb
-- Nach Änderungen an `app/kuechenbuch.html`: auf dieselbe URL publizieren, committen und selbstständig pushen
+- Nach Änderungen an `app/lebenskompass.html`: auf dieselbe URL publizieren, committen und selbstständig pushen
 - Commits ohne Co-Author- oder Session-Zeilen, kein Hinweis auf Claude als Mitautor
 - Commit-Nachrichten auf Deutsch

@@ -1,4 +1,4 @@
-<title>Mein Küchenbuch</title>
+<title>Mein Lebenskompass</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -293,7 +293,7 @@ ol.steps li { gap: 12px; }
 <div class="wrap">
   <header class="top">
     <div>
-      <h1><button type="button" id="homeLink">Mein Küchenbuch</button></h1>
+      <h1><button type="button" id="homeLink">Mein Lebenskompass</button></h1>
       <p id="sub">Rezepte sammeln, Wochen planen, Essen tracken.</p>
     </div>
     <button class="btn primary" id="addBtn" type="button">+ Rezept einfügen</button>
@@ -1457,7 +1457,8 @@ Regeln:
   // ---------- Weitergeben: Programm und Rezepte ja, persönliche und Gesundheitsdaten nie ----------
   // Datenbereiche der App. Nur "content" verlässt je die App.
   const DATA_GROUPS = { content: ["recipes"], personal: ["plans", "settings/brain"], health: ["profiles", "tracking", "cycle"] };
-  const BUNDLE = "kuechenbuch-rezepte";
+  const BUNDLE = "lebenskompass-rezepte";
+  const BUNDLE_OLD = "kuechenbuch-rezepte";
   function transferSection() {
     const msg = h("p", { class: "status", role: "status" });
     const fileIn = h("input", { type: "file", accept: "application/json,.json", id: "imp-file", hidden: true,
@@ -1479,15 +1480,15 @@ Regeln:
     const recipes = ordered().map(({ id, raw, imageId, imageUrl, ...r }) => ({ id, ...r }));
     const data = JSON.stringify({ format: BUNDLE, version: 1, exportedAt: new Date().toISOString(), recipes }, null, 2);
     try {
-      await downloads.save({ filename: `kuechenbuch-rezepte-${todayStr()}.json`, data: new Blob([data], { type: "application/json" }) });
+      await downloads.save({ filename: `lebenskompass-rezepte-${todayStr()}.json`, data: new Blob([data], { type: "application/json" }) });
       msg.textContent = `${recipes.length} Rezepte exportiert. Profile, Tracking, Zyklus und Regeln sind nicht enthalten.`;
     } catch (e) { msg.textContent = e && e.code === "declined" ? "Speichern abgebrochen." : "Der Export hat nicht geklappt. Versuch es noch einmal."; }
   }
   async function importBundle(file, msg) {
     if (!col) { msg.textContent = "Importieren geht gerade nicht. Melde dich an und lade die Seite neu."; return; }
     let b; try { b = JSON.parse(await file.text()); } catch { msg.textContent = "Die Datei ist kein gültiger Rezept-Export."; return; }
-    const list = b && b.format === BUNDLE ? arr(b.recipes) : null;
-    if (!list) { msg.textContent = "Die Datei ist kein Rezept-Export dieses Kochbuchs."; return; }
+    const list = b && (b.format === BUNDLE || b.format === BUNDLE_OLD) ? arr(b.recipes) : null;
+    if (!list) { msg.textContent = "Die Datei ist kein Rezept-Export des Lebenskompasses."; return; }
     const have = new Set(S.recipes.map(r => r.id));
     let added = 0, skipped = 0, failed = 0;
     msg.textContent = `${list.length} Rezepte werden importiert …`;
