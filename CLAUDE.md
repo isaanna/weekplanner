@@ -60,6 +60,7 @@ content/    Inhalte: Sicherung der Datenbank als JSON (recipes/, plans/, setting
 - Schriften: Young Serif (Überschriften), Figtree (Text und Bedienung)
 - Keine Bilder: Kapitel als Kacheln, Rezepte als Liste über die ganze Breite (nur Titel, Trennstrich unter jedem Rezept)
 - Reiterleiste ohne Scrollleiste: Reiter brechen bei wenig Platz um
+- Eingabefelder (Text, Suche, Auswahl) immer hell `#FAF6F1` mit Rahmen `#79685A`, beim Schreiben Rahmen `#5A473A`
 - Rezeptbereich: Suche oben, Treffer erst nach Eingabe; ohne Suche nur Kapitel-Kacheln und Zufallsgenerator
 
 ## Arbeitsweise
