@@ -335,6 +335,15 @@ ol.steps li { gap: 12px; }
 .addrow { border: 1px dashed var(--herb); background: none; border-radius: 10px; padding: 10px; font-family: var(--ui); font-weight: 600; color: var(--accent); text-align: center; }
 .addrow:hover { background: var(--herb-soft); }
 .sumpart::before { content: "·"; margin: 0 6px 0 2px; color: var(--muted); }
+.swipehint { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 30px; }
+.swipehint span { font-family: var(--ui); font-size: 0.78rem; color: var(--muted); }
+@media (hover: hover) and (pointer: fine) { .swipehint span { visibility: hidden; } }
+@media (prefers-reduced-motion: no-preference) {
+  .full.swiped-l > * { animation: inL .22s ease-out both; }
+  .full.swiped-r > * { animation: inR .22s ease-out both; }
+  @keyframes inL { from { opacity: .3; transform: translateX(28px); } to { opacity: 1; transform: none; } }
+  @keyframes inR { from { opacity: .3; transform: translateX(-28px); } to { opacity: 1; transform: none; } }
+}
 
 @media (max-width: 760px) {
   body { padding-block: 12px 32px; }
@@ -1459,7 +1468,8 @@ Regeln:
       return h("button", { type: "button", class: "wsday", "aria-pressed": xs === ds ? "true" : "false", "aria-label": x.toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" }), onclick: () => setTrackDay(xs) },
         h("span", null, DAYS[i].slice(0, 2)), h("b", { class: xs === today ? "is-today" : null }, x.getDate()), h("i", { class: mine.some(e => e.date === xs) ? "has" : null }));
     })));
-    if (ds !== today) box.append(h("div", null, h("button", { class: "btn small ghost", type: "button", onclick: () => setTrackDay(today) }, "Zu heute")));
+    box.append(h("div", { class: "swipehint" }, h("span", null, "Wischen für den nächsten oder vorherigen Tag"),
+      ds !== today ? h("button", { class: "btn small ghost", type: "button", onclick: () => setTrackDay(today) }, "Zu heute") : null));
     const pc = personChips(pid); if (pc) box.append(pc);
     if (S.pick) box.append(renderPicker(pid));
     const t = targets(S.profiles.find(p => p.id === pid) || {});
@@ -1855,6 +1865,7 @@ Regeln:
         p && p.pms ? h("span", { class: "pmstag" }, "PMS") : null));
     }
     box.append(grid);
+    box.append(h("div", { class: "swipehint" }, h("span", null, "Wischen für den nächsten oder vorherigen Monat")));
     box.append(h("div", { class: "legend" },
       Object.entries(PHASES).map(([k, v]) => h("span", null, h("i", { class: `phdot ${v.cls}` }), v.name)),
       h("span", null, h("i", { class: "phdot ph-lut pmsdot" }), "PMS (5 Tage vor den Tagen)"),
@@ -1983,6 +1994,28 @@ Regeln:
   }
 
   $("homeLink").addEventListener("click", () => go("home"));
+
+  // ---------- Wischen: Tag/Woche im Tracking, Monat im Zyklus ----------
+  (function swipe() {
+    const el = $("full"); let x0 = null, y0 = null, t0 = 0;
+    const skip = (t) => !!(t && t.closest && t.closest("input, textarea, select, .tgrid, .picker"));
+    el.addEventListener("touchstart", (e) => {
+      if (e.touches.length !== 1 || skip(e.target)) { x0 = null; return; }
+      x0 = e.touches[0].clientX; y0 = e.touches[0].clientY; t0 = Date.now();
+    }, { passive: true });
+    el.addEventListener("touchend", (e) => {
+      if (x0 == null) return;
+      const dx = e.changedTouches[0].clientX - x0, dy = e.changedTouches[0].clientY - y0; x0 = null;
+      if (Date.now() - t0 > 800 || Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.5) return;
+      const dir = dx < 0 ? 1 : -1;
+      if (S.view === "track") {
+        if (S.trackMode === "day") setTrackDay(ymd(addDays(parseYmd(S.trackDay || todayStr()), dir)));
+        else shiftWeek(7 * dir);
+      } else if (S.view === "cycle") shiftMonth(dir);
+      else return;
+      el.classList.remove("swiped-l", "swiped-r"); void el.offsetWidth; el.classList.add(dir > 0 ? "swiped-l" : "swiped-r");
+    }, { passive: true });
+  })();
   document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => go(b.dataset.view)));
   window.addEventListener("hashchange", () => { if (routeFromHash()) render(); });
   S.weekStart = ymd(mondayOf(new Date()));

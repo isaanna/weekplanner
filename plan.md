@@ -272,3 +272,4 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] App in der claude.ai-Seitenleiste angeheftet
 - [x] Tracking mit Tagesansicht (Umschalter „Tag | Woche“, auf dem Handy Standard): Wochenleiste, Nährwert-Balken, eine Karte pro Mahlzeit
 - [x] Handy: Reiter dreispaltig, kleinere Kopfzeile, Kapitel zweispaltig, kompakter Auswahl-Dialog, Zyklus-Zusammenfassung zeilenweise
+- [x] Wischen auf dem Handy: Tag und Woche im Tracking, Monat im Zyklus
