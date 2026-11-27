@@ -45,7 +45,7 @@ Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten,
 
 ## Profile und Tagesbedarf
 
-- Pro Person: Gewicht jetzt, **Zielgewicht** und **Tempo** (0,25 / 0,5 / 0,75 / 1 kg pro Woche)
+- Pro Person: **Geburtsdatum** (Alter wird daraus tagesgenau berechnet), Größe, Gewicht jetzt, **Zielgewicht** und **Tempo** (0,25 / 0,5 / 0,75 / 1 kg pro Woche)
 - Kalorien = Grundumsatz (Mifflin-St Jeor) × Aktivität ± Tempo × 1.100 kcal pro Tag, nie unter den Grundumsatz
 - Eiweiß 1,8 g pro kg Zielgewicht (beim Halten 1,6 g pro kg), Fett 30 % der Kalorien, Ballaststoffe mind. 30 g, Rest Kohlenhydrate
 - Ein eingetragenes Kalorien-Maximum ersetzt die Berechnung
@@ -60,7 +60,7 @@ content/    Teilbare Inhalte: nur Rezepte (recipes/<id>.json)
 personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json), Stimmungstexte (settings/cycle.json), Wochenpläne (plans/)
 ```
 
-**Gesundheitsdaten** – `profiles` (Gewicht, Größe, Alter), `tracking` (Essprotokoll), `cycle` (Zyklus: `config` mit Verhütung/Dauer/Profil, `d-YYYY-MM-DD` je Tag mit Blutung, gespürt, Eisprung, Notiz) – liegen **nur** in der Datenbank der App. Sie werden nie exportiert, nie ins Repository geschrieben und nie in ein Weitergabe-Paket gepackt.
+**Gesundheitsdaten** – `profiles` (Geburtsdatum, Gewicht, Größe), `tracking` (Essprotokoll), `cycle` (Zyklus: `config` mit Verhütung/Dauer/Profil, `d-YYYY-MM-DD` je Tag mit Blutung, gespürt, Eisprung, Notiz) – liegen **nur** in der Datenbank der App. Sie werden nie exportiert, nie ins Repository geschrieben und nie in ein Weitergabe-Paket gepackt.
 
 - `app/lebenskompass.html` enthält keine Rezepte, Profile, Regeln oder Beispieltexte mit Rezeptdaten. Im Code steht die Einteilung als `DATA_GROUPS` (content / personal / health)
 - Die Datenbank ist die Quelle. Nach Änderungen an Rezepten nach `content/recipes/` exportieren, nach Änderungen an Regeln oder Plänen nach `personal/` – und committen

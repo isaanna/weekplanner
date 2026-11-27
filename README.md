@@ -14,7 +14,7 @@ Die App ist eine einzelne HTML-Seite, die als Artifact auf claude.ai läuft:
 | **Wochenplan** | Vorgaben in eigenen Worten eingeben (wann vorkochen, für wen). Claude plant Frühstück, Mittag- und Abendessen (keine Snacks) mit Vorkoch-Ablauf, Nährwerten pro Person, Einkaufsliste und schlägt bei Bedarf neue Rezepte vor. Der ganze Plan lässt sich ins Tracking übernehmen. |
 | **Tracking** | Wochenraster Montag–Sonntag × Frühstück/Mittagessen/Abendessen/Snack. Per Klick Rezept oder freien Eintrag hinzufügen, Tagessumme gegen Profilziel. „Ganze Woche löschen“ leert die angezeigte Woche. |
 | **Zyklus** | Monatskalender mit Phasen in Pastellfarben (Menstruation, Follikel, Eisprung, Luteal, PMS), Eintrag pro Tag (Tage mit/ohne Blutung, Eisprung gespürt, Notiz), Vorhersage der nächsten Tage und des Eisprungs aus den letzten 3 Zyklen. Keine Verhütungsmethode. |
-| **Profil & Regeln** | Profile pro Person (Alter, Größe, Gewicht, Aktivität, Ziel, optional kcal-Maximum) mit berechnetem Tagesbedarf. Regeln für Claude: verbotene Lebensmittel, Vorlieben, weitere Regeln. |
+| **Profil & Regeln** | Profile pro Person (Geburtsdatum, Größe, Gewicht, Aktivität, Ziel, optional kcal-Maximum) mit berechnetem Tagesbedarf. Regeln für Claude: verbotene Lebensmittel, Vorlieben, weitere Regeln. |
 
 ## Rezepte hinzufügen
 
@@ -63,7 +63,7 @@ Die App selbst enthält keine Inhalte. Alles liegt in der Datenbank des Artifact
 | --- | --- |
 | `recipes` | Rezepte: `title, category, tags[], servings, time, shelfLifeDays, ingredients[], steps[], notes, source, sourceUrl, nutrition{kcal, protein, carbs, fat, fiber}` (pro Portion) |
 | `plans` | Wochenpläne: `title, summary, brief, newRecipes[], cook[], prep[], days[{day, meals[{slot, ref, portions, portionsByPerson{}, note}]}], shopping[], pantry[], tips[], checked{}` |
-| `profiles` | Personen: `name, sex, age, height, weight, targetWeight, pace, activity, kcalMax` |
+| `profiles` | Personen: `name, sex, birthDate, height, weight, targetWeight, pace, activity, kcalMax` (Alter wird aus `birthDate` berechnet) |
 | `tracking` | Einträge: `date (YYYY-MM-DD), slot, profileId, recipeId, title, portions, nut{}` |
 | `settings/brain` | Regeln: `forbidden[], preferences, rules` |
 | `settings/cycle` | Stimmungstexte je Phase: `moods{mens, foll, ov, lut, pms}` |

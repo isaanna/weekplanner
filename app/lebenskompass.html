@@ -497,8 +497,16 @@ ol.steps li { gap: 12px; }
   }
 
   // ---------- Profile & Bedarf ----------
+  // Alter aus dem Geburtsdatum (genau auf den Tag), sonst altes Feld "age"
+  function ageOf(p) {
+    const b = /^\d{4}-\d{2}-\d{2}$/.test(str(p.birthDate)) ? parseYmd(p.birthDate) : null;
+    if (!b) return num(p.age);
+    const t = new Date(); let a = t.getFullYear() - b.getFullYear();
+    if (t.getMonth() < b.getMonth() || (t.getMonth() === b.getMonth() && t.getDate() < b.getDate())) a--;
+    return a >= 0 && a < 120 ? a : null;
+  }
   function targets(p) {
-    const w = num(p.weight), hgt = num(p.height), a = num(p.age), act = num(p.activity) || 1.375;
+    const w = num(p.weight), hgt = num(p.height), a = ageOf(p), act = num(p.activity) || 1.375;
     const tw = num(p.targetWeight);
     let goal = p.goal || "halten";
     if (w && tw) goal = tw < w - 0.5 ? "abnehmen" : tw > w + 0.5 ? "aufbauen" : "halten";
@@ -537,7 +545,7 @@ ol.steps li { gap: 12px; }
   }
   function goalBars(sum, t, short) { return h("div", { style: "display:grid;gap:5px" }, ["kcal", "protein", "carbs", "fat", "fiber"].map(k => goalBar(k, sum[k], t[k], short))); }
   function goalBlock(sum, t) {
-    if (!t) return h("p", { class: "hint" }, "Im Profil Alter, Größe und Gewicht eintragen, dann erscheint hier der Tagesbedarf.");
+    if (!t) return h("p", { class: "hint" }, "Im Profil Geburtsdatum, Größe und Gewicht eintragen, dann erscheint hier der Tagesbedarf.");
     return goalBars(sum, t);
   }
   const fmtKg = (x) => String(num(x)).replace(".", ",");
@@ -1607,21 +1615,21 @@ Regeln:
       if (S.editProfile && S.editProfile.id === p.id) return profileForm();
       const t = targets(p);
       return h("div", { class: "pcard" }, h("h4", null, p.name),
-        h("p", { class: "hint" }, [p.sex === "m" ? "männlich" : "weiblich", p.age ? `${p.age} J.` : "", p.height ? `${p.height} cm` : ""].filter(Boolean).join(" · ")),
+        h("p", { class: "hint" }, [p.sex === "m" ? "männlich" : "weiblich", ageOf(p) != null ? `${ageOf(p)} J.${p.birthDate ? ` (geb. ${parseYmd(p.birthDate).toLocaleDateString("de-DE")})` : ""}` : "", p.height ? `${p.height} cm` : ""].filter(Boolean).join(" · ")),
         p.weight ? h("p", { class: "hint", style: "color:var(--ink)" }, p.targetWeight
           ? `${fmtKg(p.weight)} → ${fmtKg(p.targetWeight)} kg` + (t && t.goal !== "halten" ? ` · ${String(t.pace).replace(".", ",")} kg pro Woche · Ziel in ca. ${t.weeks} Wochen` : " · Gewicht halten")
           : `${fmtKg(p.weight)} kg · noch kein Zielgewicht`) : null,
         t ? h("dl", { class: "targets" }, h("dt", null, t.manual ? "Kalorien (selbst festgelegt)" : "Kalorien (berechnet)"), h("dd", null, `${de(t.kcal)} kcal`),
           h("dt", null, "Eiweiß"), h("dd", null, `${t.protein} g`), h("dt", null, "Kohlenhydrate"), h("dd", null, `${t.carbs} g`),
           h("dt", null, "Fett"), h("dd", null, `${t.fat} g`), h("dt", null, "Ballaststoffe"), h("dd", null, `${t.fiber} g`))
-          : h("p", { class: "hint" }, "Für den Bedarf fehlen Alter, Größe oder Gewicht."),
+          : h("p", { class: "hint" }, "Für den Bedarf fehlen Geburtsdatum, Größe oder Gewicht."),
         t && t.floored && !t.manual ? h("p", { class: "hint" }, "Hinweis: Das Tempo wäre zu schnell. Die Kalorien sind auf den Grundumsatz begrenzt.") : null,
         t && t.manual ? h("p", { class: "hint" }, "Das selbst eingetragene Kalorien-Maximum ersetzt den berechneten Wert. Lösch es im Profil, um mit Zielgewicht und Tempo zu rechnen.") : null,
         h("div", { class: "row-inline" }, h("button", { class: "btn small", type: "button", onclick: () => { S.editProfile = { ...p }; renderMain(); } }, "Bearbeiten")));
     }));
     if (S.editProfile && !S.editProfile.id) cards.append(profileForm());
     sec.append(cards);
-    if (!S.editProfile) sec.append(h("div", null, h("button", { class: "btn primary", type: "button", onclick: () => { S.editProfile = { name: "", sex: "w", age: "", height: "", weight: "", targetWeight: "", pace: "0.5", activity: "1.375", kcalMax: "" }; renderMain(); } }, "+ Profil anlegen")));
+    if (!S.editProfile) sec.append(h("div", null, h("button", { class: "btn primary", type: "button", onclick: () => { S.editProfile = { name: "", sex: "w", birthDate: "", height: "", weight: "", targetWeight: "", pace: "0.5", activity: "1.375", kcalMax: "" }; renderMain(); } }, "+ Profil anlegen")));
     sec.append(h("p", { class: "hint" }, "Berechnung: Grundumsatz nach Mifflin-St Jeor × Aktivität. Zum Abnehmen oder Zunehmen werden pro 1 kg pro Woche täglich 1.100 kcal abgezogen bzw. dazugerechnet (7.700 kcal pro kg), höchstens bis zum Grundumsatz. Eiweiß 1,8 g pro kg Zielgewicht (beim Halten 1,6 g pro kg), Fett 30 % der Kalorien, Ballaststoffe mindestens 30 g, Rest Kohlenhydrate. Ein selbst eingetragenes Kalorien-Maximum ersetzt den berechneten Wert."));
     box.append(sec);
 
@@ -1719,7 +1727,7 @@ Regeln:
     const p = S.editProfile;
     const bind = (k) => (e) => { p[k] = e.target.value; };
     const preview = h("p", { class: "hint", role: "status" });
-    const upd = () => { const t = targets(p); preview.textContent = t ? `Ergibt: ${de(t.kcal)} kcal · ${t.protein} g Eiweiß · ${t.carbs} g KH · ${t.fat} g Fett · ${t.fiber} g Ballaststoffe pro Tag${t.weeks ? ` · Ziel in ca. ${t.weeks} Wochen` : ""}${t.manual ? " (Kalorien-Maximum gilt)" : ""}` : "Alter, Größe und Gewicht eintragen oder ein Kalorien-Maximum festlegen."; };
+    const upd = () => { const t = targets(p); preview.textContent = t ? `Ergibt: ${de(t.kcal)} kcal · ${t.protein} g Eiweiß · ${t.carbs} g KH · ${t.fat} g Fett · ${t.fiber} g Ballaststoffe pro Tag${t.weeks ? ` · Ziel in ca. ${t.weeks} Wochen` : ""}${t.manual ? " (Kalorien-Maximum gilt)" : ""}` : "Geburtsdatum, Größe und Gewicht eintragen oder ein Kalorien-Maximum festlegen."; };
     const inp = (label, k, extra = {}) => h("label", { for: "pf-" + k }, label, h("input", { id: "pf-" + k, value: str(p[k]), inputmode: extra.num ? "decimal" : null, oninput: (e) => { p[k] = e.target.value; upd(); } }));
     upd();
     return h("div", { class: "pcard form", style: "max-width:720px;grid-column:1/-1" },
@@ -1727,7 +1735,8 @@ Regeln:
       h("div", { class: "row3" },
         h("label", { for: "pf-sex" }, "Geschlecht", h("select", { id: "pf-sex", onchange: (e) => { p.sex = e.target.value; upd(); } },
           h("option", { value: "w", selected: p.sex !== "m" }, "weiblich"), h("option", { value: "m", selected: p.sex === "m" }, "männlich"))),
-        inp("Alter", "age", { num: true }), inp("Größe (cm)", "height", { num: true })),
+        h("label", { for: "pf-birth" }, "Geburtsdatum", h("input", { id: "pf-birth", type: "date", value: str(p.birthDate), max: todayStr(), oninput: (e) => { p.birthDate = e.target.value; upd(); } })),
+        inp("Größe (cm)", "height", { num: true })),
       h("div", { class: "row3" }, inp("Gewicht jetzt (kg)", "weight", { num: true }), inp("Zielgewicht (kg)", "targetWeight", { num: true }),
         h("label", { for: "pf-pace" }, "Tempo", h("select", { id: "pf-pace", onchange: (e) => { p.pace = e.target.value; upd(); } }, PACES.map(([v, l]) => h("option", { value: v, selected: str(p.pace || "0.5") === v }, l))))),
       inp("Kalorien-Maximum (optional, ersetzt die Berechnung)", "kcalMax", { num: true }),
@@ -1744,7 +1753,7 @@ Regeln:
   async function saveProfile() {
     const p = S.editProfile;
     if (!str(p.name).trim()) { $("pf-name")?.focus(); return; }
-    const data = { name: str(p.name).trim(), sex: p.sex === "m" ? "m" : "w", age: num(p.age), height: num(p.height), weight: num(p.weight), activity: num(p.activity) || 1.375, targetWeight: num(p.targetWeight), pace: num(p.pace) || 0.5, kcalMax: num(p.kcalMax), updatedAt: Date.now() };
+    const data = { name: str(p.name).trim(), sex: p.sex === "m" ? "m" : "w", birthDate: /^\d{4}-\d{2}-\d{2}$/.test(str(p.birthDate)) ? p.birthDate : null, age: ageOf(p), height: num(p.height), weight: num(p.weight), activity: num(p.activity) || 1.375, targetWeight: num(p.targetWeight), pace: num(p.pace) || 0.5, kcalMax: num(p.kcalMax), updatedAt: Date.now() };
     try {
       if (p.id) { await profCol.doc(p.id).update(data); Object.assign(S.profiles.find(x => x.id === p.id), data); }
       else { const ref = await profCol.add({ ...data, createdAt: Date.now() }); if (!S.profiles.some(x => x.id === ref.id)) S.profiles.push({ id: ref.id, ...data }); }
