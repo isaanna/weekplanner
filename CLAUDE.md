@@ -50,18 +50,24 @@ Vor jedem Eintragen von Rezepten automatisch gegen diese Liste prüfen (Zutaten,
 - Eiweiß 1,8 g pro kg Zielgewicht (beim Halten 1,6 g pro kg), Fett 30 % der Kalorien, Ballaststoffe mind. 30 g, Rest Kohlenhydrate
 - Ein eingetragenes Kalorien-Maximum ersetzt die Berechnung
 
-## Programm und Inhalt trennen
+## Programm, Inhalte und persönliche Daten trennen
+
+Drei Teile, streng getrennt:
 
 ```
-app/        Code: kuechenbuch.html (die App, ohne Inhalte)
-content/    Inhalte: Sicherung der Datenbank als JSON (recipes/, plans/, settings/)
+app/        Programm: kuechenbuch.html – keine Inhalte, keine persönlichen Daten
+content/    Teilbare Inhalte: nur Rezepte (recipes/<id>.json)
+personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json), Wochenpläne (plans/)
 ```
 
-- `app/kuechenbuch.html` enthält **keine Inhalte**: keine Rezepte, keine Profile, keine Regeln, keine Beispieltexte mit Rezeptdaten
-- Alle Inhalte liegen in der Datenbank des Artifacts (`recipes`, `plans`, `profiles`, `tracking`, `settings/brain`)
-- Die Datenbank ist die Quelle. `content/` ist eine Sicherung: nach dem Eintragen oder Ändern von Rezepten, Plänen oder Regeln neu exportieren (ArtifactData `list` mit `out_dir: content`) und committen
-- `profiles` und `tracking` werden **nicht** exportiert (persönliche Daten wie Gewicht, Alter, Essprotokoll)
-- Die Regeln oben sind in `settings/brain` gespeichert und dort die Quelle für die App. Bei Änderungen **beides** aktualisieren: diese Datei und `settings/brain`
+**Gesundheitsdaten** – `profiles` (Gewicht, Größe, Alter), `tracking` (Essprotokoll), `cycle` (Zyklus) – liegen **nur** in der Datenbank der App. Sie werden nie exportiert, nie ins Repository geschrieben und nie in ein Weitergabe-Paket gepackt.
+
+- `app/kuechenbuch.html` enthält keine Rezepte, Profile, Regeln oder Beispieltexte mit Rezeptdaten. Im Code steht die Einteilung als `DATA_GROUPS` (content / personal / health)
+- Die Datenbank ist die Quelle. Nach Änderungen an Rezepten nach `content/recipes/` exportieren, nach Änderungen an Regeln oder Plänen nach `personal/` – und committen
+- Die Regeln oben stehen zusätzlich in `settings/brain` (App) und `personal/settings/brain.json`. Bei Änderungen alle drei aktualisieren
+- Weitergeben: `scripts/weitergeben.sh` erzeugt `dist/kuechenbuch-weitergabe-<datum>.zip` mit Programm + Rezepten (ohne Originaltexte). `dist/` ist nicht im Repository
+- In der App: „Profil & Regeln“ → „App weitergeben“ exportiert/importiert nur Rezepte
+- Diese Datei (CLAUDE.md) enthält persönliche Regeln und wird nicht weitergegeben
 
 ## Design
 

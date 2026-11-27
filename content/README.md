@@ -1,11 +1,6 @@
-# content – Inhalte des Küchenbuchs
+# content – teilbare Inhalte
 
-Sicherung der Datenbank der App als JSON. Die App liest **nicht** aus diesem Ordner, sondern aus ihrer Datenbank; dieser Ordner ist die versionierte Kopie davon.
+Sicherung der Rezepte aus der Datenbank der App, ein Rezept pro Datei (`recipes/<id>.json`).
+Die App liest nicht aus diesem Ordner, sondern aus ihrer Datenbank; der Ordner ist die versionierte Kopie davon.
 
-| Ordner | Inhalt |
-| --- | --- |
-| `recipes/` | ein Rezept pro Datei (`<id>.json`) |
-| `plans/` | gespeicherte Wochenpläne |
-| `settings/` | `brain.json`: verbotene Lebensmittel, Vorlieben, Regeln |
-
-Nicht gesichert: `profiles` und `tracking` (persönliche Daten).
+Dieser Ordner darf zusammen mit `app/` weitergegeben werden. Er enthält **keine** persönlichen Daten und **keine** Gesundheitsdaten.

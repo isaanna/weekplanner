@@ -334,6 +334,7 @@ ol.steps li { gap: 12px; }
     chapter: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
     editProfile: null, settingsMsg: "",
   };
+  let downloads = null;
   let db = null, col = null, plansCol = null, profCol = null, trackCol = null, sample = null, imagesOk = false, unsubTrack = null;
 
   const $ = (id) => document.getElementById(id);
@@ -1450,6 +1451,54 @@ Regeln:
         catch { S.settingsMsg = "Speichern hat nicht geklappt."; }
         msg.textContent = S.settingsMsg;
       } }, "Regeln speichern")), msg));
+    box.append(transferSection());
+  }
+
+  // ---------- Weitergeben: Programm und Rezepte ja, persönliche und Gesundheitsdaten nie ----------
+  // Datenbereiche der App. Nur "content" verlässt je die App.
+  const DATA_GROUPS = { content: ["recipes"], personal: ["plans", "settings/brain"], health: ["profiles", "tracking", "cycle"] };
+  const BUNDLE = "kuechenbuch-rezepte";
+  function transferSection() {
+    const msg = h("p", { class: "status", role: "status" });
+    const fileIn = h("input", { type: "file", accept: "application/json,.json", id: "imp-file", hidden: true,
+      onchange: (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) importBundle(f, msg); } });
+    return h("section", { class: "form", style: "margin-top:30px" },
+      h("h3", { class: "sec", style: "margin:0" }, "App weitergeben"),
+      h("p", { class: "hint" }, "Die App besteht aus drei getrennten Teilen: dem Programm, den Rezepten und euren persönlichen Daten. Weitergegeben werden nur Programm und Rezepte."),
+      h("dl", { class: "targets", style: "max-width:560px" },
+        h("dt", null, "Wird weitergegeben"), h("dd", { style: "font-weight:500" }, "Rezepte (ohne eingefügte Originaltexte)"),
+        h("dt", null, "Bleibt hier"), h("dd", { style: "font-weight:500" }, "Profile, Tracking, Zyklus, Wochenpläne, Regeln und Allergien")),
+      h("div", { class: "row-inline" },
+        h("button", { class: "btn primary", type: "button", disabled: !downloads, onclick: () => exportBundle(msg) }, "Rezepte exportieren"),
+        h("button", { class: "btn", type: "button", onclick: () => fileIn.click() }, "Rezepte importieren"), fileIn),
+      downloads ? null : h("p", { class: "hint" }, "Exportieren geht nur für Personen, die das Kochbuch bearbeiten dürfen."),
+      h("p", { class: "hint" }, "Wer die App bekommt, braucht die Programmdatei und die exportierte Rezeptdatei. Beim Import werden Rezepte, die es schon gibt, übersprungen."),
+      msg);
+  }
+  async function exportBundle(msg) {
+    const recipes = ordered().map(({ id, raw, imageId, imageUrl, ...r }) => ({ id, ...r }));
+    const data = JSON.stringify({ format: BUNDLE, version: 1, exportedAt: new Date().toISOString(), recipes }, null, 2);
+    try {
+      await downloads.save({ filename: `kuechenbuch-rezepte-${todayStr()}.json`, data: new Blob([data], { type: "application/json" }) });
+      msg.textContent = `${recipes.length} Rezepte exportiert. Profile, Tracking, Zyklus und Regeln sind nicht enthalten.`;
+    } catch (e) { msg.textContent = e && e.code === "declined" ? "Speichern abgebrochen." : "Der Export hat nicht geklappt. Versuch es noch einmal."; }
+  }
+  async function importBundle(file, msg) {
+    if (!col) { msg.textContent = "Importieren geht gerade nicht. Melde dich an und lade die Seite neu."; return; }
+    let b; try { b = JSON.parse(await file.text()); } catch { msg.textContent = "Die Datei ist kein gültiger Rezept-Export."; return; }
+    const list = b && b.format === BUNDLE ? arr(b.recipes) : null;
+    if (!list) { msg.textContent = "Die Datei ist kein Rezept-Export dieses Kochbuchs."; return; }
+    const have = new Set(S.recipes.map(r => r.id));
+    let added = 0, skipped = 0, failed = 0;
+    msg.textContent = `${list.length} Rezepte werden importiert …`;
+    for (const r of list) {
+      if (!r || typeof r !== "object") continue;
+      const id = str(r.id).replace(/[^A-Za-z0-9_\-.~:@+]/g, "").slice(0, 200);
+      if (id && have.has(id)) { skipped++; continue; }
+      const rec = recordFrom(r); rec.createdAt = num(r.createdAt) || Date.now();
+      try { if (id) await col.doc(id).set(rec); else await col.add(rec); added++; } catch { failed++; }
+    }
+    msg.textContent = `${added} Rezepte importiert${skipped ? `, ${skipped} gab es schon` : ""}${failed ? `, ${failed} fehlgeschlagen` : ""}.`;
   }
 
   function profileForm() {
@@ -1566,6 +1615,8 @@ Regeln:
     await ready;
     try { sample = window.claude ? await window.claude.use("sample") : null; } catch { sample = null; }
     if (sample) { try { const l = await sample.limits(); imagesOk = !!(l && l.images); } catch { imagesOk = false; } }
+    try { downloads = window.claude ? await window.claude.use("downloads") : null; } catch { downloads = null; }
+    if (S.view === "settings" && !busyEditing()) renderMain();
     if (!busyEditing() || S.mode === "add" || S.planMode === "new") renderMain();
   })();
 })();

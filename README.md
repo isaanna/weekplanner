@@ -40,18 +40,23 @@ Ein „Teilen“-Knopf mit Auswahl der Bring!-App ist in claude.ai nicht möglic
 ## Ordner
 
 ```
-app/        Code – kuechenbuch.html, enthält keine Inhalte
-content/    Inhalte – Sicherung der Datenbank als JSON
-            recipes/   ein Rezept pro Datei
-            plans/     gespeicherte Wochenpläne
-            settings/  Regeln (verbotene Lebensmittel, Vorlieben)
+app/        Programm – kuechenbuch.html, enthält keine Inhalte
+content/    Teilbare Inhalte – Rezepte als JSON (ein Rezept pro Datei)
+personal/   Persönlich – Regeln/Allergien und Wochenpläne, nie weitergeben
+scripts/    weitergeben.sh – packt Programm + Rezepte als ZIP
 ```
 
-Profile und Tracking werden nicht in `content/` gesichert, weil sie persönliche Daten enthalten.
+Gesundheitsdaten (Profile, Tracking, Zyklus) liegen nur in der Datenbank der App und nirgends im Repository.
+
+## Weitergeben
+
+- **Aus dem Repository:** `./scripts/weitergeben.sh` → `dist/kuechenbuch-weitergabe-<datum>.zip` mit `kuechenbuch.html`, `kuechenbuch-rezepte.json` und einer Anleitung ([WEITERGEBEN.md](WEITERGEBEN.md))
+- **Aus der App:** „Profil & Regeln“ → „App weitergeben“ → „Rezepte exportieren“ bzw. „Rezepte importieren“
+- In beiden Fällen gehen nur Programm und Rezepte mit – keine Profile, kein Tracking, kein Zyklus, keine Wochenpläne, keine Regeln oder Allergien
 
 ## Daten
 
-Die App selbst enthält keine Inhalte. Alles liegt in der Datenbank des Artifacts; `content/` ist eine Sicherung davon:
+Die App selbst enthält keine Inhalte. Alles liegt in der Datenbank des Artifacts; `content/` (Rezepte) und `personal/` (Regeln, Pläne) sind Sicherungen davon:
 
 | Sammlung | Inhalt |
 | --- | --- |

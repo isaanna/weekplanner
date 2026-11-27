@@ -247,3 +247,11 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 ## Entschieden
 - Giuli darf den Kalender sehen
 - Die Phase steht auf der Startseite (mit Stimmung), „Was koche ich heute?“ nur noch bei Rezepten
+
+---
+
+# Runde 8 – Programm, Inhalte und Gesundheitsdaten trennen
+- [x] Repository in drei Teile: `app/` (Programm), `content/` (nur Rezepte), `personal/` (Regeln/Allergien, Wochenpläne)
+- [x] Gesundheitsdaten (Profile, Tracking, Zyklus) nur in der App-Datenbank, nie im Repository oder in einem Export
+- [x] `scripts/weitergeben.sh`: ZIP mit Programm + Rezepten + Anleitung
+- [x] In der App: „App weitergeben“ mit Rezept-Export und -Import
