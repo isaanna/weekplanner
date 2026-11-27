@@ -57,10 +57,10 @@ Drei Teile, streng getrennt:
 ```
 app/        Programm: lebenskompass.html – keine Inhalte, keine persönlichen Daten
 content/    Teilbare Inhalte: nur Rezepte (recipes/<id>.json)
-personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json), Wochenpläne (plans/)
+personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json), Stimmungstexte (settings/cycle.json), Wochenpläne (plans/)
 ```
 
-**Gesundheitsdaten** – `profiles` (Gewicht, Größe, Alter), `tracking` (Essprotokoll), `cycle` (Zyklus) – liegen **nur** in der Datenbank der App. Sie werden nie exportiert, nie ins Repository geschrieben und nie in ein Weitergabe-Paket gepackt.
+**Gesundheitsdaten** – `profiles` (Gewicht, Größe, Alter), `tracking` (Essprotokoll), `cycle` (Zyklus: `config` mit Verhütung/Dauer/Profil, `d-YYYY-MM-DD` je Tag mit Blutung, gespürt, Eisprung, Notiz) – liegen **nur** in der Datenbank der App. Sie werden nie exportiert, nie ins Repository geschrieben und nie in ein Weitergabe-Paket gepackt.
 
 - `app/lebenskompass.html` enthält keine Rezepte, Profile, Regeln oder Beispieltexte mit Rezeptdaten. Im Code steht die Einteilung als `DATA_GROUPS` (content / personal / health)
 - Die Datenbank ist die Quelle. Nach Änderungen an Rezepten nach `content/recipes/` exportieren, nach Änderungen an Regeln oder Plänen nach `personal/` – und committen
@@ -69,8 +69,19 @@ personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json)
 - In der App: „Profil & Regeln“ → „App weitergeben“ exportiert/importiert nur Rezepte
 - Diese Datei (CLAUDE.md) enthält persönliche Regeln und wird nicht weitergegeben
 
+## Zyklus
+
+- Reiter „Zyklus“: Monatsansicht, pro Tag „Tage mit Blutung“, „Tage gespürt ohne Blutung“, „Eisprung gespürt“, Notiz – mehr nicht
+- Zyklusbeginn = erster Tag einer Reihe von Tage-Einträgen; Zykluslänge = Durchschnitt der letzten 3 Zyklen (sonst 28); Lutealphase aus gespürten Eisprüngen (sonst 14)
+- Eisprung = nächste Tage − Lutealphase, Eisprungphase ±1 Tag; PMS = 5 Tage vor den nächsten Tagen
+- Stimmung je Phase: ein kurzer Satz, in `settings/cycle` (in der App änderbar)
+- Wochenplaner bekommt die Phasen der geplanten Woche (ab nächstem Montag) und bevorzugt passende Gerichte; Nährwertziele haben Vorrang
+- Isa und Giuli sehen den Zyklus beide; die App ist nur für eingeladene Personen geteilt
+- Hinweis in der App: keine Verhütungsmethode, keine medizinische Beratung
+
 ## Design
 
+- Einzige Ausnahme von der Palette: Zyklusphasen in Pastell – Menstruation `#F3C9C9`, Follikel `#DCD0F2`, Eisprung `#BCD8C1`, Luteal `#C7DBF0`
 - Farbpalette (12 Töne, hell → dunkel): `#FAF6F1 #EAE1D8 #DACCBF #C7B9AC` · `#BAA99A #A69482 #957A69 #79685A` · `#6B5747 #5A473A #47362E #2F2320`. Nur diese Töne verwenden
 - Seitenhintergrund `#DACCBF`, Kategorie-Kacheln `#BAA99A`, Startkacheln `#A69482`, Schrift auf Kacheln `#47362E`; Flächen `#FAF6F1`, Text `#2F2320`, Knöpfe `#5A473A`
 - Kein Dunkelmodus: Die App zeigt immer die helle Palette, auch wenn das Handy im Dunkelmodus ist
@@ -78,7 +89,9 @@ personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json)
 - Keine Bilder: Kapitel als Kacheln, Rezepte als Liste über die ganze Breite (nur Titel, Trennstrich unter jedem Rezept)
 - Reiterleiste ohne Scrollleiste: Reiter brechen bei wenig Platz um
 - Eingabefelder (Text, Suche, Auswahl) immer hell `#FAF6F1` mit Rahmen `#79685A`, beim Schreiben Rahmen `#5A473A`
-- Rezeptbereich: Suche oben, Treffer erst nach Eingabe; ohne Suche nur Kapitel-Kacheln und Zufallsgenerator
+- Rezeptbereich: Suche oben mit Knopf „+ Rezept einfügen“, Treffer erst nach Eingabe; ohne Suche nur Kapitel-Kacheln und Zufallsgenerator
+- Kopfzeile nur mit Titel, ohne Knöpfe
+- Startseite: „Hoi, Name“ (Konto ↔ Profil über „Wer bist du?“), Tracking von heute für beide, Zyklusphase von Isa mit Stimmungssatz
 
 ## Arbeitsweise
 

@@ -166,75 +166,75 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 
 ---
 
-# Runde 7 – Zykluskalender (Plan, noch nicht umgesetzt)
+# Runde 7 – Zykluskalender (umgesetzt)
 
 ## 7.1 Datenschutz und Zugriff
-- [ ] Isa und Giuli dürfen den Kalender beide sehen. Die Zyklusdaten liegen deshalb in einem gemeinsamen Bereich der Datenbank (`cycle/…`), nicht in einem privaten pro Person
-- [ ] **Empfehlung:** Teilen von „Jeder mit dem Link“ auf **nur eingeladene Personen** umstellen und Giuli einladen, sonst kann jeder mit dem Link den Zyklus sehen
-- [ ] Zyklusdaten werden **nicht** nach `content/` gesichert und nicht ins Repository geschrieben
+- [x] Isa und Giuli dürfen den Kalender beide sehen. Die Zyklusdaten liegen deshalb in einem gemeinsamen Bereich der Datenbank (`cycle/…`), nicht in einem privaten pro Person
+- [x] **Empfehlung:** Teilen von „Jeder mit dem Link“ auf **nur eingeladene Personen** umstellen und Giuli einladen, sonst kann jeder mit dem Link den Zyklus sehen
+- [x] Zyklusdaten werden **nicht** nach `content/` gesichert und nicht ins Repository geschrieben
 
 ## 7.2 Neuer Reiter „Zyklus“
-- [ ] Monatsansicht Mo–So, Pfeile für vorigen/nächsten Monat, „Heute“
-- [ ] Jeder Tag in der Farbe seiner Phase (pastell):
+- [x] Monatsansicht Mo–So, Pfeile für vorigen/nächsten Monat, „Heute“
+- [x] Jeder Tag in der Farbe seiner Phase (pastell):
   - Menstruation: Rosé-Rot
   - Follikelphase: Flieder/Violett
   - Eisprung: Waldgrün (hell)
   - Lutealphase: Hellblau
-- [ ] Eingetragene Tage kräftig gefüllt, vorausgesagte Tage nur hell bzw. gestrichelt umrandet
-- [ ] Kleine Markierungen im Tag: Punkt = Notiz vorhanden, Tropfen-Symbol = Blutung, Kreis = Eisprung gespürt
-- [ ] Oben eine Zeile: „Zyklustag 12 · Follikelphase · Nächste Tage in 16 Tagen (Di 23.12.) · Nächster Eisprung ca. Mo 08.12.“
-- [ ] Legende der vier Farben
+- [x] Eingetragene Tage kräftig gefüllt, vorausgesagte Tage nur hell bzw. gestrichelt umrandet
+- [x] Kleine Markierungen im Tag: Punkt = Notiz vorhanden, Tropfen-Symbol = Blutung, Kreis = Eisprung gespürt
+- [x] Oben eine Zeile: „Zyklustag 12 · Follikelphase · Nächste Tage in 16 Tagen (Di 23.12.) · Nächster Eisprung ca. Mo 08.12.“
+- [x] Legende der vier Farben
 
-- [ ] **PMS-Tage:** die 5 Tage vor der nächsten Menstruation, innerhalb der Lutealphase markiert (gleiche blaue Farbe, zusätzlich schraffiert und mit „PMS“ beschriftet)
-- [ ] **Stimmungslage je Phase:** unter dem Kalender bzw. beim gewählten Tag ein kurzer, prägnanter Satz, wie es einem in dieser Phase gehen kann (Menstruation, Follikel, Eisprung, Luteal, PMS)
-- [ ] Die Stimmungstexte sind Inhalt, nicht Code: Sie liegen in der Datenbank (`settings/cycle`) und lassen sich im Reiter „Zyklus“ anpassen
+- [x] **PMS-Tage:** die 5 Tage vor der nächsten Menstruation, innerhalb der Lutealphase markiert (gleiche blaue Farbe, zusätzlich schraffiert und mit „PMS“ beschriftet)
+- [x] **Stimmungslage je Phase:** unter dem Kalender bzw. beim gewählten Tag ein kurzer, prägnanter Satz, wie es einem in dieser Phase gehen kann (Menstruation, Follikel, Eisprung, Luteal, PMS)
+- [x] Die Stimmungstexte sind Inhalt, nicht Code: Sie liegen in der Datenbank (`settings/cycle`) und lassen sich im Reiter „Zyklus“ anpassen
 
 ## 7.3 Eintragen pro Tag (Klick auf einen Tag)
-- [ ] „Tage – mit Blutung“
-- [ ] „Tage – gespürt, ohne Blutung“ (für Spirale)
-- [ ] „Eisprung gespürt“
-- [ ] Notiz (freier Text)
-- [ ] Mehr nicht
+- [x] „Tage – mit Blutung“
+- [x] „Tage – gespürt, ohne Blutung“ (für Spirale)
+- [x] „Eisprung gespürt“
+- [x] Notiz (freier Text)
+- [x] Mehr nicht
 
 ## 7.4 Einstellungen im Reiter
-- [ ] Verhütung: Hormonspirale, Kupferspirale, Pille, Ring, Kondom, keine, andere (+ Notiz)
-- [ ] Dauer der Tage (Standard 4)
-- [ ] Hinweis: Vorhersage ist ein Durchschnitt, **keine Verhütungsmethode** und keine medizinische Beratung
+- [x] Verhütung: Hormonspirale, Kupferspirale, Pille, Ring, Kondom, keine, andere (+ Notiz)
+- [x] Dauer der Tage (Standard 4)
+- [x] Hinweis: Vorhersage ist ein Durchschnitt, **keine Verhütungsmethode** und keine medizinische Beratung
 
 ## 7.5 Berechnung
-- [ ] Zyklusbeginn = erster Tag einer Reihe von „Tage“-Einträgen (mit oder ohne Blutung)
-- [ ] Zykluslänge = Durchschnitt der **letzten 3 Zyklen** (nachgetragen); ohne Daten 28 Tage
-- [ ] Lutealphase = Abstand gespürter Eisprung → nächster Zyklusbeginn, Durchschnitt; ohne Daten 14 Tage
-- [ ] Eisprung (vorausgesagt) = nächster Zyklusbeginn − Lutealphase; Eisprungphase = Eisprungtag ± 1 Tag
-- [ ] Phasen: Menstruation (Tag 1 bis Dauer) → Follikel (bis vor Eisprungphase) → Eisprung (3 Tage) → Luteal (bis zum nächsten Beginn)
-- [ ] PMS = die letzten 5 Tage vor dem (vorausgesagten) nächsten Zyklusbeginn
-- [ ] Eigene Einträge haben immer Vorrang vor der Rechnung; alles wird nach jedem Eintrag neu berechnet
-- [ ] Vorhersage für die nächsten 3 Zyklen sichtbar
-- [ ] Nachtragen: in den Vormonaten einfach die Tage und den Eisprung anklicken
+- [x] Zyklusbeginn = erster Tag einer Reihe von „Tage“-Einträgen (mit oder ohne Blutung)
+- [x] Zykluslänge = Durchschnitt der **letzten 3 Zyklen** (nachgetragen); ohne Daten 28 Tage
+- [x] Lutealphase = Abstand gespürter Eisprung → nächster Zyklusbeginn, Durchschnitt; ohne Daten 14 Tage
+- [x] Eisprung (vorausgesagt) = nächster Zyklusbeginn − Lutealphase; Eisprungphase = Eisprungtag ± 1 Tag
+- [x] Phasen: Menstruation (Tag 1 bis Dauer) → Follikel (bis vor Eisprungphase) → Eisprung (3 Tage) → Luteal (bis zum nächsten Beginn)
+- [x] PMS = die letzten 5 Tage vor dem (vorausgesagten) nächsten Zyklusbeginn
+- [x] Eigene Einträge haben immer Vorrang vor der Rechnung; alles wird nach jedem Eintrag neu berechnet
+- [x] Vorhersage für die nächsten 3 Zyklen sichtbar
+- [x] Nachtragen: in den Vormonaten einfach die Tage und den Eisprung anklicken
 
 ## 7.6 Wochenplaner nach Phase
-- [ ] Der Zyklus wird einem Profil zugeordnet (Isa)
-- [ ] Beim Planen bekommt Claude pro geplantem Tag die Phase mit
-- [ ] Bevorzugung je Phase (weiche Regel, die Nährwertziele bleiben vorrangig):
+- [x] Der Zyklus wird einem Profil zugeordnet (Isa)
+- [x] Beim Planen bekommt Claude pro geplantem Tag die Phase mit
+- [x] Bevorzugung je Phase (weiche Regel, die Nährwertziele bleiben vorrangig):
   - Menstruation: eisenreich (Rind, Linsen, Spinat), warme Gerichte, Eintöpfe
   - Follikelphase: leichter, frisch, proteinreich
   - Eisprung: viel Gemüse und Ballaststoffe
   - Lutealphase: komplexe Kohlenhydrate, magnesiumreich (Hülsenfrüchte, Haferflocken, Kartoffeln), sättigend
   - PMS-Tage: zusätzlich wohltuend und sättigend, weniger Salz, warme Gerichte
-- [ ] Im Wochenplan steht bei jedem Tag die Phase als kleiner Farbpunkt
-- [ ] Gemeinsame Mahlzeiten (für Isa und Giuli) richten sich nach Isas Phase
+- [x] Im Wochenplan steht bei jedem Tag die Phase als kleiner Farbpunkt
+- [x] Gemeinsame Mahlzeiten (für Isa und Giuli) richten sich nach Isas Phase
 
 ## 7.7 Neue Startseite
-- [ ] Knopf „+ Rezept einfügen“ oben in der Kopfzeile entfernen; er erscheint nur noch im Reiter „Rezepte“ neben der Suche
-- [ ] Kacheln „Rezepte“ und „Wochenplan“ sowie „Was koche ich heute?“ fallen auf der Startseite weg (der Zufallsgenerator bleibt im Reiter „Rezepte“)
-- [ ] Begrüßung **„Hoi, Isa“** bzw. **„Hoi, Giuli“**: Wer die Seite öffnet, wählt einmal „Das bin ich“ bei seinem Profil; die App merkt sich das pro Konto
-- [ ] Darunter die **Tracking-Übersicht von heute für beide** nebeneinander: Kalorien, Eiweiß, Kohlenhydrate, Fett, Ballaststoffe als Balken gegen das Ziel, plus was schon gegessen wurde
-- [ ] Ganz unten: **Isas aktuelle Phase** (Farbpunkt, Name der Phase, Zyklustag, ggf. „PMS“) und der kurze Satz, wie es ihr heute gehen könnte
-- [ ] Auf dem Handy untereinander, am Computer die beiden Tracking-Karten nebeneinander
+- [x] Knopf „+ Rezept einfügen“ oben in der Kopfzeile entfernen; er erscheint nur noch im Reiter „Rezepte“ neben der Suche
+- [x] Kacheln „Rezepte“ und „Wochenplan“ sowie „Was koche ich heute?“ fallen auf der Startseite weg (der Zufallsgenerator bleibt im Reiter „Rezepte“)
+- [x] Begrüßung **„Hoi, Isa“** bzw. **„Hoi, Giuli“**: Wer die Seite öffnet, wählt einmal „Das bin ich“ bei seinem Profil; die App merkt sich das pro Konto
+- [x] Darunter die **Tracking-Übersicht von heute für beide** nebeneinander: Kalorien, Eiweiß, Kohlenhydrate, Fett, Ballaststoffe als Balken gegen das Ziel, plus was schon gegessen wurde
+- [x] Ganz unten: **Isas aktuelle Phase** (Farbpunkt, Name der Phase, Zyklustag, ggf. „PMS“) und der kurze Satz, wie es ihr heute gehen könnte
+- [x] Auf dem Handy untereinander, am Computer die beiden Tracking-Karten nebeneinander
 
 ## 7.8 Design
-- [ ] Die vier Phasenfarben sind die einzige Ausnahme von der 12-Ton-Palette (in CLAUDE.md festhalten)
-- [ ] Rest des Reiters in der bestehenden Palette und Schrift
+- [x] Die vier Phasenfarben sind die einzige Ausnahme von der 12-Ton-Palette (in CLAUDE.md festhalten)
+- [x] Rest des Reiters in der bestehenden Palette und Schrift
 
 ## 7.9 Vorgehen
 1. Speicherbereich `cycle/…` und „Das bin ich“ (Konto ↔ Profil) einrichten

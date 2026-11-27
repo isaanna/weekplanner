@@ -274,7 +274,44 @@ h2.title { font-size: clamp(1.9rem, 4.6vw, 2.8rem); letter-spacing: -0.005em; li
 ul.ing li { padding: 8px 0; }
 ol.steps li { gap: 12px; }
 
+/* ---------- Zyklus: einzige Ausnahme von der Palette (Pastell je Phase) ---------- */
+:root { --ph-mens: #F3C9C9; --ph-foll: #DCD0F2; --ph-ov: #BCD8C1; --ph-lut: #C7DBF0; --ph-mark: #b5524f; --ph-ovmark: #4f7a55; }
+.ph-mens { background-color: var(--ph-mens) !important; } .ph-foll { background-color: var(--ph-foll) !important; }
+.ph-ov { background-color: var(--ph-ov) !important; } .ph-lut { background-color: var(--ph-lut) !important; }
+.phdot { display: inline-block; width: 12px; height: 12px; border-radius: 50%; border: 1px solid rgba(47,35,32,.25); vertical-align: -1px; margin-right: 6px; }
+.pmsdot { background-image: repeating-linear-gradient(135deg, rgba(47,35,32,.25) 0 2px, transparent 2px 4px); }
+.cyclesum { font-family: var(--ui); margin: 6px 0 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 2px 4px; }
+.mood { font-family: var(--display); font-size: 1.1rem; line-height: 1.4; margin: 4px 0; color: var(--ink); }
+.cal { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 5px; margin-top: 6px; }
+.calhd { font-family: var(--ui); font-size: 0.75rem; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); padding: 0 4px 2px; }
+.calday { position: relative; min-height: 70px; border: 1px solid var(--line); border-radius: 10px; background: var(--page); padding: 6px 7px; display: grid; align-content: space-between; text-align: left; color: var(--ink); min-width: 0; }
+.calday:hover { border-color: var(--accent); }
+.calday.pred { opacity: .6; border-style: dashed; border-color: var(--herb); }
+.calday.pms { background-image: repeating-linear-gradient(135deg, rgba(47,35,32,.07) 0 4px, transparent 4px 8px); }
+.calday.other { opacity: .35; }
+.calday.today { box-shadow: inset 0 0 0 2px var(--accent); }
+.calday.sel { outline: 2px solid var(--ink); outline-offset: 1px; }
+.calday .dn { font-family: var(--ui); font-weight: 700; font-size: 0.95rem; font-variant-numeric: tabular-nums; }
+.calday .mks { display: flex; gap: 4px; align-items: center; min-height: 12px; }
+.mk { display: inline-block; flex: none; }
+.mk.mk-drop { width: 9px; height: 9px; background: var(--ph-mark); border-radius: 0 50% 50% 50%; transform: rotate(45deg); }
+.mk.mk-drop.mk-hollow { background: transparent; border: 1.5px solid var(--ph-mark); }
+.mk.mk-ring { width: 10px; height: 10px; border: 2px solid var(--ph-ovmark); border-radius: 50%; }
+.mk.mk-dot { width: 6px; height: 6px; background: var(--ink); border-radius: 50%; }
+.pmstag { position: absolute; top: 6px; right: 6px; font-family: var(--ui); font-size: 0.6rem; font-weight: 700; letter-spacing: .06em; color: var(--muted); }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 12px; font-family: var(--ui); font-size: 0.85rem; color: var(--muted); }
+.chk { display: inline-flex; align-items: center; gap: 6px; font-family: var(--ui); font-size: 0.92rem; padding: 4px 10px 4px 6px; border: 1px solid var(--line); border-radius: 999px; background: var(--page); cursor: pointer; }
+.chk input { accent-color: var(--accent); }
+.cy-note { width: 100%; border: 1.5px solid var(--herb); border-radius: 6px; padding: 8px 10px; font-family: var(--body); font-size: 1rem; color: var(--ink); background: var(--page); }
+.cyclecard { border-radius: var(--radius); padding: 16px 18px; display: grid; gap: 4px; color: var(--ink); }
+.hello { font-size: clamp(2.2rem, 6vw, 3.2rem); margin-bottom: 2px; }
+.day h4 small { display: inline-flex; align-items: center; }
+
 @media (max-width: 760px) {
+  .calday { min-height: 52px; padding: 4px 5px; border-radius: 8px; }
+  .calday .dn { font-size: 0.85rem; }
+  .pmstag { display: none; }
+  .mk.mk-drop { width: 7px; height: 7px; } .mk.mk-ring { width: 8px; height: 8px; }
   .book { grid-template-columns: 1fr; }
   .toc { border-right: 0; border-bottom: 1px dashed var(--line); }
   .book.reading .toc { display: none; }
@@ -296,13 +333,13 @@ ol.steps li { gap: 12px; }
       <h1><button type="button" id="homeLink">Mein Lebenskompass</button></h1>
       <p id="sub">Rezepte sammeln, Wochen planen, Essen tracken.</p>
     </div>
-    <button class="btn primary" id="addBtn" type="button">+ Rezept einfügen</button>
   </header>
   <div class="tabs" role="tablist">
     <button type="button" role="tab" data-view="home">Start</button>
     <button type="button" role="tab" data-view="book">Rezepte</button>
     <button type="button" role="tab" data-view="plan">Wochenplan</button>
     <button type="button" role="tab" data-view="track">Tracking</button>
+    <button type="button" role="tab" data-view="cycle">Zyklus</button>
     <button type="button" role="tab" data-view="settings">Profil &amp; Regeln</button>
   </div>
   <div class="book" id="book">
@@ -331,10 +368,10 @@ ol.steps li { gap: 12px; }
     sel: null, mode: "read", q: "", tag: null, scale: null, draft: null, confirmDel: false,
     busy: false, status: "", statusErr: false, trackMsg: "",
     planSel: null, planMode: "read", brief: "", feedback: "", planBusy: false, planStatus: "", planErr: false, confirmPlanDel: false, adoptMsg: "",
-    chapter: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
+    chapter: null, cycleDays: {}, cycleCfg: null, cycleMoods: null, cycleMonth: null, cycleSel: null, me: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
     editProfile: null, settingsMsg: "",
   };
-  let downloads = null;
+  let downloads = null, cycleCol = null, userId = null;
   let db = null, col = null, plansCol = null, profCol = null, trackCol = null, sample = null, imagesOk = false, unsubTrack = null;
 
   const $ = (id) => document.getElementById(id);
@@ -486,37 +523,48 @@ ol.steps li { gap: 12px; }
   // STARTSEITE
   // =====================================================================
   function renderHome(box) {
-    const plansN = S.plans.length;
     const today = todayStr();
     const todays = S.entries.filter(e => e.date === today);
-    const wrap = h("div", { class: "home" },
-      h("div", { class: "doors" },
-        h("button", { type: "button", class: "door", onclick: () => go("book") },
-          h("span", { class: "n" }, S.loaded ? `${S.recipes.length} Rezepte` : "…"),
-          h("span", { class: "big" }, "Rezepte"),
-          h("span", { class: "sub" }, "Nach Lebensmitteln suchen, Kapitel durchblättern")),
-        h("button", { type: "button", class: "door", onclick: () => go("plan") },
-          h("span", { class: "n" }, S.plansLoaded ? `${plansN} ${plansN === 1 ? "Woche" : "Wochen"} geplant` : "…"),
-          h("span", { class: "big" }, "Wochenplan"),
-          h("span", { class: "sub" }, "Vorkochen planen, Einkaufsliste erstellen"))));
+    const me = S.profiles.find(p => p.id === S.me);
+    const wrap = h("div", { class: "home" });
+    wrap.append(h("div", null,
+      h("h2", { class: "title hello" }, me ? `Hoi, ${me.name}` : "Hoi!"),
+      h("p", { class: "hint" }, new Date().toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" }))));
+    if (!me && S.profiles.length) wrap.append(h("div", { class: "panel" },
+      h("p", { class: "hint", style: "margin:0" }, "Wer bist du? Einmal antippen, dann begrüßt dich die App mit deinem Namen."),
+      h("div", { class: "chips" }, S.profiles.map(p => h("button", { type: "button", class: "chip", onclick: () => setMe(p.id) }, p.name)))));
 
     const t = h("section", { class: "today" },
       h("div", { class: "trackhead" },
-        h("h3", { class: "sec", style: "margin:0" }, `Heute · ${new Date().toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" })}`),
+        h("h3", { class: "sec", style: "margin:0" }, "Heute gegessen"),
         h("button", { class: "btn small", type: "button", onclick: () => { S.weekStart = ymd(mondayOf(new Date())); go("track"); } }, "Zur Wochenübersicht")));
-    if (!S.profiles.length) {
-      t.append(h("p", { class: "hint" }, "Lege unter „Profil & Regeln“ ein Profil an. Dann siehst du hier, wie viel du heute schon gegessen hast und was noch fehlt."));
-    } else {
-      t.append(h("div", { class: "today-rows" }, S.profiles.map(p => {
-        const sum = zero();
-        todays.filter(e => e.profileId === p.id).forEach(e => addNut(sum, e.nut, e.portions || 1));
-        const meals = SLOTS.map(sl => todays.filter(e => e.profileId === p.id && e.slot === sl).map(e => e.title).join(", ")).map((x, i) => x ? `${SLOTS[i]}: ${x}` : null).filter(Boolean);
-        return h("div", { class: "pcard" }, h("h4", null, p.name), goalBlock(sum, targets(p)),
-          h("p", { class: "hint" }, meals.length ? meals.join(" · ") : "Noch nichts eingetragen."));
-      })));
-    }
-    wrap.append(diceBox(), t);
+    if (!S.profiles.length) t.append(h("p", { class: "hint" }, "Lege unter „Profil & Regeln“ die Profile an. Dann siehst du hier, wie viel ihr heute schon gegessen habt."));
+    else t.append(h("div", { class: "today-rows" }, S.profiles.map(p => {
+      const sum = zero();
+      todays.filter(e => e.profileId === p.id).forEach(e => addNut(sum, e.nut, e.portions || 1));
+      const meals = SLOTS.map(sl => todays.filter(e => e.profileId === p.id && e.slot === sl).map(e => e.title).join(", ")).map((x, i) => x ? `${SLOTS[i]}: ${x}` : null).filter(Boolean);
+      return h("div", { class: "pcard" }, h("h4", null, p.name), goalBlock(sum, targets(p)),
+        h("p", { class: "hint" }, meals.length ? meals.join(" · ") : "Noch nichts eingetragen."));
+    })));
+    wrap.append(t);
+
+    const cp = cycleProfile(); const sum = cycleSummary();
+    const cs = h("section", { class: "today" }, h("div", { class: "trackhead" },
+      h("h3", { class: "sec", style: "margin:0" }, cp ? `Zyklus · ${cp.name}` : "Zyklus"),
+      h("button", { class: "btn small", type: "button", onclick: () => go("cycle") }, "Zum Kalender")));
+    if (cp && sum.p) {
+      cs.append(h("div", { class: `cyclecard ${PHASES[sum.p.ph].cls}` },
+        h("div", { class: "cyclesum", style: "margin:0" }, h("b", null, `${phaseLabel(sum.p)} · Zyklustag ${sum.p.day}`)),
+        moodText(sum.p) ? h("p", { class: "mood" }, moodText(sum.p)) : null,
+        h("p", { class: "hint", style: "margin:0" }, `Nächste Tage ca. ${fmtDay(sum.nextStart)} · Nächster Eisprung ca. ${fmtDay(sum.nextOv)}`)));
+    } else cs.append(h("p", { class: "hint" }, "Im Reiter „Zyklus“ die letzten Tage eintragen und in den Einstellungen das Profil zuordnen."));
+    wrap.append(cs);
     box.append(wrap);
+  }
+  async function setMe(pid) {
+    S.me = pid;
+    try { if (db && userId) await db.collection("data/users/" + userId).doc("me").set({ profileId: pid, updatedAt: Date.now() }); else localStorage.setItem("lk-me", pid); } catch {}
+    renderMain();
   }
 
   // =====================================================================
@@ -577,7 +625,9 @@ ol.steps li { gap: 12px; }
 
   // ---------- Rezepte durchsuchen ----------
   function renderBrowse(box) {
-    box.append(h("div", { class: "eyebrow" }, "Kochbuch"), h("h2", { class: "title" }, "Was hast du da?"));
+    box.append(h("div", { class: "eyebrow" }, "Kochbuch"),
+      h("div", { class: "trackhead" }, h("h2", { class: "title", style: "margin:8px 0" }, "Was hast du da?"),
+        h("button", { class: "btn primary", type: "button", onclick: startAdd }, "+ Rezept einfügen")));
     const input = h("input", { type: "search", id: "rq", class: "bigsearch", placeholder: "Lebensmittel oder Rezept eingeben, z. B. Kartoffeln Hähnchen", value: S.q, "aria-label": "Rezepte suchen", autocomplete: "off" });
     const chips = h("div", { class: "chips" });
     const results = h("div", { class: "results" });
@@ -914,6 +964,7 @@ ${d.raw || "(kein Text – siehe Bilder)"}`;
       ? "Profile: " + S.profiles.map(p => { const t = targets(p); return `${p.name}${t ? ` (${de(t.kcal)} kcal · ${t.protein} g Eiweiß · ${t.carbs} g KH · ${t.fat} g Fett · ${t.fiber} g Ballaststoffe)` : " (ohne Zielwerte)"}`; }).join(" · ") + ". Portionen werden so verteilt, dass jeder Tag pro Person passt. Geplant werden nur Frühstück, Mittag- und Abendessen, Snacks zählen nicht dazu."
       : "Noch keine Profile. Lege unter „Profil & Regeln“ Profile an, damit die Nährwerte pro Person stimmen."));
     info.append(h("p", { class: "hint" }, brain ? "Deine Regeln und verbotenen Lebensmittel werden beachtet." : "Noch keine Regeln hinterlegt (verbotene Lebensmittel, Vorlieben)."));
+    if (cycleProfile() && phasesForWeek(nextPlanMonday())) info.append(h("p", { class: "hint" }, `Zyklus von ${cycleProfile().name}: Die Gerichte passen zur Phase an jedem Tag der Woche ab ${parseYmd(nextPlanMonday()).toLocaleDateString("de-DE")}.`));
     sh.append(info);
     sh.append(h("div", { class: "form", style: "margin-top:18px" },
       h("label", { for: "p-brief" }, "Deine Vorgaben für diese Woche",
@@ -930,6 +981,14 @@ ${d.raw || "(kein Text – siehe Bilder)"}`;
   }
   function profilesForPrompt() {
     return S.profiles.map(p => ({ id: p.id, name: p.name, dailyTargets: targets(p) && (({ manual, ...t }) => t)(targets(p)) }));
+  }
+  function cyclePrompt() {
+    const cp = cycleProfile(); const ph = phasesForWeek(nextPlanMonday());
+    if (!cp || !ph || !ph.length) return "";
+    return `ZYKLUS VON ${cp.name.toUpperCase()} (Woche ab ${parseYmd(nextPlanMonday()).toLocaleDateString("de-DE")}): ${ph.map(x => `${x.day}: ${x.phase}`).join(", ")}
+Bevorzuge je Phase passende Gerichte (weiche Regel, die Nährwertziele haben Vorrang): Menstruation – eisenreich (Rind, Linsen, Spinat), warm, Eintöpfe; Follikelphase – leichter, frisch, proteinreich; Eisprung – viel Gemüse und Ballaststoffe; Lutealphase – komplexe Kohlenhydrate, magnesiumreich (Hülsenfrüchte, Haferflocken, Kartoffeln), sättigend; PMS – zusätzlich warm, wohltuend, weniger Salz. Gemeinsame Mahlzeiten richten sich nach dieser Phase. Erwähne den Bezug zur Phase kurz in "summary".
+
+`;
   }
   function recentWeeks() {
     const last = [...S.plans].sort((a, b) => (b.createdAt || 0) - (a.createdAt || 0)).slice(0, 2);
@@ -948,7 +1007,7 @@ ${d.raw || "(kein Text – siehe Bilder)"}`;
 VORGABEN:
 ${brief}
 ${brain ? `\nHAUSREGELN (immer einhalten):\n${brain}\n` : ""}
-PERSONEN MIT TAGESZIELEN (pro Person und Tag):
+${cyclePrompt()}PERSONEN MIT TAGESZIELEN (pro Person und Tag):
 ${profs.length ? JSON.stringify(profs) : "keine Profile – plane einfach pro Portion"}
 
 ${recentWeeks()}
@@ -1028,7 +1087,7 @@ Regeln:
         Object.assign(p, plan, { checked: {} });
         S.feedback = ""; S.planStatus = "Plan angepasst.";
       } else {
-        const doc = { ...plan, brief, checked: {}, createdAt: Date.now(), updatedAt: Date.now() };
+        const doc = { ...plan, brief, weekStart: nextPlanMonday(), checked: {}, createdAt: Date.now(), updatedAt: Date.now() };
         const ref = await plansCol.add(doc);
         if (!S.plans.some(p => p.id === ref.id)) S.plans.push({ id: ref.id, ...doc });
         S.planSel = ref.id; S.planMode = "read"; S.brief = ""; S.planStatus = ""; setHash("woche-" + ref.id);
@@ -1127,7 +1186,10 @@ Regeln:
         for (const m of arr(d.meals)) { const it = resolve(p, m.ref, m.label); addNut(sum, it.recipe ? cleanNut(it.recipe.nutrition) : null, 1); }
         nutBox.append(h("small", { class: "hint" }, `pro Person ≈ ${de(sum.kcal)} kcal · ${de(sum.protein)} g Eiweiß · ${de(sum.carbs)} g KH · ${de(sum.fat)} g Fett · ${de(sum.fiber)} g Ballaststoffe`));
       }
-      return h("div", { class: "day" }, h("h4", null, d.day), meals, nutBox);
+      let phNode = null;
+      const di = DAYS.findIndex(x => str(d.day).toLowerCase().startsWith(x.toLowerCase().slice(0, 2)));
+      if (p.weekStart && di >= 0 && cycleProfile()) { const q = phaseOf(cycleModel(), dnum(p.weekStart) + di); if (q) phNode = h("small", { title: phaseLabel(q) }, h("span", { class: `phdot ${PHASES[q.ph].cls}` }), " ", phaseLabel(q)); }
+      return h("div", { class: "day" }, h("h4", null, d.day, phNode), meals, nutBox);
     }));
     wrap.append(h("section", null, h("h3", { class: "sec" }, "Die Woche"), week));
 
@@ -1456,7 +1518,7 @@ Regeln:
 
   // ---------- Weitergeben: Programm und Rezepte ja, persönliche und Gesundheitsdaten nie ----------
   // Datenbereiche der App. Nur "content" verlässt je die App.
-  const DATA_GROUPS = { content: ["recipes"], personal: ["plans", "settings/brain"], health: ["profiles", "tracking", "cycle"] };
+  const DATA_GROUPS = { content: ["recipes"], personal: ["plans", "settings/brain", "settings/cycle"], health: ["profiles", "tracking", "cycle"] };
   const BUNDLE = "lebenskompass-rezepte";
   const BUNDLE_OLD = "kuechenbuch-rezepte";
   function transferSection() {
@@ -1540,6 +1602,197 @@ Regeln:
   }
 
   // =====================================================================
+  // ZYKLUS (Gesundheitsdaten: Sammlung "cycle", nie exportiert)
+  // =====================================================================
+  const PHASES = {
+    mens: { name: "Menstruation", cls: "ph-mens" },
+    foll: { name: "Follikelphase", cls: "ph-foll" },
+    ov:   { name: "Eisprung", cls: "ph-ov" },
+    lut:  { name: "Lutealphase", cls: "ph-lut" },
+  };
+  const CONTRA = ["", "Hormonspirale", "Kupferspirale", "Pille", "Vaginalring", "Kondom", "Keine", "Andere"];
+  const MOOD_KEYS = [["mens", "Menstruation"], ["foll", "Follikelphase"], ["ov", "Eisprung"], ["lut", "Lutealphase"], ["pms", "PMS-Tage"]];
+  const dayMs = 864e5;
+  const dnum = (s) => Math.round(parseYmd(s).getTime() / dayMs);
+  const dstr = (n) => ymd(new Date(n * dayMs + 12 * 3600e3));
+
+  function cycleModel() {
+    const days = S.cycleDays;
+    const per = num(S.cycleCfg?.periodLength) || 4;
+    const isPeriod = (n) => { const d = days[dstr(n)]; return !!(d && (d.bleeding || d.felt)); };
+    const periodNums = Object.keys(days).filter(k => days[k].bleeding || days[k].felt).map(dnum).sort((a, b) => a - b);
+    const starts = periodNums.filter(n => !isPeriod(n - 1) && !isPeriod(n - 2));
+    const lens = []; for (let i = 1; i < starts.length; i++) { const l = starts[i] - starts[i - 1]; if (l >= 15 && l <= 60) lens.push(l); }
+    const recent = lens.slice(-3);
+    const avgLen = recent.length ? Math.round(recent.reduce((a, b) => a + b, 0) / recent.length) : 28;
+    const ovNums = Object.keys(days).filter(k => days[k].ovulation).map(dnum).sort((a, b) => a - b);
+    const luts = [];
+    for (let i = 1; i < starts.length; i++) { const o = ovNums.filter(x => x > starts[i - 1] && x < starts[i]).pop(); if (o != null) { const l = starts[i] - o; if (l >= 8 && l <= 20) luts.push(l); } }
+    const lr = luts.slice(-3);
+    const lutLen = lr.length ? Math.round(lr.reduce((a, b) => a + b, 0) / lr.length) : 14;
+    return { days, per, starts, avgLen, lutLen, ovNums, nCycles: recent.length, nLut: lr.length };
+  }
+  function phaseOf(m, n) {
+    if (!m.starts.length || n < m.starts[0]) return null;
+    let s = null, sPred = false;
+    for (const x of m.starts) if (x <= n) s = x;
+    const last = m.starts[m.starts.length - 1];
+    if (s === last && n >= last + m.avgLen) { const k = Math.floor((n - last) / m.avgLen); s = last + k * m.avgLen; sPred = true; }
+    const nextReal = m.starts.find(x => x > s);
+    const next = nextReal != null ? nextReal : s + m.avgLen;
+    const felt = m.ovNums.filter(x => x > s && x < next).pop();
+    const ov = felt != null ? felt : next - m.lutLen;
+    const d = m.days[dstr(n)];
+    let ph;
+    if (n - s < m.per || (d && (d.bleeding || d.felt))) ph = "mens";
+    else if (Math.abs(n - ov) <= 1) ph = "ov";
+    else if (n < ov) ph = "foll";
+    else ph = "lut";
+    const pms = ph === "lut" && next - n <= 5;
+    const predicted = sPred || n > dnum(todayStr());
+    return { ph, pms, day: n - s + 1, start: s, next, ov, predicted, nextPredicted: nextReal == null };
+  }
+  function cycleSummary() {
+    const m = cycleModel(); const t = dnum(todayStr());
+    const p = phaseOf(m, t);
+    if (!p) return { m, p: null };
+    let nextStart = p.next <= t ? p.next + m.avgLen : p.next;
+    let nextOv = p.ov > t ? p.ov : null;
+    if (nextOv == null) { const q = phaseOf(m, nextStart); nextOv = q ? q.ov : nextStart + m.avgLen - m.lutLen; }
+    return { m, p, nextStart, nextOv, t };
+  }
+  const fmtDay = (n) => new Date(n * dayMs + 12 * 3600e3).toLocaleDateString("de-DE", { weekday: "short", day: "2-digit", month: "2-digit" });
+  function moodText(p) {
+    if (!p) return "";
+    const moods = S.cycleMoods || {};
+    return str(p.pms ? (moods.pms || moods.lut) : moods[p.ph]);
+  }
+  function phaseLabel(p) { return p ? PHASES[p.ph].name + (p.pms ? " · PMS" : "") : ""; }
+  function cycleProfile() { return S.profiles.find(x => x.id === S.cycleCfg?.profileId) || null; }
+
+  function renderCycle(box) {
+    const sum = cycleSummary();
+    box.append(h("div", { class: "eyebrow" }, "Zyklus" + (cycleProfile() ? " · " + cycleProfile().name : "")));
+    const monthStart = S.cycleMonth ? parseYmd(S.cycleMonth) : new Date(new Date().getFullYear(), new Date().getMonth(), 1);
+    const title = monthStart.toLocaleDateString("de-DE", { month: "long", year: "numeric" });
+    box.append(h("div", { class: "trackhead" },
+      h("h2", { class: "title", style: "margin:4px 0" }, title),
+      h("div", { class: "weeknav" },
+        h("button", { class: "btn small", type: "button", "aria-label": "Voriger Monat", onclick: () => shiftMonth(-1) }, "←"),
+        h("button", { class: "btn small", type: "button", "aria-label": "Nächster Monat", onclick: () => shiftMonth(1) }, "→"),
+        h("button", { class: "btn small ghost", type: "button", onclick: () => { S.cycleMonth = null; S.cycleSel = todayStr(); renderMain(); } }, "Heute"))));
+
+    if (sum.p) {
+      box.append(h("p", { class: "cyclesum" },
+        h("span", { class: `phdot ${PHASES[sum.p.ph].cls}` }),
+        h("b", null, `Zyklustag ${sum.p.day} · ${phaseLabel(sum.p)}`),
+        ` · Nächste Tage ca. ${fmtDay(sum.nextStart)} (in ${sum.nextStart - sum.t} Tagen) · Nächster Eisprung ca. ${fmtDay(sum.nextOv)}`));
+    } else {
+      box.append(h("p", { class: "hint" }, "Trag die ersten Tage deiner letzten Zyklen ein (Tag anklicken → „Tage“). Ab dem ersten Eintrag rechnet der Kalender die Phasen und die Vorhersage aus."));
+    }
+
+    // Monatsraster
+    const first = mondayOf(monthStart);
+    const grid = h("div", { class: "cal", role: "grid" });
+    ["Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"].forEach(d => grid.append(h("div", { class: "calhd" }, d)));
+    const today = todayStr();
+    for (let i = 0; i < 42; i++) {
+      const d = addDays(first, i); const ds = ymd(d);
+      if (i >= 35 && d.getMonth() !== monthStart.getMonth()) break;
+      const p = phaseOf(sum.m, dnum(ds));
+      const e = S.cycleDays[ds] || {};
+      const cls = ["calday", p ? PHASES[p.ph].cls : "", p && p.predicted ? "pred" : "", p && p.pms ? "pms" : "", d.getMonth() !== monthStart.getMonth() ? "other" : "", ds === today ? "today" : "", ds === S.cycleSel ? "sel" : ""].filter(Boolean).join(" ");
+      grid.append(h("button", { type: "button", class: cls, "aria-label": `${d.toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long" })}${p ? ", " + phaseLabel(p) : ""}`,
+        onclick: () => { S.cycleSel = ds; renderMain(); setTimeout(() => $("cyc-panel")?.scrollIntoView({ behavior: "smooth", block: "nearest" }), 30); } },
+        h("span", { class: "dn" }, d.getDate()),
+        h("span", { class: "mks" },
+          e.bleeding ? h("i", { class: "mk mk-drop", title: "Blutung" }) : null,
+          e.felt ? h("i", { class: "mk mk-drop mk-hollow", title: "Tage gespürt" }) : null,
+          e.ovulation ? h("i", { class: "mk mk-ring", title: "Eisprung gespürt" }) : null,
+          e.note ? h("i", { class: "mk mk-dot", title: "Notiz" }) : null),
+        p && p.pms ? h("span", { class: "pmstag" }, "PMS") : null));
+    }
+    box.append(grid);
+    box.append(h("div", { class: "legend" },
+      Object.entries(PHASES).map(([k, v]) => h("span", null, h("i", { class: `phdot ${v.cls}` }), v.name)),
+      h("span", null, h("i", { class: "phdot ph-lut pmsdot" }), "PMS (5 Tage vor den Tagen)"),
+      h("span", null, h("i", { class: "phdot ph-foll" , style: "opacity:.45;border-style:dashed" }), "hell = Vorhersage")));
+
+    if (S.cycleSel) box.append(dayPanel(sum.m, S.cycleSel));
+    box.append(cycleSettings(sum));
+  }
+  function shiftMonth(n) { const b = S.cycleMonth ? parseYmd(S.cycleMonth) : new Date(new Date().getFullYear(), new Date().getMonth(), 1); S.cycleMonth = ymd(new Date(b.getFullYear(), b.getMonth() + n, 1)); renderMain(); }
+
+  function dayPanel(m, ds) {
+    const e = { bleeding: false, felt: false, ovulation: false, note: "", ...(S.cycleDays[ds] || {}) };
+    const p = phaseOf(m, dnum(ds));
+    const msg = h("span", { class: "hint", role: "status" });
+    const chk = (k, label) => h("label", { class: "chk", for: "cy-" + k }, h("input", { type: "checkbox", id: "cy-" + k, checked: !!e[k], onchange: (ev) => {
+      e[k] = ev.target.checked;
+      if (k === "bleeding" && e.bleeding) { e.felt = false; const o = $("cy-felt"); if (o) o.checked = false; }
+      if (k === "felt" && e.felt) { e.bleeding = false; const o = $("cy-bleeding"); if (o) o.checked = false; }
+    } }), label);
+    return h("section", { class: "panel", id: "cyc-panel", style: "margin-top:18px;max-width:640px" },
+      h("div", { class: "trackhead" }, h("strong", { style: "font-family:var(--ui)" }, parseYmd(ds).toLocaleDateString("de-DE", { weekday: "long", day: "numeric", month: "long", year: "numeric" })),
+        h("button", { class: "btn small ghost", type: "button", onclick: () => { S.cycleSel = null; renderMain(); } }, "Schließen")),
+      p ? h("p", { class: "cyclesum", style: "margin:0" }, h("span", { class: `phdot ${PHASES[p.ph].cls}` }), h("b", null, `${phaseLabel(p)} · Zyklustag ${p.day}`), p.predicted ? " (vorausgesagt)" : "") : null,
+      p && moodText(p) ? h("p", { class: "mood" }, moodText(p)) : null,
+      h("div", { class: "row-inline" }, chk("bleeding", "Tage – mit Blutung"), chk("felt", "Tage – gespürt, ohne Blutung"), chk("ovulation", "Eisprung gespürt")),
+      h("label", { class: "hint", for: "cy-note", style: "display:grid;gap:4px" }, "Notiz",
+        h("textarea", { id: "cy-note", rows: 3, class: "cy-note", oninput: (ev) => { e.note = ev.target.value; } }, e.note)),
+      h("div", { class: "row-inline" },
+        h("button", { class: "btn primary small", type: "button", onclick: async () => {
+          if (!cycleCol) { msg.textContent = "Speichern geht gerade nicht."; return; }
+          const data = { date: ds, bleeding: !!e.bleeding, felt: !!e.felt, ovulation: !!e.ovulation, note: str(e.note).trim(), updatedAt: Date.now() };
+          try {
+            if (!data.bleeding && !data.felt && !data.ovulation && !data.note) { await cycleCol.doc("d-" + ds).delete(); delete S.cycleDays[ds]; }
+            else { await cycleCol.doc("d-" + ds).set(data); S.cycleDays[ds] = data; }
+            renderMain();
+          } catch { msg.textContent = "Speichern hat nicht geklappt."; }
+        } }, "Speichern"), msg));
+  }
+
+  function cycleSettings(sum) {
+    const c = { profileId: "", contraception: "", contraceptionNote: "", periodLength: 4, ...(S.cycleCfg || {}) };
+    const moods = { ...(S.cycleMoods || {}) };
+    const msg = h("p", { class: "status", role: "status" });
+    const m = sum.m;
+    return h("details", { class: "brief", style: "margin-top:26px" }, h("summary", null, "Einstellungen, Berechnung und Stimmungstexte"),
+      h("div", { class: "form", style: "margin-top:12px" },
+        h("div", { class: "row3" },
+          h("label", { for: "cy-prof" }, "Zyklus gehört zu", h("select", { id: "cy-prof", onchange: (ev) => { c.profileId = ev.target.value; } },
+            h("option", { value: "" }, "—"), S.profiles.map(p => h("option", { value: p.id, selected: c.profileId === p.id }, p.name)))),
+          h("label", { for: "cy-contra" }, "Verhütung", h("select", { id: "cy-contra", onchange: (ev) => { c.contraception = ev.target.value; } },
+            CONTRA.map(x => h("option", { value: x, selected: c.contraception === x }, x || "—")))),
+          h("label", { for: "cy-per" }, "Dauer der Tage", h("input", { id: "cy-per", inputmode: "numeric", value: String(c.periodLength), oninput: (ev) => { c.periodLength = ev.target.value; } }))),
+        h("label", { for: "cy-cnote" }, "Notiz zur Verhütung", h("input", { id: "cy-cnote", value: str(c.contraceptionNote), oninput: (ev) => { c.contraceptionNote = ev.target.value; } })),
+        h("p", { class: "hint" }, `Berechnung: Zykluslänge ${m.avgLen} Tage (${m.nCycles ? `Durchschnitt der letzten ${m.nCycles} Zyklen` : "Standardwert, noch zu wenig Einträge"}), Lutealphase ${m.lutLen} Tage (${m.nLut ? `aus ${m.nLut} gespürten Eisprüngen` : "Standardwert"}). Eisprung = nächste Tage − Lutealphase, Eisprungphase = Eisprungtag ± 1 Tag, PMS = 5 Tage vor den nächsten Tagen. Deine Einträge haben immer Vorrang.`),
+        h("p", { class: "hint" }, c.contraception === "Hormonspirale" || c.contraception === "Pille" || c.contraception === "Vaginalring"
+          ? "Mit hormoneller Verhütung findet der Eisprung oft nicht oder unregelmäßig statt. Deine gespürten Einträge sind deshalb wichtiger als die Rechnung."
+          : "Die Vorhersage ist ein Durchschnitt."),
+        h("p", { class: "hint" }, h("b", null, "Keine Verhütungsmethode und keine medizinische Beratung.")),
+        h("fieldset", null, h("legend", null, "Stimmung je Phase (ein kurzer Satz)"),
+          MOOD_KEYS.map(([k, l]) => h("label", { for: "mood-" + k, class: "hint", style: "display:grid;gap:4px" }, l,
+            h("input", { id: "mood-" + k, value: str(moods[k]), oninput: (ev) => { moods[k] = ev.target.value; } })))),
+        h("div", { class: "row-inline" }, h("button", { class: "btn primary small", type: "button", onclick: async () => {
+          if (!db) { msg.textContent = "Speichern geht gerade nicht."; return; }
+          try {
+            await cycleCol.doc("config").set({ profileId: c.profileId || null, contraception: c.contraception || "", contraceptionNote: str(c.contraceptionNote).trim(), periodLength: Math.max(1, Math.min(10, Math.round(num(c.periodLength) || 4))), updatedAt: Date.now() });
+            await db.doc("settings/cycle").set({ moods: Object.fromEntries(MOOD_KEYS.map(([k]) => [k, str(moods[k]).trim()])), updatedAt: Date.now() });
+            msg.textContent = "Gespeichert.";
+          } catch { msg.textContent = "Speichern hat nicht geklappt."; }
+        } }, "Einstellungen speichern")), msg));
+  }
+
+  // Phase je Wochentag für den Wochenplaner
+  function phasesForWeek(startStr) {
+    const m = cycleModel(); if (!m.starts.length) return null;
+    const mon = dnum(startStr);
+    return DAYS.map((d, i) => { const p = phaseOf(m, mon + i); return p ? { day: d, phase: PHASES[p.ph].name + (p.pms ? " (PMS)" : "") } : null; }).filter(Boolean);
+  }
+  function nextPlanMonday() { return ymd(addDays(mondayOf(new Date()), new Date().getDay() === 1 ? 0 : 7)); }
+
+  // =====================================================================
   // RAHMEN
   // =====================================================================
   function renderMain() {
@@ -1550,6 +1803,7 @@ Regeln:
       if (S.view === "home") renderHome(box);
       else if (S.view === "book") { if (S.mode === "add" || S.mode === "edit") renderForm(box); else if (S.sel && current()) renderRecipe(box); else renderBrowse(box); }
       else if (S.view === "track") renderTrack(box);
+      else if (S.view === "cycle") renderCycle(box);
       else renderSettings(box);
       return;
     }
@@ -1567,7 +1821,7 @@ Regeln:
     const n = S.recipes.length, w = S.plans.length;
     $("sub").textContent = S.loaded ? `${n} ${n === 1 ? "Rezept" : "Rezepte"} · ${w} ${w === 1 ? "Woche" : "Wochen"} geplant` : "Rezepte sammeln, Wochen planen, Essen tracken.";
   }
-  const HASH = { home: "start", book: "rezepte", plan: "wochenplan", track: "tracking", settings: "profil" };
+  const HASH = { home: "start", book: "rezepte", plan: "wochenplan", track: "tracking", cycle: "zyklus", settings: "profil" };
   function go(view) {
     if (view === "book" && S.view === "book") { S.sel = null; S.chapter = null; S.q = ""; S.tag = null; S.mode = "read"; }
     S.view = view; S.pick = null;
@@ -1586,7 +1840,6 @@ Regeln:
     return false;
   }
 
-  $("addBtn").addEventListener("click", startAdd);
   $("homeLink").addEventListener("click", () => go("home"));
   document.querySelectorAll(".tabs button").forEach(b => b.addEventListener("click", () => go(b.dataset.view)));
   window.addEventListener("hashchange", () => { if (routeFromHash()) render(); });
@@ -1597,7 +1850,7 @@ Regeln:
   // ---------- Daten ----------
   const ready = new Promise(res => { let n = 0; (function w() { if (window.claude || n++ > 30) res(); else setTimeout(w, 100); })(); });
   const busyEditing = () => (S.view === "book" && S.mode !== "read") || (S.view === "plan" && S.planMode === "new") || S.planBusy || !!S.editProfile || !!S.pick ||
-    ["p-feedback", "b-forbidden", "b-pref", "b-rules", "rq"].includes(document.activeElement?.id);
+    ["p-feedback", "b-forbidden", "b-pref", "b-rules", "rq"].includes(document.activeElement?.id) || /^(cy-|mood-)/.test(document.activeElement?.id || "");
   (async () => {
     await ready;
     const timer = setTimeout(() => { S.loaded = S.plansLoaded = S.profilesLoaded = true; render(); }, 10000);
@@ -1611,6 +1864,19 @@ Regeln:
     profCol.onSnapshot((snap) => { S.profiles = snap.docs.map(d => ({ id: d.id, ...d.data() })).sort((a, b) => (a.createdAt || 0) - (b.createdAt || 0)); S.profilesLoaded = true; after(); }, () => { S.profilesLoaded = true; });
     db.doc("settings/brain").onSnapshot((snap) => { S.brain = snap.exists ? snap.data() : null; if (!busyEditing()) renderMain(); }, () => {});
     subscribeWeek();
+    cycleCol = db.collection("cycle");
+    cycleCol.onSnapshot((snap) => {
+      const days = {}; let cfg = null;
+      for (const d of snap.docs) { const x = d.data() || {}; if (d.id === "config") cfg = x; else if (d.id.startsWith("d-") && x.date) days[x.date] = x; }
+      S.cycleDays = days; S.cycleCfg = cfg; if (!busyEditing()) renderMain();
+    }, () => {});
+    db.doc("settings/cycle").onSnapshot((snap) => { S.cycleMoods = snap.exists ? (snap.data() || {}).moods || null : null; if (!busyEditing()) renderMain(); }, () => {});
+    try {
+      const user = window.claude ? await window.claude.use("user") : null;
+      userId = user ? await user.id() : null;
+    } catch { userId = null; }
+    if (userId) db.collection("data/users/" + userId).doc("me").onSnapshot((snap) => { S.me = snap.exists ? (snap.data() || {}).profileId || null : null; if (!busyEditing()) renderMain(); }, () => {});
+    else { try { S.me = localStorage.getItem("lk-me"); } catch {} renderMain(); }
   })();
   (async () => {
     await ready;
