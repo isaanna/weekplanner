@@ -163,3 +163,73 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Planer muss alle fünf Werte pro Person und Tag treffen
 - [x] ~~16 Bausteine (Beilagen)~~ wieder entfernt: stattdessen 7 Frühstücke und 10 Hauptgerichte mit viel Ballaststoffen und Eiweiß; Planer nutzt nur ganze Rezepte und schreibt bei Lücken neue
 - [x] Planer: kurze Einkaufsliste (ca. 20 Artikel), gemeinsame Grundzutaten, andere Gerichte als in den letzten Wochen
+
+---
+
+# Runde 7 – Zykluskalender (Plan, noch nicht umgesetzt)
+
+## 7.1 Datenschutz zuerst
+- [ ] Zyklusdaten in einem **privaten Bereich** der Datenbank speichern (`data/users/<eigene id>/…`): nur die angemeldete Person selbst sieht und ändert sie, auch wenn das Kochbuch per Link geteilt ist
+- [ ] Dafür bekommt die App die Berechtigung „wer schaut gerade“ (`user`)
+- [ ] Zyklusdaten werden **nicht** nach `content/` gesichert und nicht ins Repository geschrieben
+
+## 7.2 Neuer Reiter „Zyklus“
+- [ ] Monatsansicht Mo–So, Pfeile für vorigen/nächsten Monat, „Heute“
+- [ ] Jeder Tag in der Farbe seiner Phase (pastell):
+  - Menstruation: Rosé-Rot
+  - Follikelphase: Flieder/Violett
+  - Eisprung: Waldgrün (hell)
+  - Lutealphase: Hellblau
+- [ ] Eingetragene Tage kräftig gefüllt, vorausgesagte Tage nur hell bzw. gestrichelt umrandet
+- [ ] Kleine Markierungen im Tag: Punkt = Notiz vorhanden, Tropfen-Symbol = Blutung, Kreis = Eisprung gespürt
+- [ ] Oben eine Zeile: „Zyklustag 12 · Follikelphase · Nächste Tage in 16 Tagen (Di 23.12.) · Nächster Eisprung ca. Mo 08.12.“
+- [ ] Legende der vier Farben
+
+## 7.3 Eintragen pro Tag (Klick auf einen Tag)
+- [ ] „Tage – mit Blutung“
+- [ ] „Tage – gespürt, ohne Blutung“ (für Spirale)
+- [ ] „Eisprung gespürt“
+- [ ] Notiz (freier Text)
+- [ ] Mehr nicht
+
+## 7.4 Einstellungen im Reiter
+- [ ] Verhütung: Hormonspirale, Kupferspirale, Pille, Ring, Kondom, keine, andere (+ Notiz)
+- [ ] Dauer der Tage (Standard 4)
+- [ ] Hinweis: Vorhersage ist ein Durchschnitt, **keine Verhütungsmethode** und keine medizinische Beratung
+
+## 7.5 Berechnung
+- [ ] Zyklusbeginn = erster Tag einer Reihe von „Tage“-Einträgen (mit oder ohne Blutung)
+- [ ] Zykluslänge = Durchschnitt der **letzten 3 Zyklen** (nachgetragen); ohne Daten 28 Tage
+- [ ] Lutealphase = Abstand gespürter Eisprung → nächster Zyklusbeginn, Durchschnitt; ohne Daten 14 Tage
+- [ ] Eisprung (vorausgesagt) = nächster Zyklusbeginn − Lutealphase; Eisprungphase = Eisprungtag ± 1 Tag
+- [ ] Phasen: Menstruation (Tag 1 bis Dauer) → Follikel (bis vor Eisprungphase) → Eisprung (3 Tage) → Luteal (bis zum nächsten Beginn)
+- [ ] Eigene Einträge haben immer Vorrang vor der Rechnung; alles wird nach jedem Eintrag neu berechnet
+- [ ] Vorhersage für die nächsten 3 Zyklen sichtbar
+- [ ] Nachtragen: in den Vormonaten einfach die Tage und den Eisprung anklicken
+
+## 7.6 Wochenplaner nach Phase
+- [ ] Der Zyklus wird einem Profil zugeordnet (Isa)
+- [ ] Beim Planen bekommt Claude pro geplantem Tag die Phase mit
+- [ ] Bevorzugung je Phase (weiche Regel, die Nährwertziele bleiben vorrangig):
+  - Menstruation: eisenreich (Rind, Linsen, Spinat), warme Gerichte, Eintöpfe
+  - Follikelphase: leichter, frisch, proteinreich
+  - Eisprung: viel Gemüse und Ballaststoffe
+  - Lutealphase: komplexe Kohlenhydrate, magnesiumreich (Hülsenfrüchte, Haferflocken, Kartoffeln), sättigend
+- [ ] Im Wochenplan steht bei jedem Tag die Phase als kleiner Farbpunkt
+- [ ] Gemeinsame Mahlzeiten (für Isa und Giuli) richten sich nach Isas Phase
+
+## 7.7 Design
+- [ ] Die vier Phasenfarben sind die einzige Ausnahme von der 12-Ton-Palette (in CLAUDE.md festhalten)
+- [ ] Rest des Reiters in der bestehenden Palette und Schrift
+
+## 7.8 Vorgehen
+1. Privaten Speicherbereich und Berechtigung einrichten
+2. Reiter mit Monatsansicht und Tageseingabe
+3. Berechnung und Vorhersage, mit Testdaten aus 3 Zyklen lokal prüfen
+4. Einstellungen (Verhütung, Dauer)
+5. Anbindung an den Wochenplaner
+6. Veröffentlichen, README/CLAUDE.md, Commit und Push
+
+## Offene Fragen
+- Soll Giuli den Kalender sehen können, oder bleibt er nur für Isa sichtbar?
+- Soll die aktuelle Phase auch auf der Startseite stehen (eine Zeile), oder nur im Reiter „Zyklus“?
