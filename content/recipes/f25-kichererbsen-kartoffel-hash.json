@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795777823364,
+  "ingredients": [
+    "400 g festkochende Kartoffeln",
+    "1 Dose Kichererbsen (240 g)",
+    "4 Eier",
+    "100 g Putenschinken",
+    "1 rote Paprika",
+    "100 g Babyspinat",
+    "1 TL Rapsöl"
+  ],
+  "notes": "Zum Vorkochen ohne Ei portionieren und morgens ein Spiegelei dazu braten.",
+  "nutrition": {
+    "carbs": 55,
+    "fat": 18,
+    "fiber": 13,
+    "kcal": 560,
+    "protein": 40
+  },
+  "servings": 2,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln klein würfeln und im Öl 12 Minuten braten.",
+    "Kichererbsen, Paprika und Putenschinken dazugeben und 5 Minuten mitbraten, Spinat unterheben.",
+    "Vier Mulden formen, Eier hineingeben und mit Deckel 5 Minuten stocken lassen. Salzen und pfeffern."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "25 Min.",
+  "title": "Kartoffel-Kichererbsen-Hash mit Ei und Putenschinken",
+  "updatedAt": 1795777823364
+}

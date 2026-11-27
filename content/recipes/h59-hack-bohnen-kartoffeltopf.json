@@ -1,0 +1,40 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823370,
+  "ingredients": [
+    "500 g mageres Rinderhack",
+    "800 g festkochende Kartoffeln",
+    "2 Dosen Kidneybohnen (je 240 g)",
+    "800 g stückige Tomaten",
+    "2 Paprika",
+    "1 EL Paprikapulver",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 55,
+    "fat": 10,
+    "fiber": 15,
+    "kcal": 505,
+    "protein": 41
+  },
+  "servings": 4,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hack in einem großen Topf krümelig braten.",
+    "Kartoffeln und Paprika würfeln, mit Tomaten, Paprikapulver und 300 ml Wasser dazugeben und 25 Minuten köcheln.",
+    "Bohnen abspülen, zugeben und 5 Minuten mitkochen. Abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "45 Min.",
+  "title": "Rinderhack-Bohnen-Kartoffeltopf",
+  "updatedAt": 1795777823370
+}

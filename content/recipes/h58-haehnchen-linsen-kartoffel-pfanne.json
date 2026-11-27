@@ -1,0 +1,41 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823369,
+  "ingredients": [
+    "500 g Hähnchenbrust",
+    "600 g festkochende Kartoffeln",
+    "150 g Tellerlinsen",
+    "400 g passierte Tomaten",
+    "200 g Babyspinat",
+    "50 g Feta",
+    "2 Knoblauchzehen"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 47,
+    "fat": 8,
+    "fiber": 12,
+    "kcal": 475,
+    "protein": 46
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Linsen 25 Minuten in Wasser weich kochen.",
+    "Kartoffeln würfeln und mit etwas Öl 15 Minuten braten.",
+    "Hähnchen würfeln, mit Knoblauch dazugeben und 6 Minuten mitbraten.",
+    "Tomaten und Linsen unterrühren, 5 Minuten köcheln, Spinat unterheben. Mit Feta bestreuen und würzen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar",
+    "viel Gemüse"
+  ],
+  "time": "40 Min.",
+  "title": "Hähnchen-Linsen-Kartoffel-Pfanne mit Spinat",
+  "updatedAt": 1795777823369
+}

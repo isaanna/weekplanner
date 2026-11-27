@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795777823362,
+  "ingredients": [
+    "500 g Skyr natur",
+    "80 g kernige Haferflocken",
+    "300 g Beeren (TK oder frisch)",
+    "20 g geschroteter Leinsamen",
+    "2 TL Honig"
+  ],
+  "notes": "Viel Eiweiß und Ballaststoffe zum Start.",
+  "nutrition": {
+    "carbs": 52,
+    "fat": 8,
+    "fiber": 15,
+    "kcal": 455,
+    "protein": 35
+  },
+  "servings": 2,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Skyr mit Honig glatt rühren.",
+    "Haferflocken und Leinsamen unterrühren.",
+    "Beeren darauf verteilen. Hält im Glas 3 Tage."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "Vollkorn",
+    "schnell",
+    "meal-prep-tauglich"
+  ],
+  "time": "5 Min.",
+  "title": "Beeren-Skyr mit Haferflocken und Leinsamen",
+  "updatedAt": 1795777823362
+}

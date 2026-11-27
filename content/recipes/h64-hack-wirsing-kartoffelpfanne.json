@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823375,
+  "ingredients": [
+    "500 g mageres Rinderhack",
+    "600 g Wirsing",
+    "700 g festkochende Kartoffeln",
+    "200 ml Brühe",
+    "1 TL Senf",
+    "1 TL Kümmel",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 40,
+    "fat": 9,
+    "fiber": 11,
+    "kcal": 470,
+    "protein": 45
+  },
+  "servings": 3,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln würfeln und 10 Minuten in Salzwasser vorkochen.",
+    "Hack krümelig braten, Wirsing in Streifen dazugeben und 5 Minuten mitbraten.",
+    "Kartoffeln, Brühe, Senf und Kümmel zugeben und 8 Minuten garen. Abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "viel Gemüse"
+  ],
+  "time": "30 Min.",
+  "title": "Rinderhack-Wirsing-Kartoffelpfanne",
+  "updatedAt": 1795777823375
+}

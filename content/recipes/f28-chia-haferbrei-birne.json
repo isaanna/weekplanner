@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795777823367,
+  "ingredients": [
+    "80 g Haferflocken",
+    "400 ml Milch (1,5 %)",
+    "300 g Skyr natur",
+    "2 Birnen",
+    "20 g Chiasamen",
+    "Zimt"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 61,
+    "fat": 9,
+    "fiber": 12,
+    "kcal": 480,
+    "protein": 31
+  },
+  "servings": 2,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Haferflocken und Chiasamen in der Milch 5 Minuten köcheln.",
+    "Vom Herd nehmen, Skyr und Zimt unterrühren.",
+    "Mit gewürfelter Birne servieren. Hält kalt 3 Tage."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "Vollkorn",
+    "meal-prep-tauglich"
+  ],
+  "time": "10 Min.",
+  "title": "Chia-Haferbrei mit Birne und Skyr",
+  "updatedAt": 1795777823367
+}

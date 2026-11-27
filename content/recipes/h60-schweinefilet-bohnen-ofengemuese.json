@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823371,
+  "ingredients": [
+    "600 g Schweinefilet",
+    "800 g festkochende Kartoffeln",
+    "2 Dosen weiße Bohnen (je 240 g)",
+    "1 Zucchini",
+    "2 Paprika",
+    "2 EL Olivenöl",
+    "Salz, Pfeffer, Rosmarin"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 51,
+    "fat": 9,
+    "fiber": 14,
+    "kcal": 530,
+    "protein": 46
+  },
+  "servings": 4,
+  "shelfLifeDays": 3,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln, Zucchini und Paprika würfeln, mit Öl, Rosmarin und Salz 30 Minuten backen.",
+    "Bohnen abspülen und für die letzten 10 Minuten untermischen.",
+    "Filet in Medaillons schneiden und je Seite 3–4 Minuten braten. Mit dem Ofengemüse servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "viel Gemüse"
+  ],
+  "time": "45 Min.",
+  "title": "Schweinefilet mit Kartoffeln, weißen Bohnen und Ofengemüse",
+  "updatedAt": 1795777823371
+}

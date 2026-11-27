@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823378,
+  "ingredients": [
+    "500 g mageres Rinderhack",
+    "1 Ei",
+    "30 g Haferflocken",
+    "1 Dose weiße Bohnen (240 g)",
+    "700 g passierte Tomaten",
+    "800 g festkochende Kartoffeln",
+    "Salz, Pfeffer, Oregano"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 52,
+    "fat": 9,
+    "fiber": 11,
+    "kcal": 470,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hack mit Ei, Haferflocken, Salz und Pfeffer verkneten und kleine Bällchen formen.",
+    "Bällchen rundherum anbraten, Tomaten, Bohnen und Oregano zugeben und 20 Minuten köcheln.",
+    "Kartoffeln in Salzwasser 20 Minuten kochen und dazu servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "45 Min.",
+  "title": "Hackbällchen in Tomaten-Bohnen-Soße mit Kartoffeln",
+  "updatedAt": 1795777823378
+}

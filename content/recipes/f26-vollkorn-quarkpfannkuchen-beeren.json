@@ -1,0 +1,37 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795777823365,
+  "ingredients": [
+    "80 g Dinkel-Vollkornmehl",
+    "300 g Magerquark",
+    "2 Eier",
+    "300 g Beeren",
+    "20 g geschroteter Leinsamen",
+    "1 TL Backpulver"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 11,
+    "fiber": 14,
+    "kcal": 445,
+    "protein": 33
+  },
+  "servings": 2,
+  "shelfLifeDays": 2,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Mehl, Quark, Eier, Leinsamen und Backpulver zu einem dicken Teig verrühren.",
+    "In einer beschichteten Pfanne kleine Pfannkuchen je Seite 2–3 Minuten backen.",
+    "Mit den Beeren servieren."
+  ],
+  "tags": [
+    "süß",
+    "gesund",
+    "proteinreich",
+    "Vollkorn"
+  ],
+  "time": "20 Min.",
+  "title": "Vollkorn-Quarkpfannkuchen mit Beeren",
+  "updatedAt": 1795777823365
+}

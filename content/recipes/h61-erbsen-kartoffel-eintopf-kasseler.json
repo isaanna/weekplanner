@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823372,
+  "ingredients": [
+    "400 g Kasselerlachs",
+    "600 g mehligkochende Kartoffeln",
+    "600 g Erbsen (TK)",
+    "300 g Möhren",
+    "1,2 l Gemüsebrühe",
+    "Majoran"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 43,
+    "fat": 6,
+    "fiber": 13,
+    "kcal": 400,
+    "protein": 32
+  },
+  "servings": 4,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln und Möhren würfeln und in der Brühe 15 Minuten kochen.",
+    "Erbsen dazugeben und 5 Minuten mitkochen, ein Drittel grob pürieren.",
+    "Kasseler würfeln, im Eintopf 5 Minuten ziehen lassen, mit Majoran abschmecken."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "35 Min.",
+  "title": "Erbsen-Kartoffel-Eintopf mit Kasseler",
+  "updatedAt": 1795777823372
+}

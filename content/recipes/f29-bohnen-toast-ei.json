@@ -1,0 +1,37 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795777823368,
+  "ingredients": [
+    "4 Scheiben Vollkornbrot",
+    "1 Dose weiße Bohnen in Tomatensoße (400 g)",
+    "4 Eier",
+    "100 g Putenschinken",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 56,
+    "fat": 13,
+    "fiber": 15,
+    "kcal": 540,
+    "protein": 39
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Bohnen in einem Topf erwärmen.",
+    "Eier 7 Minuten kochen oder als Spiegeleier braten.",
+    "Brot toasten, mit Putenschinken, Bohnen und Ei belegen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "Vollkorn",
+    "schnell"
+  ],
+  "time": "15 Min.",
+  "title": "Vollkorntoast mit Tomaten-Bohnen, Ei und Putenschinken",
+  "updatedAt": 1795777823368
+}

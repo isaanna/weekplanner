@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795777823363,
+  "ingredients": [
+    "4 Scheiben Vollkornbrot",
+    "6 Eier",
+    "200 g Babyspinat",
+    "200 g Hüttenkäse",
+    "2 Tomaten",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 45,
+    "fat": 20,
+    "fiber": 12,
+    "kcal": 575,
+    "protein": 41
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Spinat in einer Pfanne zusammenfallen lassen.",
+    "Eier verquirlen, dazugeben und cremig stocken lassen, würzen.",
+    "Brot mit Hüttenkäse bestreichen, Rührei und Tomatenscheiben darauf geben."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "Vollkorn",
+    "schnell"
+  ],
+  "time": "15 Min.",
+  "title": "Vollkornbrot mit Rührei, Spinat und Hüttenkäse",
+  "updatedAt": 1795777823363
+}

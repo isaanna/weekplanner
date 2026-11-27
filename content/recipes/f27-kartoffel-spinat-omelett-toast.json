@@ -1,0 +1,38 @@
+{
+  "category": "Frühstück",
+  "createdAt": 1795777823366,
+  "ingredients": [
+    "300 g gekochte Kartoffeln",
+    "6 Eier",
+    "300 g Blattspinat",
+    "2 Scheiben Vollkornbrot",
+    "60 g Feta",
+    "1 TL Olivenöl",
+    "Salz, Pfeffer"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 47,
+    "fat": 23,
+    "fiber": 10,
+    "kcal": 560,
+    "protein": 35
+  },
+  "servings": 2,
+  "shelfLifeDays": 1,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln in Scheiben im Öl 6 Minuten anbraten, Spinat zufallen lassen.",
+    "Eier verquirlen, darüber gießen, Feta darüber bröseln und mit Deckel stocken lassen.",
+    "Mit getoastetem Vollkornbrot servieren."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "Vollkorn"
+  ],
+  "time": "20 Min.",
+  "title": "Kartoffel-Spinat-Omelett mit Vollkorntoast",
+  "updatedAt": 1795777823366
+}

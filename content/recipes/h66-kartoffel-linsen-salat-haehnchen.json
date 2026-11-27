@@ -1,0 +1,38 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823377,
+  "ingredients": [
+    "800 g festkochende Kartoffeln",
+    "150 g Tellerlinsen",
+    "400 g Hähnchenbrust",
+    "100 g Rucola",
+    "1 Bund Radieschen",
+    "3 EL Olivenöl",
+    "1 EL Senf, 2 EL Apfelessig, Salz, Pfeffer"
+  ],
+  "notes": "Kalt essen, ideal zum Mitnehmen.",
+  "nutrition": {
+    "carbs": 49,
+    "fat": 10,
+    "fiber": 12,
+    "kcal": 465,
+    "protein": 37
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Kartoffeln kochen, pellen und würfeln. Linsen 25 Minuten weich kochen.",
+    "Hähnchen braten und in Streifen schneiden, Radieschen in Scheiben schneiden.",
+    "Öl, Senf, Essig, Salz und Pfeffer verrühren und alles vermischen. Rucola erst vor dem Essen dazu."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich"
+  ],
+  "time": "40 Min.",
+  "title": "Kartoffel-Linsen-Salat mit Hähnchen",
+  "updatedAt": 1795777823377
+}

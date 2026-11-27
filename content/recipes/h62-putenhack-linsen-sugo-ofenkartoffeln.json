@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823373,
+  "ingredients": [
+    "500 g Putenhack",
+    "120 g rote Linsen",
+    "700 g passierte Tomaten",
+    "2 Möhren",
+    "800 g festkochende Kartoffeln",
+    "1 EL Olivenöl",
+    "Salz, Pfeffer, Oregano"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 58,
+    "fat": 8,
+    "fiber": 12,
+    "kcal": 505,
+    "protein": 41
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 210 °C vorheizen. Kartoffeln in Spalten schneiden, mit wenig Öl und Salz 30 Minuten backen.",
+    "Hack im restlichen Öl anbraten, Möhren fein reiben und mitbraten.",
+    "Tomaten, Linsen und 200 ml Wasser zugeben und 15 Minuten köcheln, bis die Linsen weich sind. Mit Oregano würzen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "40 Min.",
+  "title": "Putenhack-Linsen-Sugo mit Ofenkartoffeln",
+  "updatedAt": 1795777823373
+}

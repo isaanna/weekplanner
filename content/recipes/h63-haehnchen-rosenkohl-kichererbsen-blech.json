@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823374,
+  "ingredients": [
+    "600 g Hähnchenbrust",
+    "600 g festkochende Kartoffeln",
+    "400 g Rosenkohl",
+    "1 Dose Kichererbsen (240 g)",
+    "2 Paprika",
+    "2 EL Olivenöl",
+    "Salz, Pfeffer, Paprikapulver"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 40,
+    "fat": 9,
+    "fiber": 12,
+    "kcal": 465,
+    "protein": 46
+  },
+  "servings": 4,
+  "shelfLifeDays": 4,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Ofen auf 200 °C vorheizen. Kartoffeln vierteln, Rosenkohl halbieren, mit 1 EL Öl und Salz 15 Minuten backen.",
+    "Hähnchen und Paprika in Stücke schneiden, mit Kichererbsen, restlichem Öl und Gewürzen mischen.",
+    "Aufs Blech geben und weitere 20 Minuten backen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "viel Gemüse"
+  ],
+  "time": "40 Min.",
+  "title": "Hähnchen-Blech mit Kartoffeln, Rosenkohl und Kichererbsen",
+  "updatedAt": 1795777823374
+}

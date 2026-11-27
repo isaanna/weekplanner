@@ -1,0 +1,39 @@
+{
+  "category": "Hauptgerichte",
+  "createdAt": 1795777823376,
+  "ingredients": [
+    "500 g Putenhack",
+    "600 g Süßkartoffeln",
+    "2 Dosen schwarze Bohnen (je 240 g)",
+    "800 g stückige Tomaten",
+    "1 Dose Mais (140 g)",
+    "1 EL Rapsöl",
+    "Salz, Kreuzkümmel, Chili"
+  ],
+  "notes": "",
+  "nutrition": {
+    "carbs": 56,
+    "fat": 7,
+    "fiber": 15,
+    "kcal": 475,
+    "protein": 40
+  },
+  "servings": 4,
+  "shelfLifeDays": 5,
+  "source": "Von Claude zusammengestellt",
+  "steps": [
+    "Hack im Öl krümelig braten und mit Kreuzkümmel und Chili würzen.",
+    "Süßkartoffeln würfeln, mit Tomaten und 200 ml Wasser zugeben und 20 Minuten köcheln.",
+    "Bohnen und Mais abspülen, zugeben und 5 Minuten mitkochen."
+  ],
+  "tags": [
+    "herzhaft",
+    "gesund",
+    "proteinreich",
+    "meal-prep-tauglich",
+    "einfrierbar"
+  ],
+  "time": "45 Min.",
+  "title": "Puten-Chili mit Süßkartoffeln und schwarzen Bohnen",
+  "updatedAt": 1795777823376
+}

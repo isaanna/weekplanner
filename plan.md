@@ -161,5 +161,5 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Eiweiß nach Zielgewicht (1,8 g/kg)
 - [x] Tracking, Startseite und Wochenplan zeigen Kalorien, Eiweiß, Kohlenhydrate, Fett und Ballaststoffe
 - [x] Planer muss alle fünf Werte pro Person und Tag treffen
-- [x] 16 Bausteine (Beilagen) zum Ausgleichen der Nährwerte
+- [x] ~~16 Bausteine (Beilagen)~~ wieder entfernt: stattdessen 7 Frühstücke und 10 Hauptgerichte mit viel Ballaststoffen und Eiweiß; Planer nutzt nur ganze Rezepte und schreibt bei Lücken neue
 - [x] Planer: kurze Einkaufsliste (ca. 20 Artikel), gemeinsame Grundzutaten, andere Gerichte als in den letzten Wochen
