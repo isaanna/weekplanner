@@ -345,6 +345,10 @@ ol.steps li { gap: 12px; }
 .phnut { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; }
 .phnut label { display: grid; gap: 3px; font-family: var(--ui); font-size: 0.75rem; color: var(--muted); }
 .photobox input:not([type=file]) { border: 1.5px solid var(--herb); background: var(--page); border-radius: 6px; padding: 7px 9px; font-family: var(--ui); font-size: 0.95rem; color: var(--ink); width: 100%; min-width: 0; }
+.entryact { display: inline-flex; align-items: center; gap: 2px; flex: none; }
+.copyto { border: 1px solid var(--line); background: var(--page); border-radius: 999px; padding: 2px 8px; font-family: var(--ui); font-size: 0.72rem; font-weight: 600; color: var(--accent); white-space: nowrap; }
+.copyto:hover { border-color: var(--accent); }
+.slotcard .copyto { font-size: 0.8rem; padding: 4px 10px; }
 .sumpart::before { content: "·"; margin: 0 6px 0 2px; color: var(--muted); }
 .swipehint { display: flex; justify-content: space-between; align-items: center; gap: 8px; min-height: 30px; }
 .swipehint span { font-family: var(--ui); font-size: 0.78rem; color: var(--muted); }
@@ -442,7 +446,7 @@ ol.steps li { gap: 12px; }
     sel: null, mode: "read", q: "", tag: null, scale: null, draft: null, confirmDel: false,
     busy: false, status: "", statusErr: false, trackMsg: "",
     planSel: null, planMode: "read", brief: "", feedback: "", planBusy: false, planStatus: "", planErr: false, confirmPlanDel: false, adoptMsg: "",
-    chapter: null, photo: null, trackMode: null, trackDay: null, cycleDays: {}, cycleCfg: null, cycleMoods: null, cycleMonth: null, cycleSel: null, me: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
+    chapter: null, photo: null, copyMsg: "", trackMode: null, trackDay: null, cycleDays: {}, cycleCfg: null, cycleMoods: null, cycleMonth: null, cycleSel: null, me: null, weekStart: null, pick: null, confirmWeekDel: false, pickQ: "", person: "all",
     editProfile: null, settingsMsg: "",
   };
   let downloads = null, cycleCol = null, userId = null;
@@ -1456,11 +1460,28 @@ Regeln:
     }, () => {});
   }
 
+  // ---------- Essen einer anderen Person übernehmen ----------
+  const otherProfiles = (pid) => S.profiles.filter(p => p.id !== pid);
+  function alreadyHas(e, target) {
+    return S.entries.some(x => x.profileId === target && x.date === e.date && x.slot === e.slot &&
+      (x.copiedFrom === e.id || e.copiedFrom === x.id || (x.recipeId && x.recipeId === e.recipeId) || (!x.recipeId && !e.recipeId && x.title === e.title)));
+  }
+  async function copyEntries(list, target) {
+    const todo = list.filter(e => !alreadyHas(e, target));
+    if (!todo.length) { S.copyMsg = `Schon bei ${profName(target)} eingetragen.`; renderMain(); return; }
+    const ok = await addEntries(todo.map(e => ({ date: e.date, slot: e.slot, profileId: target, recipeId: e.recipeId || null, title: e.title, portions: e.portions || 1, nut: e.nut || null,
+      ...(e.source ? { source: e.source } : {}), ...(e.items ? { items: e.items } : {}), copiedFrom: e.id })));
+    S.copyMsg = ok ? `${todo.length} ${todo.length === 1 ? "Eintrag" : "Einträge"} zu ${profName(target)} übernommen.` : "Übernehmen hat nicht ganz geklappt.";
+    renderMain();
+  }
   function entryRow(e) {
+    const others = e.profileId && e.profileId !== "all" ? otherProfiles(e.profileId) : [];
     return h("div", { class: "entry" },
       h("span", null, e.recipeId && S.recipes.some(r => r.id === e.recipeId) ? h("button", { type: "button", class: "linkish", onclick: () => openRecipe(e.recipeId) }, e.title) : e.title,
-        h("small", null, [e.source === "foto" ? "per Foto" : "", e.portions && e.portions != 1 ? `${fmt(e.portions)} Port.` : "", e.nut?.kcal ? `${de(e.nut.kcal * (e.portions || 1))} kcal` : ""].filter(Boolean).join(" · "))),
-      h("button", { type: "button", class: "x", "aria-label": `${e.title} entfernen`, onclick: () => delEntry(e.id) }, "×"));
+        h("small", null, [e.source === "foto" ? "per Foto" : "", e.copiedFrom ? "übernommen" : "", e.portions && e.portions != 1 ? `${fmt(e.portions)} Port.` : "", e.nut?.kcal ? `${de(e.nut.kcal * (e.portions || 1))} kcal` : ""].filter(Boolean).join(" · "))),
+      h("span", { class: "entryact" },
+        others.map(o => alreadyHas(e, o.id) ? null : h("button", { type: "button", class: "copyto", title: `Auch bei ${o.name} eintragen`, "aria-label": `${e.title} auch bei ${o.name} eintragen`, onclick: () => copyEntries([e], o.id) }, "→ " + o.name)),
+        h("button", { type: "button", class: "x", "aria-label": `${e.title} entfernen`, onclick: () => delEntry(e.id) }, "×")));
   }
   function openPick(ds, sl) { S.pick = { date: ds, slot: sl }; S.pickQ = ""; renderMain(); setTimeout(() => { const el = $("pk-q"); if (el) { el.focus({ preventScroll: true }); el.closest(".picker")?.scrollIntoView({ behavior: "smooth", block: "start" }); } }, 30); }
   function trackModeSwitch() {
@@ -1507,6 +1528,13 @@ Regeln:
         es.length ? h("div", null, es.map(entryRow)) : null,
         h("button", { type: "button", class: "addrow", onclick: () => openPick(ds, sl) }, "+ " + sl + " eintragen"));
     })));
+    const dayList = mine.filter(e => e.date === ds);
+    const others = pid !== "all" ? otherProfiles(pid) : [];
+    if (dayList.length && others.length) box.append(h("div", { class: "row-inline", style: "margin-top:14px" },
+      others.map(o => { const open = dayList.filter(e => !alreadyHas(e, o.id));
+        return h("button", { type: "button", class: "btn small", disabled: !open.length, onclick: () => copyEntries(dayList, o.id) },
+          open.length ? `Ganzen Tag zu ${o.name} übernehmen (${open.length})` : `Alles schon bei ${o.name}`); })));
+    if (S.copyMsg) { box.append(h("p", { class: "status", role: "status" }, S.copyMsg)); S.copyMsg = ""; }
   }
   function renderTrack(box) {
     if (!S.trackMode) S.trackMode = window.matchMedia && window.matchMedia("(max-width: 760px)").matches ? "day" : "week";

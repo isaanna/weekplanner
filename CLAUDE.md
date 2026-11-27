@@ -99,6 +99,7 @@ personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json)
 - Kopfzeile nur mit Titel, ohne Knöpfe
 - Tracking: Umschalter „Tag | Woche“. Auf dem Handy startet die Tagesansicht (Wochenleiste zum Antippen, Nährwert-Balken, eine Karte pro Mahlzeit mit „+ … eintragen“), am Computer die Wochentabelle
 - Nährwert-Balken: grün = passt, ockerbraun mit „zu wenig“, rotbraun mit „zu viel“. Am laufenden Tag, an künftigen Tagen und an Tagen ohne Einträge wird „zu wenig“ nicht markiert (neutraler Balken), nur „zu viel“
+- Essen übernehmen: Bei jedem Eintrag Knopf „→ Name“ (in das Tracking der anderen Person kopieren), in der Tagesansicht „Ganzen Tag zu Name übernehmen“. Kopien tragen `copiedFrom`, doppelte Übernahmen werden übersprungen
 - Fotoassistent im Tracking: „Essen fotografieren“ (Kamera) oder „Foto hochladen“ (Mediathek/Dateien) → Claude erkennt das Essen und schätzt die Nährwerte → prüfen → eintragen (`source: "foto"`, erkannte `items`). Das Foto wird nicht gespeichert. Verbotene Lebensmittel lösen eine Warnung aus
 - Wischen auf dem Handy: Tracking-Tagesansicht = Tag vor/zurück, Wochenansicht = Woche (nicht auf der Tabelle selbst, die scrollt), Zyklus = Monat
 - Handy: Reiter in drei Spalten, Kapitel-Kacheln zweispaltig, alles ohne seitliches Scrollen
