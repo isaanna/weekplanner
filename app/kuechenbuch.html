@@ -17,6 +17,7 @@
   --herb: #79685A;
   --herb-soft: #EAE1D8;
   --tile: #A69482;
+  --tile-cat: #BAA99A;
   --tile-ink: #47362E;
   --danger: #8f3b2c;
   --ok: #5d6b3a;
@@ -45,7 +46,7 @@ header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: 
 header.top h1 { font-family: var(--display); font-weight: 400; font-size: clamp(1.9rem, 5vw, 2.8rem); line-height: 1; margin: 0; letter-spacing: -0.02em; }
 header.top h1 button { all: unset; cursor: pointer; }
 header.top p { margin: 6px 0 0; color: var(--muted); font-family: var(--ui); font-size: 0.95rem; }
-.tabs { display: flex; gap: 2px; border-bottom: 1px solid var(--line); overflow-x: auto; }
+.tabs { display: flex; flex-wrap: wrap; gap: 2px 4px; border-bottom: 1px solid var(--line); padding-right: 8px; }
 .tabs button { border: 0; background: none; font-family: var(--ui); font-weight: 700; font-size: 0.98rem; padding: 8px 12px 10px; color: var(--muted); border-bottom: 3px solid transparent; margin-bottom: -1px; white-space: nowrap; }
 .tabs button[aria-selected="true"] { color: var(--ink); border-bottom-color: var(--accent); }
 
@@ -239,12 +240,15 @@ h2.title { font-size: clamp(1.9rem, 4.6vw, 2.8rem); letter-spacing: -0.005em; li
   background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 24 24' fill='none' stroke='%235A473A' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='m20 20-3.5-3.5'/%3E%3C/svg%3E") no-repeat 18px center; }
 .bigsearch:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 18%, transparent); }
 .results { display: grid; gap: 14px; margin-top: 18px; }
-.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
-.cards.three { grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
-.rcard, .chapter, .door, .chapterhead { background: var(--tile); color: var(--tile-ink); border: 0; border-radius: var(--radius); }
-.rcard { display: flex; align-items: flex-end; text-align: left; padding: 18px 18px 16px; min-height: 112px; transition: transform .15s, box-shadow .15s; min-width: 0; }
-.rcard:hover, .chapter:hover, .door:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -16px rgba(47,35,32,.55); }
-.rtitle { font-family: var(--display); font-size: 1.12rem; line-height: 1.25; overflow-wrap: anywhere; }
+.door { background: var(--tile); color: var(--tile-ink); border: 0; border-radius: var(--radius); }
+.chapter, .chapterhead { background: var(--tile-cat); color: var(--tile-ink); border: 0; border-radius: var(--radius); }
+.rlist { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.rlist li { border-bottom: 1px solid var(--line); }
+.rrow { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: none; border: 0; text-align: left; padding: 14px 6px; color: var(--ink); }
+.rrow:hover { background: var(--herb-soft); }
+.rrow .rgo { font-family: var(--ui); font-size: 1.4rem; line-height: 1; color: var(--muted); flex: none; }
+.chapter:hover, .door:hover { transform: translateY(-2px); box-shadow: 0 12px 24px -16px rgba(47,35,32,.55); }
+.rtitle { font-family: var(--display); font-size: 1.1rem; line-height: 1.3; overflow-wrap: anywhere; min-width: 0; }
 .bigsearch::-webkit-search-cancel-button { filter: grayscale(1); }
 .chapters { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 14px; }
 .chapter { display: grid; gap: 4px; text-align: left; padding: 22px 20px 20px; min-height: 140px; align-content: end; transition: transform .15s, box-shadow .15s; }
@@ -509,7 +513,8 @@ ol.steps li { gap: 12px; }
   const CAT_DESC = { "Frühstück": "Für den Start in den Tag", "Vorspeisen & Salate": "Leicht und frisch", "Suppen": "Wärmt von innen", "Hauptgerichte": "Mittag- und Abendessen", "Beilagen": "Passt dazu", "Snacks": "Schnell vor dem Fernsehabend", "Backen": "Aus dem Ofen", "Desserts": "Zum Schluss etwas Süßes", "Getränke": "Zum Trinken", "Sonstiges": "Alles andere" };
   // ---------- Rezeptkarten ----------
   function recipeCard(r) {
-    return h("button", { type: "button", class: "rcard", onclick: () => openRecipe(r.id) }, h("span", { class: "rtitle" }, r.title || "Ohne Titel"));
+    return h("li", null, h("button", { type: "button", class: "rrow", onclick: () => openRecipe(r.id) },
+      h("span", { class: "rtitle" }, r.title || "Ohne Titel"), h("span", { class: "rgo", "aria-hidden": "true" }, "›")));
   }
   function matches(r, q) {
     const words = q.toLowerCase().split(/\s+/).filter(Boolean);
@@ -543,7 +548,7 @@ ol.steps li { gap: 12px; }
           h("button", { type: "button", class: "chip", "aria-pressed": DICE.quick ? "true" : "false", onclick: () => { DICE.quick = !DICE.quick; rollDice(); draw(); } }, "nur schnell")));
       if (DICE.rolled) {
         const picks = DICE.picks.map(id => S.recipes.find(r => r.id === id)).filter(Boolean);
-        box.append(picks.length ? h("div", { class: "cards three" }, picks.map(recipeCard))
+        box.append(picks.length ? h("ul", { class: "rlist" }, picks.map(recipeCard))
           : h("p", { class: "hint" }, "Nichts gefunden. Lockere die Auswahl, zum Beispiel ohne „nur schnell“."));
       }
     };
@@ -568,7 +573,7 @@ ol.steps li { gap: 12px; }
       if (q || S.tag) {
         const hits = ordered().filter(r => (!S.tag || arr(r.tags).includes(S.tag)) && (!q || matches(r, q)));
         results.append(h("p", { class: "count" }, `${hits.length} ${hits.length === 1 ? "Treffer" : "Treffer"}${q ? ` für „${q}“` : ""}${S.tag ? ` · ${S.tag}` : ""}`));
-        results.append(hits.length ? h("div", { class: "cards" }, hits.map(recipeCard)) : h("p", { class: "hint" }, "Kein Rezept passt. Versuch ein anderes Lebensmittel."));
+        results.append(hits.length ? h("ul", { class: "rlist" }, hits.map(recipeCard)) : h("p", { class: "hint" }, "Kein Rezept passt. Versuch ein anderes Lebensmittel."));
         return;
       }
       if (S.chapter) {
@@ -576,7 +581,7 @@ ol.steps li { gap: 12px; }
         results.append(h("div", { class: "chapterhead" },
           h("div", null, h("span", { class: "chn" }, `${list.length} Rezepte`), h("h3", null, S.chapter), h("p", null, CAT_DESC[S.chapter] || "")),
           h("button", { type: "button", class: "btn small", onclick: () => { S.chapter = null; drawResults(); } }, "Alle Kapitel")));
-        results.append(h("div", { class: "cards" }, list.map(recipeCard)));
+        results.append(h("ul", { class: "rlist" }, list.map(recipeCard)));
         return;
       }
       const cats = CATS.filter(c => S.recipes.some(r => (r.category || "Sonstiges") === c));

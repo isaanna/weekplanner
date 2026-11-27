@@ -150,3 +150,8 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Bilder und Foto-Upload entfernt, Rezepte nur noch als Kacheln mit Titel
 - [x] Ganze App in der 12-Ton-Palette (Beige bis Espresso)
 - [x] Alle Kacheln gleich: Hintergrund `#DACCBF`, Kachel `#957A69`, Schrift `#47362E`
+
+## Runde 5 – Liste statt Rezeptkacheln
+- [x] Rezepte unter den Kategorien als Liste über die ganze Breite, Trennstrich unter jedem Rezept (auch Suchtreffer und Zufallsvorschläge)
+- [x] Kategorie-Kacheln in `#BAA99A`
+- [x] Reiterleiste ohne Scrollleiste, Reiter brechen bei wenig Platz um
