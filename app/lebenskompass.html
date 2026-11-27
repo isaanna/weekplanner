@@ -629,12 +629,7 @@ ol.steps li { gap: 12px; }
       h("div", { class: "trackhead" }, h("h2", { class: "title", style: "margin:8px 0" }, "Was hast du da?"),
         h("button", { class: "btn primary", type: "button", onclick: startAdd }, "+ Rezept einfügen")));
     const input = h("input", { type: "search", id: "rq", class: "bigsearch", placeholder: "Lebensmittel oder Rezept eingeben, z. B. Kartoffeln Hähnchen", value: S.q, "aria-label": "Rezepte suchen", autocomplete: "off" });
-    const chips = h("div", { class: "chips" });
     const results = h("div", { class: "results" });
-    const drawChips = () => {
-      const used = TAGS.filter(t => S.recipes.some(r => arr(r.tags).includes(t)));
-      chips.replaceChildren(...used.map(t => h("button", { type: "button", class: "chip", "aria-pressed": S.tag === t ? "true" : "false", onclick: () => { S.tag = S.tag === t ? null : t; drawChips(); drawResults(); } }, t)));
-    };
     const drawResults = () => {
       results.replaceChildren();
       if (!S.loaded) { results.append(h("p", { class: "hint" }, "Kochbuch wird geladen…")); return; }
@@ -664,8 +659,8 @@ ol.steps li { gap: 12px; }
       results.append(diceBox());
     };
     input.addEventListener("input", (e) => { S.q = e.target.value; drawResults(); });
-    box.append(h("div", { class: "searchwrap" }, input), chips, results);
-    drawChips(); drawResults();
+    box.append(h("div", { class: "searchwrap" }, input), results);
+    drawResults();
     if (!S.q) setTimeout(() => { if (document.activeElement === document.body) input.focus({ preventScroll: true }); }, 30);
   }
 

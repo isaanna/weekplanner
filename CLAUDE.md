@@ -89,7 +89,7 @@ personal/   Persönlich, nie weitergeben: Regeln/Allergien (settings/brain.json)
 - Keine Bilder: Kapitel als Kacheln, Rezepte als Liste über die ganze Breite (nur Titel, Trennstrich unter jedem Rezept)
 - Reiterleiste ohne Scrollleiste: Reiter brechen bei wenig Platz um
 - Eingabefelder (Text, Suche, Auswahl) immer hell `#FAF6F1` mit Rahmen `#79685A`, beim Schreiben Rahmen `#5A473A`
-- Rezeptbereich: Suche oben mit Knopf „+ Rezept einfügen“, Treffer erst nach Eingabe; ohne Suche nur Kapitel-Kacheln und Zufallsgenerator
+- Rezeptbereich: Suche oben mit Knopf „+ Rezept einfügen“, ohne Eigenschafts-Filter darunter; Treffer erst nach Eingabe; ohne Suche nur Kapitel-Kacheln und Zufallsgenerator
 - Kopfzeile nur mit Titel, ohne Knöpfe
 - Startseite: „Hoi, Name“ (Konto ↔ Profil über „Wer bist du?“), Tracking von heute für beide, Zyklusphase von Isa mit Stimmungssatz
 
