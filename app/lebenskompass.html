@@ -1632,13 +1632,15 @@ Regeln:
     if (!sample || !imagesOk) return null;
     const ph = S.photo || {};
     const box = h("section", { class: "photobox" });
-    const fileIn = h("input", { type: "file", accept: "image/*", capture: "environment", id: "ph-file", hidden: true,
-      onchange: (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) analyzePhoto(f); } });
+    const pickFile = (e) => { const f = e.target.files[0]; e.target.value = ""; if (f) analyzePhoto(f); };
+    const fileIn = h("input", { type: "file", accept: "image/*", capture: "environment", id: "ph-file", hidden: true, onchange: pickFile });
+    const uploadIn = h("input", { type: "file", accept: "image/*", id: "ph-upload", hidden: true, onchange: pickFile });
     if (!ph.draft && !ph.busy) {
-      box.append(...[fileIn,
+      box.append(...[fileIn, uploadIn,
         h("div", { class: "row-inline" },
           h("button", { type: "button", class: "btn primary", onclick: () => fileIn.click() }, "Essen fotografieren"),
-          h("span", { class: "hint" }, "Claude erkennt das Essen und schätzt die Nährwerte.")),
+          h("button", { type: "button", class: "btn", onclick: () => uploadIn.click() }, "Foto hochladen")),
+        h("span", { class: "hint" }, "Claude erkennt das Essen auf dem Bild und schätzt die Nährwerte."),
         h("input", { id: "ph-hint", placeholder: "Optional: Hinweis, z. B. „halbe Portion“ oder „mit Olivenöl“", value: str(ph.hint), oninput: (e) => { S.photo = { ...(S.photo || {}), hint: e.target.value }; } }),
         ph.err ? h("p", { class: "status err" }, ph.err) : null].filter(Boolean));
       return box;
