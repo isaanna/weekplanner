@@ -265,5 +265,5 @@ Aktueller Inhalt: 83 Rezepte (20 Frühstück, 50 Hauptgerichte, 10 Snacks, 3 eig
 - [x] Eigenschafts-Filter unter der Rezeptsuche entfernt
 - [x] Bring!: Helfer als Cloudflare Worker (`integrations/bring-worker.js`, Anleitung `integrations/BRING.md`)
 - [x] App: Knopf „In Bring! öffnen“ im Wochenplan, Adresse des Helfers unter „Profil & Regeln“ → „Bring!“
-- [ ] Worker bei Cloudflare anlegen und Adresse in der App eintragen (Isa)
+- [x] Worker bei Cloudflare anlegen (`bring-liste`) und Adresse in der App eintragen
 - [ ] Import in Bring! einmal echt testen
